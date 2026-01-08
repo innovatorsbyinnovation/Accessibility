@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WCAG 2.2 Perceivable – COMPLIANT Examples</title>
+<style>
+  body { font-family: Arial; }
+  .high-contrast { color:#000; background:#fff; }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.2 – 1.x Perceivable COMPLIANT Test Cases</h1>
+
+<!-- ===================== 1.1.1 Non-text Content ===================== -->
+
+<!-- ===== Images ===== -->
+
+<section id="TC-1.1.1-C-001">
+  <h2>Informative image with meaningful alt</h2>
+  <img src="product.jpg" alt="Red running shoes with white sole">
+</section>
+
+<section id="TC-1.1.1-C-002">
+  <h2>Chart image with data summary</h2>
+  <img src="sales.png" alt="Bar chart showing Q4 sales increased by 30 percent">
+</section>
+
+<section id="TC-1.1.1-C-003">
+  <h2>Logo with company name</h2>
+  <img src="logo.png" alt="Acme Corporation">
+</section>
+
+<section id="TC-1.1.1-C-004">
+  <h2>Decorative image properly hidden</h2>
+  <img src="divider.png" alt="" role="presentation">
+</section>
+
+<section id="TC-1.1.1-C-005">
+  <h2>Functional image acting as button</h2>
+  <a href="#">
+    <img src="download.png" alt="Download report">
+  </a>
+</section>
+
+<!-- ===== Icons & Buttons ===== -->
+
+<section id="TC-1.1.1-C-006">
+  <h2>Icon button with aria-label</h2>
+  <button aria-label="Delete item">🗑️</button>
+</section>
+
+<section id="TC-1.1.1-C-007">
+  <h2>Hamburger menu labeled</h2>
+  <button aria-label="Open navigation menu">☰</button>
+</section>
+
+<section id="TC-1.1.1-C-008">
+  <h2>SVG icon with title</h2>
+  <svg width="24" height="24" role="img">
+    <title>Search</title>
+    <circle cx="12" cy="12" r="10"></circle>
+  </svg>
+</section>
+
+<section id="TC-1.1.1-C-009">
+  <h2>SVG icon with aria-label</h2>
+  <svg width="24" height="24" aria-label="User profile">
+    <circle cx="12" cy="8" r="4"></circle>
+    <rect x="6" y="14" width="12" height="6"></rect>
+  </svg>
+</section>
+
+<!-- ===== Forms ===== -->
+
+<section id="TC-1.1.1-C-010">
+  <h2>Image submit button with alt</h2>
+  <input type="image" src="submit.png" alt="Submit form">
+</section>
+
+<section id="TC-1.1.1-C-011">
+  <h2>Input with explicit label</h2>
+  <label for="email">Email address</label>
+  <input id="email" type="email">
+</section>
+
+<section id="TC-1.1.1-C-012">
+  <h2>Search field with icon and text label</h2>
+  <label for="search">Search</label>
+  <input id="search" type="search">
+</section>
+
+<!-- ===== CAPTCHA ===== -->
+
+<section id="TC-1.1.1-C-013">
+  <h2>CAPTCHA with alternative method</h2>
+  <img src="captcha.png" alt="">
+  <a href="#">Use audio CAPTCHA instead</a>
+</section>
+
+<!-- ===== Media Posters ===== -->
+
+<section id="TC-1.1.1-C-014">
+  <h2>Video poster described</h2>
+  <video controls poster="intro.jpg" aria-label="Company introduction video showing office campus">
+    <source src="intro.mp4">
+  </video>
+</section>
+
+<!-- ===== Charts & Infographics ===== -->
+
+<section id="TC-1.1.1-C-015">
+  <h2>Complex infographic with text alternative</h2>
+  <img src="infographic.png" alt="">
+  <p id="info-desc">
+    Infographic shows three steps: Register, Verify email, Complete profile.
+  </p>
+</section>
+
+<!-- ===== Background Images ===== -->
+
+<section id="TC-1.1.1-C-016">
+  <h2>Important background image with text</h2>
+  <div style="background:url('offer.png'); padding:20px;">
+    <p>50% discount available today only</p>
+  </div>
+</section>
+
+<!-- ===== Canvas ===== -->
+
+<section id="TC-1.1.1-C-017">
+  <h2>Canvas with fallback text</h2>
+  <canvas id="chart">
+    Sales chart showing steady growth from January to June.
+  </canvas>
+</section>
+
+<!-- ===== iFrames ===== -->
+
+<section id="TC-1.1.1-C-018">
+  <h2>Iframe with descriptive title</h2>
+  <iframe src="map.html" title="Office location map"></iframe>
+</section>
+
+<!-- ===== Emojis ===== -->
+
+<section id="TC-1.1.1-C-019">
+  <h2>Emoji with text equivalent</h2>
+  <p>Payment successful <span aria-label="success">✔</span></p>
+</section>
+
+<!-- ===== Lists ===== -->
+
+<section id="TC-1.1.1-C-020">
+  <h2>Icon list with text</h2>
+  <ul>
+    <li><span aria-hidden="true">✔</span> Feature enabled</li>
+    <li><span aria-hidden="true">✖</span> Feature disabled</li>
+  </ul>
+</section>
+
+<!-- ===== Media Controls ===== -->
+
+<section id="TC-1.1.1-C-021">
+  <h2>Audio play button labeled</h2>
+  <button aria-label="Play audio">▶</button>
+</section>
+
+<!-- ===== Maps ===== -->
+
+<section id="TC-1.1.1-C-022">
+  <h2>Map image with description</h2>
+  <img src="map.png" alt="Map showing office near Central Park metro station">
+</section>
+
+<!-- ===== Status Indicators ===== -->
+
+<section id="TC-1.1.1-C-023">
+  <h2>Status icon with text</h2>
+  <img src="success.png" alt="">
+  <span>Order completed successfully</span>
+</section>
+
+<!-- ===== Progress Indicators ===== -->
+
+<section id="TC-1.1.1-C-024">
+  <h2>Progress bar with accessible text</h2>
+  <label for="progress">Profile completion: 60%</label>
+  <progress id="progress" value="60" max="100"></progress>
+</section>
+
+<!-- ===== QR Codes ===== -->
+
+<section id="TC-1.1.1-C-025">
+  <h2>QR code with explanation</h2>
+  <img src="qr.png" alt="QR code to download mobile app">
+</section>
+
+<!-- ===== File Types ===== -->
+
+<section id="TC-1.1.1-C-026">
+  <h2>File icon with label</h2>
+  <img src="pdf.png" alt="">
+  <a href="report.pdf">Annual Report (PDF)</a>
+</section>
+
+<!-- ===== Ratings ===== -->
+
+<section id="TC-1.1.1-C-027">
+  <h2>Star rating with text</h2>
+  <span aria-hidden="true">⭐⭐⭐⭐☆</span>
+  <span>4 out of 5 stars</span>
+</section>
+
+<!-- ===== Tooltips ===== -->
+
+<section id="TC-1.1.1-C-028">
+  <h2>Tooltip icon with label</h2>
+  <button aria-describedby="tip1">i</button>
+  <span id="tip1">More information about pricing</span>
+</section>
+
+<!-- ===== Animations ===== -->
+
+<section id="TC-1.1.1-C-029">
+  <h2>Loading animation with text</h2>
+  <div role="status">Loading content, please wait</div>
+</section>
+
+<!-- ===== Social Icons ===== -->
+
+<section id="TC-1.1.1-C-030">
+  <h2>Social media icon link labeled</h2>
+  <a href="#" aria-label="Follow us on Twitter">
+    <img src="twitter.png" alt="">
+  </a>
+</section>
+
+<!-- ===== Alerts ===== -->
+
+<section id="TC-1.1.1-C-031">
+  <h2>Alert icon with message</h2>
+  <img src="warning.png" alt="">
+  <span>Password is required</span>
+</section>
+
+<!-- ===== Sliders ===== -->
+
+<section id="TC-1.1.1-C-032">
+  <h2>Carousel arrows labeled</h2>
+  <button aria-label="Previous slide">&lt;</button>
+  <button aria-label="Next slide">&gt;</button>
+</section>
+
+<!-- ===== Success Messages ===== -->
+
+<section id="TC-1.1.1-C-033">
+  <h2>Success image with text</h2>
+  <img src="check.png" alt="">
+  <p>Your form has been submitted successfully</p>
+</section>
+
+<!-- ===== Language Images ===== -->
+
+<section id="TC-1.1.1-C-034">
+  <h2>Text rendered as HTML instead of image</h2>
+  <h3>Limited Time Offer</h3>
+</section>
+
+<!-- ===== SVG Charts ===== -->
+
+<section id="TC-1.1.1-C-035">
+  <h2>SVG chart with title and desc</h2>
+  <svg width="100" height="50" role="img">
+    <title>Monthly Revenue</title>
+    <desc>Revenue increased steadily from January to June</desc>
+    <rect width="100" height="50"></rect>
+  </svg>
+</section>
+
+<!-- ===== Badges ===== -->
+
+<section id="TC-1.1.1-C-036">
+  <h2>Badge icon with text</h2>
+  <img src="new.png" alt="">
+  <span>New product</span>
+</section>
+
+<!-- ===== Emoji Buttons ===== -->
+
+<section id="TC-1.1.1-C-037">
+  <h2>Emoji button with accessible name</h2>
+  <button aria-label="Add to favorites">❤️</button>
+</section>
+
+<!-- ===== Decorative Icons ===== -->
+
+<section id="TC-1.1.1-C-038">
+  <h2>Decorative icon hidden from AT</h2>
+  <span aria-hidden="true">★</span>
+  <span>Featured item</span>
+</section>
+
+<!-- ===== Notifications ===== -->
+
+<section id="TC-1.1.1-C-039">
+  <h2>Notification icon with label</h2>
+  <img src="bell.png" alt="">
+  <span>3 new notifications</span>
+</section>
+
+<!-- ===== Misc ===== -->
+
+<section id="TC-1.1.1-C-040">
+  <h2>Image link with descriptive alt</h2>
+  <a href="#">
+    <img src="help.png" alt="Go to help center">
+  </a>
+</section>
+
+<section id="TC-1.1.1-C-041">
+  <h2>TC-1.1.1-C-041: Informative image with alt</h2>
+  <img src="chart.png" alt="Sales increased by 30 percent in Q4">
+</section>
+
+<section id="TC-1.1.1-C-042">
+  <h2>TC-1.1.1-C-042: Decorative image hidden</h2>
+  <img src="divider.png" alt="" role="presentation">
+</section>
+
+<section id="TC-1.1.1-C-043">
+  <h2>TC-1.1.1-C-043: Accessible CAPTCHA</h2>
+  <img src="captcha.png" alt="">
+  <a href="#">Get audio CAPTCHA</a>
+</section>
+
+<section id="TC-1.1.1-C-044">
+  <h2>TC-1.1.1-C-044: SVG with aria-label</h2>
+  <svg width="100" height="50" aria-label="Blue rectangle">
+    <rect width="100" height="50" fill="blue"/>
+  </svg>
+</section>
+
+<section id="TC-1.1.1-C-045">
+  <h2>TC-1.1.1-C-045: Icon button with accessible name</h2>
+  <button aria-label="Search">🔍</button>
+</section>
+
+<!-- ===================== 1.2 Time-based Media ===================== -->
+
+
+<!-- ===================== 1.2.1 Audio-only ===================== -->
+
+<section id="TC-1.2-C-001">
+  <h2>Audio-only with full transcript</h2>
+  <audio controls src="podcast.mp3"></audio>
+  <p><strong>Transcript:</strong> Welcome to the weekly podcast discussing accessibility updates…</p>
+</section>
+
+<section id="TC-1.2-C-002">
+  <h2>Audio embedded with accessible transcript link</h2>
+  <audio controls src="announcement.mp3"></audio>
+  <a href="#t2">Read transcript</a>
+  <div id="t2">Announcement: Office will be closed on Friday.</div>
+</section>
+
+<section id="TC-1.2-C-003">
+  <h2>Audio-only identified clearly</h2>
+  <audio controls aria-label="Interview audio recording" src="interview.mp3"></audio>
+</section>
+
+<!-- ===================== 1.2.1 Video-only ===================== -->
+
+<section id="TC-1.2-C-004">
+  <h2>Silent video with text alternative</h2>
+  <video controls src="silent-demo.mp4"></video>
+  <p>This silent video shows the step-by-step assembly process.</p>
+</section>
+
+<section id="TC-1.2-C-005">
+  <h2>Autoplay muted video with description</h2>
+  <video autoplay muted loop src="animation.mp4"></video>
+  <p>Animated illustration of system workflow.</p>
+</section>
+
+<!-- ===================== 1.2.2 Captions (Prerecorded) ===================== -->
+
+<section id="TC-1.2-C-006">
+  <h2>Video with synchronized captions</h2>
+  <video controls>
+    <source src="training.mp4">
+    <track kind="captions" srclang="en" src="training-en.vtt" default>
+  </video>
+</section>
+
+<section id="TC-1.2-C-007">
+  <h2>Multiple caption languages available</h2>
+  <video controls>
+    <source src="news.mp4">
+    <track kind="captions" srclang="en" src="news-en.vtt" default>
+    <track kind="captions" srclang="hi" src="news-hi.vtt">
+  </video>
+</section>
+
+<section id="TC-1.2-C-008">
+  <h2>Captions include speaker identification</h2>
+  <video controls>
+    <source src="panel.mp4">
+    <track kind="captions" srclang="en" src="panel.vtt">
+  </video>
+</section>
+
+<!-- ===================== 1.2.3 Audio Description ===================== -->
+
+<section id="TC-1.2-C-009">
+  <h2>Video with integrated audio description</h2>
+  <video controls>
+    <source src="product-demo-ad.mp4">
+  </video>
+</section>
+
+<section id="TC-1.2-C-010">
+  <h2>Audio description track selectable</h2>
+  <video controls>
+    <source src="demo.mp4">
+    <track kind="descriptions" srclang="en" src="demo-desc.vtt">
+  </video>
+</section>
+
+<!-- ===================== 1.2.4 Captions (Live) ===================== -->
+
+<section id="TC-1.2-C-011">
+  <h2>Live stream with real-time captions</h2>
+  <video controls src="live-stream.m3u8" aria-describedby="livecap"></video>
+  <p id="livecap">Live captions enabled during broadcast.</p>
+</section>
+
+<section id="TC-1.2-C-012">
+  <h2>Simulated live video with captions</h2>
+  <video controls>
+    <source src="sim-live.mp4">
+    <track kind="captions" srclang="en" src="sim-live.vtt">
+  </video>
+</section>
+
+<!-- ===================== 1.2.5 Audio Description (Prerecorded) ===================== -->
+
+<section id="TC-1.2-C-013">
+  <h2>Promotional video with audio description</h2>
+  <video controls>
+    <source src="promo.mp4">
+    <track kind="descriptions" srclang="en" src="promo-desc.vtt">
+  </video>
+</section>
+
+<section id="TC-1.2-C-014">
+  <h2>Charts verbally explained in narration</h2>
+  <video controls src="data-video-described.mp4"></video>
+</section>
+
+<!-- ===================== 1.2.6 Sign Language ===================== -->
+
+<section id="TC-1.2-C-015">
+  <h2>Video with sign language interpretation</h2>
+  <video controls src="announcement-sign.mp4"></video>
+</section>
+
+<section id="TC-1.2-C-016">
+  <h2>Sign language provided as alternative video</h2>
+  <a href="training-sign.mp4">Watch sign language version</a>
+</section>
+
+<!-- ===================== 1.2.7 Extended Audio Description ===================== -->
+
+<section id="TC-1.2-C-017">
+  <h2>Extended audio description version available</h2>
+  <a href="complex-ad.mp4">Watch extended audio described version</a>
+</section>
+
+<section id="TC-1.2-C-018">
+  <h2>Video pauses to allow audio description</h2>
+  <video controls src="timeline-extended-ad.mp4"></video>
+</section>
+
+<!-- ===================== Transcript Best Practices ===================== -->
+
+<section id="TC-1.2-C-019">
+  <h2>Transcript includes non-speech sounds</h2>
+  <audio controls src="story.mp3"></audio>
+  <p>[Door opens] [Soft music fades in] Narrator: The journey begins…</p>
+</section>
+
+<section id="TC-1.2-C-020">
+  <h2>Transcript placed near media</h2>
+  <audio controls src="lecture.mp3"></audio>
+  <div>Transcript content provided directly below the player.</div>
+</section>
+
+<!-- ===================== Caption Quality ===================== -->
+
+<section id="TC-1.2-C-021">
+  <h2>Captions synchronized and readable</h2>
+  <video controls>
+    <source src="speech.mp4">
+    <track kind="captions" src="speech.vtt" srclang="en">
+  </video>
+</section>
+
+<section id="TC-1.2-C-022">
+  <h2>Captions include sound effects</h2>
+  <video controls>
+    <source src="movie.mp4">
+    <track kind="captions" src="movie.vtt" srclang="en">
+  </video>
+</section>
+
+<!-- ===================== Embedded Media ===================== -->
+
+<section id="TC-1.2-C-023">
+  <h2>Embedded third-party video with captions</h2>
+  <iframe src="video-captioned.html" title="Captioned webinar recording"></iframe>
+</section>
+
+<section id="TC-1.2-C-024">
+  <h2>Webinar recording with transcript</h2>
+  <iframe src="webinar.html" title="Recorded webinar"></iframe>
+  <a href="webinar-transcript.html">Read transcript</a>
+</section>
+
+<!-- ===================== Player Controls ===================== -->
+
+<section id="TC-1.2-C-025">
+  <h2>Media player allows pause and stop</h2>
+  <video controls src="background.mp4"></video>
+</section>
+
+<section id="TC-1.2-C-026">
+  <h2>Keyboard-accessible custom controls</h2>
+  <div role="group" aria-label="Custom video controls">
+    <button>Play</button>
+    <button>Pause</button>
+  </div>
+</section>
+
+<!-- ===================== Multiple Tracks ===================== -->
+
+<section id="TC-1.2-C-027">
+  <h2>User can select audio description track</h2>
+  <video controls>
+    <source src="multi-track.mp4">
+    <track kind="descriptions" src="desc.vtt" srclang="en">
+  </video>
+</section>
+
+<section id="TC-1.2-C-028">
+  <h2>Audio description announced clearly</h2>
+  <video controls aria-describedby="adinfo">
+    <source src="ad.mp4">
+  </video>
+  <p id="adinfo">Audio description available via settings.</p>
+</section>
+
+<!-- ===================== Visual Information ===================== -->
+
+<section id="TC-1.2-C-029">
+  <h2>Presenter narrates on-screen text</h2>
+  <video controls src="presentation-described.mp4"></video>
+</section>
+
+<section id="TC-1.2-C-030">
+  <h2>Slides content included in transcript</h2>
+  <video controls src="slides.mp4"></video>
+  <a href="slides-transcript.html">Slides transcript</a>
+</section>
+
+<!-- ===================== Accuracy & Language ===================== -->
+
+<section id="TC-1.2-C-031">
+  <h2>Accurate captions match spoken words</h2>
+  <video controls>
+    <source src="speech.mp4">
+    <track kind="captions" src="accurate.vtt" srclang="en">
+  </video>
+</section>
+
+<section id="TC-1.2-C-032">
+  <h2>Critical instructions fully captioned</h2>
+  <video controls src="tutorial-captioned.mp4"></video>
+</section>
+
+<!-- ===================== Misc ===================== -->
+
+<section id="TC-1.2-C-033">
+  <h2>Captions resizable via player settings</h2>
+  <video controls src="scalable-captions.mp4"></video>
+</section>
+
+<section id="TC-1.2-C-034">
+  <h2>Transcript provided as accessible HTML</h2>
+  <audio controls src="talk.mp3"></audio>
+  <a href="transcript.html">HTML transcript</a>
+</section>
+
+<section id="TC-1.2-C-035">
+  <h2>Live captions with minimal delay</h2>
+  <video controls src="conference-live.m3u8"></video>
+</section>
+
+<section id="TC-1.2-C-036">
+  <h2>Audio description does not overlap dialogue</h2>
+  <video controls src="balanced-ad.mp4"></video>
+</section>
+
+<section id="TC-1.2-C-037">
+  <h2>Captions toggle available</h2>
+  <video controls src="toggle-captions.mp4"></video>
+</section>
+
+<section id="TC-1.2-C-038">
+  <h2>Audio-only media labeled clearly</h2>
+  <audio controls aria-label="Customer testimonial audio" src="testimonial.mp3"></audio>
+</section>
+
+<section id="TC-1.2-C-039">
+  <h2>Transcript references speaker changes</h2>
+  <audio controls src="debate.mp3"></audio>
+  <p>Speaker 1: … Speaker 2: …</p>
+</section>
+
+<section id="TC-1.2-C-040">
+  <h2>Extended AD link placed near video</h2>
+  <video controls src="complex.mp4"></video>
+  <a href="complex-extended-ad.mp4">Extended audio description version</a>
+</section>
+
+<section id="TC-1.2.1-C-041">
+  <h2>TC-1.2.1-C-041: Audio with transcript</h2>
+  <audio controls src="speech.mp3"></audio>
+  <p>Transcript: Welcome to the accessibility overview…</p>
+</section>
+
+<section id="TC-1.2.2-C-042">
+  <h2>TC-1.2.2-C-042: Video with captions</h2>
+  <video controls>
+    <source src="news.mp4">
+    <track kind="captions" srclang="en" src="news.vtt" default>
+  </video>
+</section>
+
+<section id="TC-1.2.3-C-043">
+  <h2>TC-1.2.3-C-043: Audio description provided</h2>
+  <video controls>
+    <source src="demo.mp4">
+    <track kind="descriptions" srclang="en" src="desc.vtt">
+  </video>
+</section>
+
+<!-- ===================== 1.3 Adaptable ===================== -->
+
+
+<!-- ===================== 1.3.1 Info & Relationships ===================== -->
+
+<section id="TC-1.3-C-001">
+  <h2>Semantic heading structure</h2>
+  <h3>Shipping Address</h3>
+</section>
+
+<section id="TC-1.3-C-002">
+  <h2>Proper data table with headers</h2>
+  <table>
+    <caption>Student Scores</caption>
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">Score</th>
+    </tr>
+    <tr>
+      <td>John</td>
+      <td>90</td>
+    </tr>
+  </table>
+</section>
+
+<section id="TC-1.3-C-003">
+  <h2>Form field with explicit label</h2>
+  <label for="fname">First Name</label>
+  <input id="fname" type="text">
+</section>
+
+<section id="TC-1.3-C-004">
+  <h2>Grouped radio buttons using fieldset</h2>
+  <fieldset>
+    <legend>Payment Method</legend>
+    <label><input type="radio" name="pay"> Card</label>
+    <label><input type="radio" name="pay"> Cash</label>
+  </fieldset>
+</section>
+
+<section id="TC-1.3-C-005">
+  <h2>Semantic list structure</h2>
+  <ul>
+    <li>Item one</li>
+    <li>Item two</li>
+    <li>Item three</li>
+  </ul>
+</section>
+
+<section id="TC-1.3-C-006">
+  <h2>Required field programmatically identified</h2>
+  <label for="email">Email <span aria-hidden="true">*</span></label>
+  <input id="email" type="email" required aria-required="true">
+</section>
+
+<section id="TC-1.3-C-007">
+  <h2>Checkbox group with relationship</h2>
+  <fieldset>
+    <legend>Notification Preferences</legend>
+    <label><input type="checkbox"> Email</label>
+    <label><input type="checkbox"> SMS</label>
+  </fieldset>
+</section>
+
+<!-- ===================== 1.3.2 Meaningful Sequence ===================== -->
+
+<section id="TC-1.3-C-008">
+  <h2>Logical DOM and visual order match</h2>
+  <ol>
+    <li>Review</li>
+    <li>Pay</li>
+    <li>Confirm</li>
+  </ol>
+</section>
+
+<section id="TC-1.3-C-009">
+  <h2>Flex layout preserving DOM order</h2>
+  <div class="two-col">
+    <div class="box">Step 1: Review</div>
+    <div class="box">Step 2: Pay</div>
+  </div>
+</section>
+
+<section id="TC-1.3-C-010">
+  <h2>Table reading order preserved</h2>
+  <table>
+    <tr>
+      <th scope="row">Total</th>
+      <td>₹500</td>
+    </tr>
+  </table>
+</section>
+
+<section id="TC-1.3-C-011">
+  <h2>Form instructions before input</h2>
+  <p id="pwdHelp">Password must be at least 8 characters.</p>
+  <input type="password" aria-describedby="pwdHelp">
+</section>
+
+<!-- ===================== 1.3.3 Sensory Characteristics ===================== -->
+
+<section id="TC-1.3-C-012">
+  <h2>Instructions not relying on color alone</h2>
+  <p>Select the “Continue” button labeled Continue.</p>
+  <button>Continue</button>
+</section>
+
+<section id="TC-1.3-C-013">
+  <h2>Instructions not relying on shape alone</h2>
+  <p>Select the Delete button labeled “Delete”.</p>
+  <button>Delete</button>
+</section>
+
+<section id="TC-1.3-C-014">
+  <h2>Instructions not relying on position</h2>
+  <p>Complete the registration form titled “Sign Up”.</p>
+</section>
+
+<section id="TC-1.3-C-015">
+  <h2>Error message programmatically associated</h2>
+  <label for="age">Age</label>
+  <input id="age" type="number" aria-describedby="ageError">
+  <span id="ageError">Age is required.</span>
+</section>
+
+<!-- ===================== 1.3.4 Orientation ===================== -->
+
+<section id="TC-1.3-C-016">
+  <h2>Content supports both orientations</h2>
+  <p>This layout adapts to portrait and landscape.</p>
+</section>
+
+<section id="TC-1.3-C-017">
+  <h2>Responsive form layout</h2>
+  <form>
+    <label for="city">City</label>
+    <input id="city" type="text">
+  </form>
+</section>
+
+<section id="TC-1.3-C-018">
+  <h2>Video without forced orientation</h2>
+  <video controls>
+    <source src="sample.mp4" type="video/mp4">
+  </video>
+</section>
+
+<!-- ===================== 1.3.5 Identify Input Purpose ===================== -->
+
+<section id="TC-1.3-C-019">
+  <h2>Email field with autocomplete</h2>
+  <label for="email2">Email</label>
+  <input id="email2" type="email" autocomplete="email">
+</section>
+
+<section id="TC-1.3-C-020">
+  <h2>Name fields with autocomplete tokens</h2>
+  <label for="given">First Name</label>
+  <input id="given" autocomplete="given-name">
+  <label for="family">Last Name</label>
+  <input id="family" autocomplete="family-name">
+</section>
+
+<section id="TC-1.3-C-021">
+  <h2>Address fields with purpose</h2>
+  <label for="street">Street</label>
+  <input id="street" autocomplete="street-address">
+</section>
+
+<section id="TC-1.3-C-022">
+  <h2>Phone number with autocomplete</h2>
+  <label for="phone">Phone</label>
+  <input id="phone" type="tel" autocomplete="tel">
+</section>
+
+<section id="TC-1.3-C-023">
+  <h2>Password with purpose</h2>
+  <label for="pwd">Password</label>
+  <input id="pwd" type="password" autocomplete="new-password">
+</section>
+
+<!-- ===================== Structural & Landmark Enhancements ===================== -->
+
+<section id="TC-1.3-C-024">
+  <h2>Proper heading hierarchy</h2>
+  <h3>Section</h3>
+  <h4>Subsection</h4>
+</section>
+
+<section id="TC-1.3-C-025">
+  <h2>Multiple forms with landmarks</h2>
+  <main>
+    <form aria-labelledby="login">
+      <h3 id="login">Login</h3>
+    </form>
+    <form aria-labelledby="register">
+      <h3 id="register">Register</h3>
+    </form>
+  </main>
+</section>
+
+<section id="TC-1.3-C-026">
+  <h2>Semantic timeline list</h2>
+  <ol>
+    <li>Order Placed</li>
+    <li>Shipped</li>
+    <li>Delivered</li>
+  </ol>
+</section>
+
+<section id="TC-1.3-C-027">
+  <h2>Accessible accordion structure</h2>
+  <button aria-expanded="false">Section 1</button>
+</section>
+
+<section id="TC-1.3-C-028">
+  <h2>Chart with text alternative</h2>
+  <img src="chart.png" alt="Sales increased from January to March">
+</section>
+
+<section id="TC-1.3-C-029">
+  <h2>Modal content grouped</h2>
+  <section role="dialog" aria-labelledby="modalTitle">
+    <h3 id="modalTitle">Confirm Action</h3>
+    <p>Are you sure?</p>
+  </section>
+</section>
+
+<section id="TC-1.3-C-030">
+  <h2>Tabs with proper relationships</h2>
+  <div role="tablist">
+    <button role="tab">Tab 1</button>
+    <button role="tab">Tab 2</button>
+  </div>
+</section>
+
+<section id="TC-1.3-C-031">
+  <h2>Search input with purpose</h2>
+  <label for="search">Search</label>
+  <input id="search" type="search" autocomplete="search">
+</section>
+
+<section id="TC-1.3-C-032">
+  <h2>Date field with autocomplete</h2>
+  <label for="dob">Date of Birth</label>
+  <input id="dob" type="date" autocomplete="bday">
+</section>
+
+<section id="TC-1.3-C-033">
+  <h2>Credit card field identified</h2>
+  <label for="cc">Card Number</label>
+  <input id="cc" autocomplete="cc-number">
+</section>
+
+<section id="TC-1.3-C-034">
+  <h2>Address grouped semantically</h2>
+  <fieldset>
+    <legend>Address</legend>
+    <label>City <input autocomplete="address-level2"></label>
+    <label>ZIP <input autocomplete="postal-code"></label>
+  </fieldset>
+</section>
+
+<section id="TC-1.3-C-035">
+  <h2>Relationship conveyed via aria-describedby</h2>
+  <input aria-describedby="tip1">
+  <span id="tip1">Enter your employee ID</span>
+</section>
+
+<section id="TC-1.3-C-036">
+  <h2>Table with row and column headers</h2>
+  <table>
+    <tr>
+      <th scope="col">Product</th>
+      <th scope="col">Price</th>
+    </tr>
+    <tr>
+      <th scope="row">Book</th>
+      <td>₹200</td>
+    </tr>
+  </table>
+</section>
+
+<section id="TC-1.3-C-037">
+  <h2>Form validation message linked</h2>
+  <input aria-invalid="true" aria-describedby="err1">
+  <span id="err1">Invalid input</span>
+</section>
+
+<section id="TC-1.3-C-038">
+  <h2>Instructions conveyed textually</h2>
+  <p>Select all applicable options below.</p>
+</section>
+
+<section id="TC-1.3-C-039">
+  <h2>Layout grouping using section</h2>
+  <section>
+    <h3>Profile Info</h3>
+    <p>User details</p>
+  </section>
+</section>
+
+<section id="TC-1.3-C-040">
+  <h2>Consistent structure across pages</h2>
+  <header>Header</header>
+  <main>Main content</main>
+  <footer>Footer</footer>
+</section>
+
+<section id="TC-1.3-C-041">
+  <h2>TC-1.3.1-C-041: Semantic layout</h2>
+  <nav>Navigation</nav>
+  <main>Main content</main>
+</section>
+
+<section id="TC-1.3-C-042">
+  <h2>TC-1.3.1-C-042: Proper form labels</h2>
+  <label for="name">Name</label>
+  <input id="name" type="text">
+</section>
+
+<section id="TC-1.3-C-043">
+  <h2>TC-1.3.2-C-043: Logical reading order</h2>
+  <ol>
+    <li>Step 1</li>
+    <li>Step 2</li>
+  </ol>
+</section>
+
+<!-- ===================== 1.4 Distinguishable ===================== -->
+
+<section id="TC-1.4.1-C-012">
+  <h2>TC-1.4.1-C-012: Color not sole indicator</h2>
+  <p><strong>*</strong> Required fields are marked with an asterisk.</p>
+</section>
+
+<section id="TC-1.4.3-C-013">
+  <h2>TC-1.4.3-C-013: Sufficient contrast</h2>
+  <p class="high-contrast">Readable text.</p>
+</section>
+
+<section id="TC-1.4.4-C-014">
+  <h2>TC-1.4.4-C-014: Scalable text</h2>
+  <p style="font-size:1rem;">Resizable text.</p>
+</section>
+
+<section id="TC-1.4.5-C-015">
+  <h2>TC-1.4.5-C-015: Real text instead of image</h2>
+  <h3>Welcome to the portal</h3>
+</section>
+
+<section id="TC-1.4.10-C-016">
+  <h2>TC-1.4.10-C-016: Responsive reflow</h2>
+  <div style="max-width:100%;">Responsive content</div>
+</section>
+
+<section id="TC-1.4.12-C-017">
+  <h2>TC-1.4.12-C-017: Text spacing safe</h2>
+  <p style="line-height:1.5;">Readable spacing</p>
+</section>
+
+<section id="TC-1.4.13-C-018">
+  <h2>TC-1.4.13-C-018: Persistent hover content</h2>
+  <button aria-describedby="tip">Info</button>
+  <div id="tip">Additional information stays visible.</div>
+</section>
+
+</body>
+</html>

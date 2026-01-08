@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WCAG 2.x Operable – NON COMPLIANT (Part 1)</title>
+<style>
+.fake-btn{background:#0a6;color:#fff;padding:8px;cursor:pointer}
+.no-focus:focus{outline:none}
+.hidden{display:none}
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.x Operable – NON-COMPLIANT (Part 1)</h1>
+
+<!-- ===================== 2.1.1 KEYBOARD ===================== -->
+
+<section id="TC-2.1.1-NC-001">
+<h2>Div button – mouse only</h2>
+<div class="fake-btn" onclick="alert('Saved')">Save</div>
+</section>
+
+<section id="TC-2.1.1-NC-002">
+<h2>Span clickable</h2>
+<span onclick="alert('Clicked')">Click me</span>
+</section>
+
+<section id="TC-2.1.1-NC-003">
+<h2>Canvas interaction – no keyboard fallback</h2>
+<canvas width="200" height="50"></canvas>
+</section>
+
+<section id="TC-2.1.1-NC-004">
+<h2>SVG clickable without tabindex</h2>
+<svg width="100" height="40">
+<rect width="100" height="40" onclick="alert('SVG')" />
+</svg>
+</section>
+
+<section id="TC-2.1.1-NC-005">
+<h2>Custom dropdown – mouse only</h2>
+<div onclick="alert('Open')">Select country</div>
+</section>
+
+<!-- ===================== 2.1.2 NO KEYBOARD TRAP ===================== -->
+
+<section id="TC-2.1.2-NC-006">
+<h2>Focus trapped inside div</h2>
+<div tabindex="0" onkeydown="event.preventDefault()">Trapped</div>
+</section>
+
+<section id="TC-2.1.2-NC-007">
+<h2>Modal without escape</h2>
+<div role="dialog">
+<input placeholder="Name">
+</div>
+</section>
+
+<section id="TC-2.1.2-NC-008">
+<h2>Iframe traps focus</h2>
+<iframe srcdoc="<input autofocus>"></iframe>
+</section>
+
+<!-- ===================== 2.1.3 KEYBOARD (NO EXCEPTION) ===================== -->
+
+<section id="TC-2.1.3-NC-009">
+<h2>Drag-only game</h2>
+<div draggable="true">Drag to play</div>
+</section>
+
+<section id="TC-2.1.3-NC-010">
+<h2>Gesture-only puzzle</h2>
+<p>Swipe only to continue</p>
+</section>
+
+<!-- ===================== 2.1.4 CHARACTER KEY SHORTCUTS ===================== -->
+
+<section id="TC-2.1.4-NC-011">
+<h2>Single-letter shortcut</h2>
+<script>
+document.addEventListener('keydown',e=>{
+ if(e.key==='d'){alert('Deleted')}
+});
+</script>
+</section>
+
+<section id="TC-2.1.4-NC-012">
+<h2>No way to disable shortcuts</h2>
+<p>Press "S" anywhere</p>
+</section>
+
+<!-- ===================== 2.2.1 TIMING ADJUSTABLE ===================== -->
+
+<section id="TC-2.2.1-NC-013">
+<h2>Session timeout without warning</h2>
+<meta http-equiv="refresh" content="10">
+</section>
+
+<section id="TC-2.2.1-NC-014">
+<h2>Quiz auto-submits</h2>
+<p>Auto submit in 30 seconds</p>
+</section>
+
+<!-- ===================== 2.2.2 PAUSE, STOP, HIDE ===================== -->
+
+<section id="TC-2.2.2-NC-015">
+<h2>Auto-scrolling news</h2>
+<marquee>Breaking News</marquee>
+</section>
+
+<section id="TC-2.2.2-NC-016">
+<h2>Auto-rotating carousel</h2>
+<div>Slide 1 → Slide 2 → Slide 3</div>
+</section>
+
+<!-- ===================== 2.2.3 NO TIMING ===================== -->
+
+<section id="TC-2.2.3-NC-017">
+<h2>Time-limited exam</h2>
+<p>No option to extend</p>
+</section>
+
+<!-- ===================== 2.2.4 INTERRUPTIONS ===================== -->
+
+<section id="TC-2.2.4-NC-018">
+<h2>Forced popup interruption</h2>
+<script>alert('Subscribe now');</script>
+</section>
+
+</body>
+</html>

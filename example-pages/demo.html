@@ -2,8 +2,23 @@
 <html lang="en">
 <head>
   <title>Sandbox for testing fails</title>
-</head>
-<body>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
   <h1>Demo page</h1>
 
   <p>This is a basic page to use as a demo page for iframes and webchat etc</p>

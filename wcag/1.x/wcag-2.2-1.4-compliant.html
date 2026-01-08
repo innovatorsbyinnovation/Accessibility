@@ -1,0 +1,281 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WCAG 2.2 – 1.4 Use of Color & Contrast (COMPLIANT)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { color:#111; background:#fff; }
+  .status-success::before { content:"✔ "; }
+  .status-error::before { content:"✖ "; }
+  .link { text-decoration: underline; color:#0645ad; }
+  .btn-primary {
+    background:#005fcc;
+    color:#ffffff;
+    padding:10px 16px;
+    border:none;
+  }
+  .btn-primary:focus {
+    outline:3px solid #ffbf47;
+    outline-offset:2px;
+  }
+  .high-contrast {
+    color:#111;
+    background:#f5f5f5;
+  }
+  .border-strong {
+    border:2px solid #333;
+    padding:8px;
+  }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.2 – 1.4.x COMPLIANT Test Cases</h1>
+
+<!-- ===================== 1.4.1 Use of Color ===================== -->
+
+<section id="TC-1.4-C-001">
+  <h2>Status conveyed with text and icon</h2>
+  <p class="status-success">Approved</p>
+  <p class="status-error">Rejected</p>
+</section>
+
+<section id="TC-1.4-C-002">
+  <h2>Required field identified textually</h2>
+  <label for="name">Name (required)</label>
+  <input id="name" required aria-required="true">
+</section>
+
+<section id="TC-1.4-C-003">
+  <h2>Chart legend with text labels</h2>
+  <ul>
+    <li>Sales – Blue bar</li>
+    <li>Profit – Orange bar</li>
+  </ul>
+</section>
+
+<section id="TC-1.4-C-004">
+  <h2>Link identifiable beyond color</h2>
+  <a href="#" class="link">Help Center</a>
+</section>
+
+<section id="TC-1.4-C-005">
+  <h2>Error message with icon and text</h2>
+  <input aria-invalid="true" aria-describedby="err1">
+  <span id="err1">Error: Invalid value</span>
+</section>
+
+<section id="TC-1.4-C-006">
+  <h2>Instructions without color reference</h2>
+  <p>Select the button labeled “Continue”.</p>
+  <button class="btn-primary">Continue</button>
+</section>
+
+<section id="TC-1.4-C-007">
+  <h2>Selected state indicated with text</h2>
+  <button aria-pressed="true">Selected</button>
+</section>
+
+<section id="TC-1.4-C-008">
+  <h2>Legend includes text and symbols</h2>
+  <p>■ Sales &nbsp; ▲ Growth</p>
+</section>
+
+<section id="TC-1.4-C-009">
+  <h2>Validation with message and icon</h2>
+  <span>⚠ Required field</span>
+</section>
+
+<section id="TC-1.4-C-010">
+  <h2>Active tab with aria-selected</h2>
+  <button aria-selected="true">Home</button>
+  <button aria-selected="false">Profile</button>
+</section>
+
+<!-- ===================== 1.4.3 Contrast (Minimum) ===================== -->
+
+<section id="TC-1.4-C-011">
+  <h2>Body text with sufficient contrast</h2>
+  <p class="high-contrast">This text meets 4.5:1 contrast.</p>
+</section>
+
+<section id="TC-1.4-C-012">
+  <h2>Placeholder with readable contrast</h2>
+  <input placeholder="Enter name" style="color:#555;">
+</section>
+
+<section id="TC-1.4-C-013">
+  <h2>Enabled button clearly distinguishable</h2>
+  <button class="btn-primary">Submit</button>
+</section>
+
+<section id="TC-1.4-C-014">
+  <h2>Small text with strong contrast</h2>
+  <p style="color:#222;font-size:12px;">Terms apply</p>
+</section>
+
+<section id="TC-1.4-C-015">
+  <h2>Link text with sufficient contrast</h2>
+  <a href="#" class="link">Read more</a>
+</section>
+
+<section id="TC-1.4-C-016">
+  <h2>Footer text readable</h2>
+  <footer style="color:#333;">© 2026 Company</footer>
+</section>
+
+<section id="TC-1.4-C-017">
+  <h2>Text over image with overlay</h2>
+  <div style="background:#444;color:#fff;padding:20px;">
+    Sale Now On
+  </div>
+</section>
+
+<section id="TC-1.4-C-018">
+  <h2>Input value text readable</h2>
+  <input value="John" style="color:#111;">
+</section>
+
+<section id="TC-1.4-C-019">
+  <h2>Button text meets contrast</h2>
+  <button class="btn-primary">Pay Now</button>
+</section>
+
+<section id="TC-1.4-C-020">
+  <h2>Breadcrumb with strong contrast</h2>
+  <nav style="color:#222;">Home &gt; Products &gt; Shoes</nav>
+</section>
+
+<!-- ===================== 1.4.11 Non-text Contrast ===================== -->
+
+<section id="TC-1.4-C-021">
+  <h2>Input border clearly visible</h2>
+  <input class="border-strong">
+</section>
+
+<section id="TC-1.4-C-022">
+  <h2>Checkbox with visible outline</h2>
+  <input type="checkbox" style="outline:2px solid #333;">
+</section>
+
+<section id="TC-1.4-C-023">
+  <h2>Icon button with text alternative</h2>
+  <button aria-label="Delete">🗑 Delete</button>
+</section>
+
+<section id="TC-1.4-C-024">
+  <h2>Strong focus indicator</h2>
+  <button class="btn-primary">Focus Me</button>
+</section>
+
+<section id="TC-1.4-C-025">
+  <h2>Slider with visible track</h2>
+  <input type="range" style="accent-color:#005fcc;">
+</section>
+
+<section id="TC-1.4-C-026">
+  <h2>Progress bar clearly distinguishable</h2>
+  <progress value="50" max="100"></progress>
+</section>
+
+<section id="TC-1.4-C-027">
+  <h2>Tabs with clear borders</h2>
+  <button class="border-strong">Tab 1</button>
+</section>
+
+<section id="TC-1.4-C-028">
+  <h2>Card boundary clearly defined</h2>
+  <div class="border-strong">Card</div>
+</section>
+
+<section id="TC-1.4-C-029">
+  <h2>Icon state conveyed with label</h2>
+  <span aria-label="Favorite">❤ Favorite</span>
+</section>
+
+<section id="TC-1.4-C-030">
+  <h2>Disabled state clearly indicated</h2>
+  <button disabled aria-disabled="true">Disabled</button>
+</section>
+
+<!-- ===================== Additional Good Practices ===================== -->
+
+<section id="TC-1.4-C-031">
+  <h2>Hover state with underline and color</h2>
+  <a href="#" class="link">Hover me</a>
+</section>
+
+<section id="TC-1.4-C-032">
+  <h2>Table row selection with icon and text</h2>
+  <table>
+    <tr><td>✔ Selected row</td></tr>
+  </table>
+</section>
+
+<section id="TC-1.4-C-033">
+  <h2>Error summary with heading</h2>
+  <div>
+    <h3>Errors found</h3>
+    <p>Please correct the fields below.</p>
+  </div>
+</section>
+
+<section id="TC-1.4-C-034">
+  <h2>Rating with numeric value</h2>
+  <span>Rating: 5 out of 5</span>
+</section>
+
+<section id="TC-1.4-C-035">
+  <h2>Timeline with labels</h2>
+  <ol>
+    <li>Completed</li>
+    <li>In Progress</li>
+  </ol>
+</section>
+
+<section id="TC-1.4-C-036">
+  <h2>Legend text with strong contrast</h2>
+  <span style="color:#222;">Completed</span>
+</section>
+
+<section id="TC-1.4-C-037">
+  <h2>Notification badge readable</h2>
+  <span style="background:#d00;color:#fff;padding:4px;">3</span>
+</section>
+
+<section id="TC-1.4-C-038">
+  <h2>Accordion state with text</h2>
+  <div>Section expanded</div>
+</section>
+
+<section id="TC-1.4-C-039">
+  <h2>Selected menu item with marker</h2>
+  <li aria-current="page">▶ Dashboard</li>
+</section>
+
+<section id="TC-1.4-C-040">
+  <h2>Banner text readable</h2>
+  <div style="background:#003366;color:#ffffff;padding:12px;">
+    Welcome User
+  </div>
+</section>
+
+</body>
+</html>

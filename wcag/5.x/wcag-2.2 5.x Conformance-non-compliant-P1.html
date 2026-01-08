@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <!-- ❌ TC-5.1-NC-001: No WCAG conformance claim -->
+  <!-- ❌ TC-5.1-NC-002: Missing WCAG version -->
+  <!-- ❌ TC-5.1-NC-003: No conformance level stated -->
+
+  <title>Non-Compliant WCAG 2.2 Conformance Examples</title>
+</head>
+
+<body>
+<h1>WCAG 2.2 – 5.x Non-Compliant Conformance Test Cases</h1>
+
+<!-- ================================================= -->
+<!-- 5.1 Conformance – Non-Compliant -->
+<!-- ================================================= -->
+<section id="TC-5.1-NC-004">
+  <h2>5.1 – Partial conformance claim</h2>
+  <p>This website conforms to WCAG in some areas.</p>
+  <!-- ❌ vague, incomplete, invalid claim -->
+</section>
+
+<section id="TC-5.1-NC-005">
+  <h2>5.1 – Incorrect conformance level</h2>
+  <meta name="wcag-conformance" content="WCAG 2.0 AAA">
+  <!-- ❌ Wrong WCAG version -->
+</section>
+
+<section id="TC-5.1-NC-006">
+  <h2>5.1 – No accessibility scope defined</h2>
+  <p>Accessibility applies to most pages.</p>
+</section>
+
+<!-- ================================================= -->
+<!-- 5.2 Full Pages – Non-Compliant -->
+<!-- ================================================= -->
+<section id="TC-5.2-NC-001">
+  <h2>5.2 – Partial page evaluated</h2>
+  <iframe src="external.html"></iframe>
+  <p>Iframe content excluded from evaluation.</p>
+</section>
+
+<section id="TC-5.2-NC-002">
+  <h2>5.2 – Overlay excludes content</h2>
+  <div id="overlay">
+    <p>Overlay tested, underlying page ignored.</p>
+  </div>
+</section>
+
+<section id="TC-5.2-NC-003">
+  <h2>5.2 – Responsive view ignored</h2>
+  <p>Only desktop breakpoint evaluated.</p>
+</section>
+
+<!-- ================================================= -->
+<!-- 5.3 Complete Processes – Non-Compliant -->
+<!-- ================================================= -->
+<section id="TC-5.3-NC-001">
+  <h2>5.3 – Multi-step form partially tested</h2>
+  <form>
+    <label>Name <input type="text"></label>
+    <!-- ❌ Step 2 and confirmation missing -->
+  </form>
+</section>
+
+<section id="TC-5.3-NC-002">
+  <h2>5.3 – Checkout flow incomplete</h2>
+  <p>Cart page tested, payment skipped.</p>
+</section>
+
+<section id="TC-5.3-NC-003">
+  <h2>5.3 – Authentication bypassed</h2>
+  <p>Login form excluded from audit.</p>
+</section>
+
+<!-- ================================================= -->
+<!-- 5.4 Accessibility-Supported – Non-Compliant -->
+<!-- ================================================= -->
+<section id="TC-5.4-NC-001">
+  <h2>5.4 – Unsupported ARIA used</h2>
+  <div role="fancyslider">Custom widget</div>
+</section>
+
+<section id="TC-5.4-NC-002">
+  <h2>5.4 – Reliance on non-supported JS</h2>
+  <p>Content only works with proprietary screen reader scripts.</p>
+</section>
+
+<section id="TC-5.4-NC-003">
+  <h2>5.4 – Assistive tech dependency undocumented</h2>
+  <p>Requires specific browser + AT combination.</p>
+</section>
+
+<!-- ================================================= -->
+<!-- ADDITIONAL 5.1 CONFORMANCE FAILURES -->
+<!-- ================================================= -->
+
+<section id="TC-5.1-NC-020">
+  <h2>5.1 – Conformance claim hidden in PDF only</h2>
+  <p>Accessibility statement available only as downloadable PDF.</p>
+</section>
+
+<section id="TC-5.1-NC-021">
+  <h2>5.1 – Claim applies only to homepage</h2>
+  <p>This page conforms to WCAG 2.2 Level AA.</p>
+</section>
+
+<section id="TC-5.1-NC-022">
+  <h2>5.1 – Mixed conformance levels</h2>
+  <p>Some pages AA, some A.</p>
+</section>
+
+<section id="TC-5.1-NC-023">
+  <h2>5.1 – Deprecated WCAG reference</h2>
+  <p>Conforms to WCAG 1.0.</p>
+</section>
+
+<section id="TC-5.1-NC-024">
+  <h2>5.1 – Missing third-party exclusions</h2>
+  <p>Embedded widgets excluded without disclosure.</p>
+</section>
+
+<!-- ================================================= -->
+<!-- ADDITIONAL 5.2 FULL PAGE FAILURES -->
+<!-- ================================================= -->
+
+<section id="TC-5.2-NC-020">
+  <h2>5.2 – Shadow DOM excluded</h2>
+  <p>Custom elements not evaluated.</p>
+</section>
+
+<section id="TC-5.2-NC-021">
+  <h2>5.2 – Language switcher pages excluded</h2>
+  <p>Only English version audited.</p>
+</section>
+
+<section id="TC-5.2-NC-022">
+  <h2>5.2 – Print stylesheet ignored</h2>
+  <p>Printed content unreadable.</p>
+</section>
+
+<section id="TC-5.2-NC-023">
+  <h2>5.2 – Error pages excluded</h2>
+  <p>404 and 500 pages not tested.</p>
+</section>
+
+<!-- ================================================= -->
+<!-- ADDITIONAL 5.3 PROCESS FAILURES -->
+<!-- ================================================= -->
+
+<section id="TC-5.3-NC-020">
+  <h2>5.3 – Optional step not tested</h2>
+  <p>Promo code step skipped.</p>
+</section>
+
+<section id="TC-5.3-NC-021">
+  <h2>5.3 – Timeout warning excluded</h2>
+  <p>Session expiration not evaluated.</p>
+</section>
+
+<section id="TC-5.3-NC-022">
+  <h2>5.3 – Error recovery not included</h2>
+  <p>Password reset flow excluded.</p>
+</section>
+
+<section id="TC-5.3-NC-023">
+  <h2>5.3 – Alternate payment method skipped</h2>
+  <p>Wallet checkout not tested.</p>
+</section>
+
+<!-- ================================================= -->
+<!-- ADDITIONAL 5.4 ACCESSIBILITY SUPPORT FAILURES -->
+<!-- ================================================= -->
+
+<section id="TC-5.4-NC-020">
+  <h2>5.4 – Custom ARIA without fallback</h2>
+  <div role="magicpanel">Panel</div>
+</section>
+
+<section id="TC-5.4-NC-021">
+  <h2>5.4 – Requires browser extension</h2>
+  <p>Accessibility depends on proprietary plugin.</p>
+</section>
+
+<section id="TC-5.4-NC-022">
+  <h2>5.4 – Touch-only interaction required</h2>
+  <p>Keyboard-only users unsupported.</p>
+</section>
+
+<section id="TC-5.4-NC-023">
+  <h2>5.4 – Screen reader specific scripting</h2>
+  <p>Optimized only for NVDA.</p>
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WCAG 2.x Operable – NON COMPLIANT (Part 4)</title>
+<style>
+.small-target {
+  width:18px;
+  height:18px;
+  background:#333;
+  display:inline-block;
+}
+.drag-box {
+  width:100px;
+  height:40px;
+  background:#ccc;
+}
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+
+<body oncontextmenu="return false;">
+<h1>WCAG 2.x Operable – NON-COMPLIANT (Part 4)</h1>
+
+<!-- ===================== 2.5.1 POINTER GESTURES ===================== -->
+
+<section id="TC-2.5.1-NC-301">
+<h2>Pinch-only zoom</h2>
+<p>Image can only be zoomed with pinch gesture</p>
+</section>
+
+<section id="TC-2.5.1-NC-302">
+<h2>Two-finger swipe required</h2>
+<p>No single-pointer alternative</p>
+</section>
+
+<!-- ===================== 2.5.2 POINTER CANCELLATION ===================== -->
+
+<section id="TC-2.5.2-NC-303">
+<h2>Action on pointer down</h2>
+<button onmousedown="alert('Deleted')">Delete</button>
+</section>
+
+<section id="TC-2.5.2-NC-304">
+<h2>No undo after touch</h2>
+<div onclick="alert('Sent')">Send</div>
+</section>
+
+<!-- ===================== 2.5.3 LABEL IN NAME ===================== -->
+
+<section id="TC-2.5.3-NC-305">
+<h2>Accessible name mismatch</h2>
+<button aria-label="Close">Submit</button>
+</section>
+
+<section id="TC-2.5.3-NC-306">
+<h2>Icon button without label match</h2>
+<button aria-label="Settings">⚙</button>
+</section>
+
+<!-- ===================== 2.5.4 MOTION ACTUATION ===================== -->
+
+<section id="TC-2.5.4-NC-307">
+<h2>Shake to undo only</h2>
+<p>No alternative control</p>
+</section>
+
+<section id="TC-2.5.4-NC-308">
+<h2>Tilt device to scroll</h2>
+<p>Motion required</p>
+</section>
+
+<!-- ===================== 2.5.5 TARGET SIZE (AAA) ===================== -->
+
+<section id="TC-2.5.5-NC-309">
+<h2>Very small target</h2>
+<div class="small-target"></div>
+</section>
+
+<section id="TC-2.5.5-NC-310">
+<h2>Closely spaced links</h2>
+<a href="#">A</a><a href="#">B</a><a href="#">C</a>
+</section>
+
+<!-- ===================== 2.5.6 CONCURRENT INPUT ===================== -->
+
+<section id="TC-2.5.6-NC-311">
+<h2>Mouse disables keyboard</h2>
+<p>Keyboard navigation breaks after mouse use</p>
+</section>
+
+<!-- ===================== 2.5.7 DRAGGING MOVEMENTS ===================== -->
+
+<section id="TC-2.5.7-NC-312">
+<h2>Drag-only reorder</h2>
+<div class="drag-box" draggable="true">Item</div>
+</section>
+
+<section id="TC-2.5.7-NC-313">
+<h2>Slider drag required</h2>
+<input type="range">
+</section>
+
+<!-- ===================== 2.5.8 TARGET SIZE (MINIMUM) ===================== -->
+
+<section id="TC-2.5.8-NC-314">
+<h2>Target below 24×24 CSS px</h2>
+<div class="small-target"></div>
+</section>
+
+<section id="TC-2.5.8-NC-315">
+<h2>Touch icon too small</h2>
+<button style="width:20px;height:20px">+</button>
+</section>
+
+</body>
+</html>

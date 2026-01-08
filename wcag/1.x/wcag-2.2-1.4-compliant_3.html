@@ -1,0 +1,431 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WCAG 2.2 – 1.4 Text Spacing & Content on Hover (COMPLIANT)</title>
+<style>
+  body { font-size:16px; line-height:1.5; }
+  .spacing-compliant {
+    line-height:1.5;
+    letter-spacing:0.12em;
+    word-spacing:0.16em;
+    margin-bottom:1em;
+  }
+
+  /* Tooltip / hover compliant */
+  .tooltip {
+    position:relative;
+    display:inline-block;
+  }
+  .tooltip span {
+    visibility:hidden;
+    width:200px;
+    background:#333;
+    color:#fff;
+    text-align:left;
+    padding:5px;
+    border-radius:4px;
+    position:absolute;
+    z-index:1;
+    top:100%; left:0;
+  }
+  .tooltip:hover span, .tooltip:focus-within span {
+    visibility:visible;
+  }
+
+  .btn { padding:8px 16px; font-size:1rem; background:#005fcc; color:#fff; border:none; }
+  .btn:focus { outline:3px solid #ffbf47; outline-offset:2px; }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.2 – 1.4.x Part 4 COMPLIANT Test Cases</h1>
+
+<!-- ===================== 1.4.12 Text Spacing ===================== -->
+
+<section id="TC-1.4.4-C-001">
+  <h2>Paragraph with compliant line, letter, word, paragraph spacing</h2>
+  <p class="spacing-compliant">This paragraph maintains proper line height, letter spacing, word spacing, and paragraph spacing for readability.</p>
+</section>
+
+<section id="TC-1.4.4-C-002">
+  <h2>Multiple paragraphs with consistent spacing</h2>
+  <p class="spacing-compliant">Paragraph 1 with adequate spacing.</p>
+  <p class="spacing-compliant">Paragraph 2 remains clear and readable.</p>
+</section>
+
+<section id="TC-1.4.4-C-003">
+  <h2>Form label spacing</h2>
+  <label class="spacing-compliant" for="name">Name:</label>
+  <input id="name" type="text">
+</section>
+
+<section id="TC-1.4.4-C-004">
+  <h2>Table content readable with spacing</h2>
+  <table border="1">
+    <tr>
+      <th class="spacing-compliant">Header 1</th>
+      <th class="spacing-compliant">Header 2</th>
+    </tr>
+    <tr>
+      <td class="spacing-compliant">Data 1</td>
+      <td class="spacing-compliant">Data 2</td>
+    </tr>
+  </table>
+</section>
+
+<section id="TC-1.4.4-C-005">
+  <h2>Inline text with spacing</h2>
+  <span class="spacing-compliant">Inline text maintains readability</span>
+</section>
+
+<section id="TC-1.4.4-C-006">
+  <h2>Blockquote spacing</h2>
+  <blockquote class="spacing-compliant">Proper spacing for quotes ensures clarity.</blockquote>
+</section>
+
+<section id="TC-1.4.4-C-007">
+  <h2>List items spacing</h2>
+  <ul>
+    <li class="spacing-compliant">Item 1</li>
+    <li class="spacing-compliant">Item 2</li>
+  </ul>
+</section>
+
+<section id="TC-1.4.4-C-008">
+  <h2>Header text spacing</h2>
+  <h2 class="spacing-compliant">Subheader Example</h2>
+</section>
+
+<section id="TC-1.4.4-C-009">
+  <h2>Button label spacing</h2>
+  <button class="btn spacing-compliant">Submit</button>
+</section>
+
+<section id="TC-1.4.4-C-010">
+  <h2>Navigation link spacing</h2>
+  <nav>
+    <a href="#" class="spacing-compliant">Home</a> |
+    <a href="#" class="spacing-compliant">About</a> |
+    <a href="#" class="spacing-compliant">Contact</a>
+  </nav>
+</section>
+
+<!-- ===================== 1.4.13 Content on Hover/Focus ===================== -->
+
+<section id="TC-1.4.4-C-011">
+  <h2>Tooltip appears on hover and focus</h2>
+  <div class="tooltip" tabindex="0">
+    Hover or focus me
+    <span>This tooltip is visible on hover or focus, accessible via keyboard.</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-012">
+  <h2>Tooltip positioned correctly without overlapping</h2>
+  <div class="tooltip" tabindex="0">
+    Hover or focus
+    <span>Tooltip does not obscure other content</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-013">
+  <h2>Tooltip dismissible by mouseout or blur</h2>
+  <div class="tooltip" tabindex="0">
+    Focus or hover
+    <span>Tooltip hides when focus moves away</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-014">
+  <h2>Menu on hover accessible via keyboard</h2>
+  <nav>
+    <ul>
+      <li class="tooltip" tabindex="0">
+        Menu
+        <span>
+          Option 1<br>
+          Option 2<br>
+          Option 3
+        </span>
+      </li>
+    </ul>
+  </nav>
+</section>
+
+<section id="TC-1.4.4-C-015">
+  <h2>Tooltip with sufficient size and contrast</h2>
+  <div class="tooltip" tabindex="0">
+    Hover me
+    <span style="width:250px; background:#005fcc; color:#fff;">Readable tooltip content</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-016">
+  <h2>Hover content does not obscure form elements</h2>
+  <div style="position:relative;">
+    <input type="text" placeholder="Name">
+    <div class="tooltip" tabindex="0" style="position:absolute; left:0; top:2em;">
+      Additional info
+    </div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-017">
+  <h2>Tooltip remains visible long enough for reading</h2>
+  <div class="tooltip" tabindex="0">
+    Hover me
+    <span>Tooltip stays until user moves mouse or focus away</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-018">
+  <h2>Popover accessible via focus</h2>
+  <button class="btn tooltip" tabindex="0">
+    Show info
+    <span>Focus-accessible popover content</span>
+  </button>
+</section>
+
+<section id="TC-1.4.4-C-019">
+  <h2>Hover content positioned relative to trigger</h2>
+  <div class="tooltip" tabindex="0">
+    Hover me
+    <span>Tooltip appears directly below trigger</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-020">
+  <h2>Tooltip text large enough to read</h2>
+  <div class="tooltip" tabindex="0">
+    Hover me
+    <span style="font-size:1rem;">Readable tooltip content</span>
+  </div>
+</section>
+
+<!-- Additional text spacing + hover/focus cases -->
+
+<section id="TC-1.4.4-C-021">
+  <h2>Paragraph with line, letter, word, paragraph spacing and tooltip</h2>
+  <p class="spacing-compliant tooltip" tabindex="0">
+    Hover this paragraph
+    <span>Tooltip text accessible and readable</span>
+  </p>
+</section>
+
+<section id="TC-1.4.4-C-022">
+  <h2>Navigation links with spacing and hover tooltip</h2>
+  <nav>
+    <a href="#" class="spacing-compliant tooltip" tabindex="0">
+      Home
+      <span>Go to homepage</span>
+    </a>
+    <a href="#" class="spacing-compliant tooltip" tabindex="0">
+      About
+      <span>Learn about us</span>
+    </a>
+  </nav>
+</section>
+
+<section id="TC-1.4.4-C-023">
+  <h2>Form input with label spacing and focus tooltip</h2>
+  <label class="spacing-compliant tooltip" for="email" tabindex="0">
+    Email
+    <span>Enter your email address</span>
+  </label>
+  <input id="email" type="email">
+</section>
+
+<section id="TC-1.4.4-C-024">
+  <h2>List items with spacing and hover content</h2>
+  <ul>
+    <li class="spacing-compliant tooltip" tabindex="0">
+      Item 1
+      <span>More info about item 1</span>
+    </li>
+    <li class="spacing-compliant tooltip" tabindex="0">
+      Item 2
+      <span>More info about item 2</span>
+    </li>
+  </ul>
+</section>
+
+<section id="TC-1.4.4-C-025">
+  <h2>Card content with spacing and hover info</h2>
+  <div class="flex-container">
+    <div class="flex-box spacing-compliant tooltip" tabindex="0">
+      Card 1
+      <span>Tooltip for card 1</span>
+    </div>
+    <div class="flex-box spacing-compliant tooltip" tabindex="0">
+      Card 2
+      <span>Tooltip for card 2</span>
+    </div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-026">
+  <h2>Header text with spacing and tooltip</h2>
+  <h2 class="spacing-compliant tooltip" tabindex="0">
+    Section Header
+    <span>Additional info</span>
+  </h2>
+</section>
+
+<section id="TC-1.4.4-C-027">
+  <h2>Accordion header with spacing and hover info</h2>
+  <div class="spacing-compliant tooltip" tabindex="0">
+    Section 1
+    <span>More information</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-028">
+  <h2>Tabs with spacing and hover/focus content</h2>
+  <div style="display:flex;gap:5px;">
+    <button class="btn spacing-compliant tooltip" tabindex="0">
+      Tab 1
+      <span>Tab 1 description</span>
+    </button>
+    <button class="btn spacing-compliant tooltip" tabindex="0">
+      Tab 2
+      <span>Tab 2 description</span>
+    </button>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-029">
+  <h2>Pagination buttons with spacing and tooltip</h2>
+  <div style="display:flex;gap:5px;">
+    <button class="btn spacing-compliant tooltip" tabindex="0">1<span>Go to page 1</span></button>
+    <button class="btn spacing-compliant tooltip" tabindex="0">2<span>Go to page 2</span></button>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-030">
+  <h2>Footer links with spacing and hover content</h2>
+  <footer>
+    <a href="#" class="spacing-compliant tooltip" tabindex="0">Privacy<span>Privacy policy details</span></a> |
+    <a href="#" class="spacing-compliant tooltip" tabindex="0">Terms<span>Terms and conditions</span></a>
+  </footer>
+</section>
+
+<section id="TC-1.4.4-C-031">
+  <h2>Tooltip with sufficient contrast, font-size, spacing</h2>
+  <div class="tooltip spacing-compliant" tabindex="0">
+    Hover me
+    <span style="font-size:1rem; color:#fff; background:#005fcc; padding:5px; border-radius:3px;">Accessible tooltip</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-032">
+  <h2>Form label spacing + tooltip for guidance</h2>
+  <label class="spacing-compliant tooltip" for="username" tabindex="0">
+    Username
+    <span>Enter your unique username</span>
+  </label>
+  <input id="username" type="text">
+</section>
+
+<section id="TC-1.4.4-C-033">
+  <h2>Table cells with spacing and hover info</h2>
+  <table border="1">
+    <tr>
+      <td class="spacing-compliant tooltip" tabindex="0">
+        Data 1
+        <span>Additional details</span>
+      </td>
+      <td class="spacing-compliant tooltip" tabindex="0">
+        Data 2
+        <span>Additional details</span>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<section id="TC-1.4.4-C-034">
+  <h2>Inline text spacing and hover tooltip</h2>
+  <span class="spacing-compliant tooltip" tabindex="0">
+    Important term
+    <span>Explanation of the term</span>
+  </span>
+</section>
+
+<section id="TC-1.4.4-C-035">
+  <h2>Card grid with spacing and accessible hover content</h2>
+  <div class="flex-container">
+    <div class="flex-box spacing-compliant tooltip" tabindex="0">
+      Card 1
+      <span>Card 1 hover content</span>
+    </div>
+    <div class="flex-box spacing-compliant tooltip" tabindex="0">
+      Card 2
+      <span>Card 2 hover content</span>
+    </div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-036">
+  <h2>Header with spacing and tooltip accessible via keyboard</h2>
+  <h3 class="spacing-compliant tooltip" tabindex="0">
+    Section Header
+    <span>Additional info about header</span>
+  </h3>
+</section>
+
+<section id="TC-1.4.4-C-037">
+  <h2>Accordion content spacing + tooltip guidance</h2>
+  <div class="spacing-compliant tooltip" tabindex="0">
+    Accordion 1
+    <span>Hover/focus accessible info</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-038">
+  <h2>Tabs with spacing and focus tooltip</h2>
+  <div style="display:flex;gap:5px;">
+    <button class="btn spacing-compliant tooltip" tabindex="0">
+      Tab 1
+      <span>Tab 1 info</span>
+    </button>
+    <button class="btn spacing-compliant tooltip" tabindex="0">
+      Tab 2
+      <span>Tab 2 info</span>
+    </button>
+  </div>
+</section>
+
+<section id="TC-1.4.4-C-039">
+  <h2>Footer links spacing + tooltip</h2>
+  <footer>
+    <a href="#" class="spacing-compliant tooltip" tabindex="0">Contact<span>Contact us info</span></a>
+    <a href="#" class="spacing-compliant tooltip" tabindex="0">Help<span>Help info</span></a>
+  </footer>
+</section>
+
+<section id="TC-1.4.4-C-040">
+  <h2>Overall page spacing + accessible hover tooltips</h2>
+  <p class="spacing-compliant tooltip" tabindex="0">
+    Sample paragraph
+    <span>Hover/focus accessible info</span>
+  </p>
+</section>
+
+</body>
+</html>

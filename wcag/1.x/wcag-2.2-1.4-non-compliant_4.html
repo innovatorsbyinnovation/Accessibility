@@ -1,0 +1,278 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WCAG 2.2 – 1.4 Part 5 NON-COMPLIANT</title>
+<style>
+  /* Missing or invisible focus */
+  .btn-nc { background:#ccc; color:#eee; border:none; padding:8px 16px; }
+  .link-nc { color:#999; text-decoration:none; }
+
+  /* Poor contrast */
+  .low-contrast { color:#aaa; background:#fff; }
+
+  /* Misused landmarks */
+  nav[role="banner"] { /* wrong role */ }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.2 – 1.4.x Part 5 NON-COMPLIANT Test Cases</h1>
+
+<!-- ===================== 1.4.11 & 2.4.7 Focus ===================== -->
+
+<section id="TC-1.4.5-NC-001">
+  <h2>Button with no focus indicator</h2>
+  <button class="btn-nc">Submit</button>
+</section>
+
+<section id="TC-1.4.5-NC-002">
+  <h2>Link with insufficient contrast and no focus</h2>
+  <a href="#" class="link-nc">Read more</a>
+</section>
+
+<section id="TC-1.4.5-NC-003">
+  <h2>Input field without visible focus</h2>
+  <input type="text" placeholder="Enter name">
+</section>
+
+<section id="TC-1.4.5-NC-004">
+  <h2>Checkbox without focus outline</h2>
+  <input type="checkbox" id="chk1"><label for="chk1">Option</label>
+</section>
+
+<section id="TC-1.4.5-NC-005">
+  <h2>Radio button invisible on focus</h2>
+  <input type="radio" name="radio1" id="r1"><label for="r1">Choice 1</label>
+</section>
+
+<!-- ===================== ARIA landmarks misuse ===================== -->
+
+<section id="TC-1.4.5-NC-006">
+  <h2>Nav element with incorrect landmark role</h2>
+  <nav role="banner">
+    <a href="#">Home</a>
+  </nav>
+</section>
+
+<section id="TC-1.4.5-NC-007">
+  <h2>Main content misused as role="complementary"</h2>
+  <main role="complementary">
+    <p>Main content</p>
+  </main>
+</section>
+
+<section id="TC-1.4.5-NC-008">
+  <h2>Header missing ARIA role or semantic tag</h2>
+  <div>Header without <code>&lt;header&gt;</code> or role="banner"</div>
+</section>
+
+<section id="TC-1.4.5-NC-009">
+  <h2>Footer missing landmark role</h2>
+  <div>Footer content</div>
+</section>
+
+<section id="TC-1.4.5-NC-010">
+  <h2>Multiple main landmarks on a page</h2>
+  <main>Main 1</main>
+  <main>Main 2</main>
+</section>
+
+<!-- ===================== Non-distinguishable interactive elements ===================== -->
+
+<section id="TC-1.4.5-NC-011">
+  <h2>Button with low contrast text</h2>
+  <button style="background:#ccc;color:#eee;">Low contrast</button>
+</section>
+
+<section id="TC-1.4.5-NC-012">
+  <h2>Link visually indistinguishable from text</h2>
+  <p><a href="#" style="color:#555;text-decoration:none;">Click here</a></p>
+</section>
+
+<section id="TC-1.4.5-NC-013">
+  <h2>Dropdown without focus highlight</h2>
+  <select>
+    <option>Option 1</option>
+    <option>Option 2</option>
+  </select>
+</section>
+
+<section id="TC-1.4.5-NC-014">
+  <h2>Tabs without visible focus</h2>
+  <button>Tab 1</button>
+  <button>Tab 2</button>
+</section>
+
+<section id="TC-1.4.5-NC-015">
+  <h2>Accordion button no focus style</h2>
+  <button>Section 1</button>
+</section>
+
+<!-- ===================== Additional cases for auditing ===================== -->
+
+<section id="TC-1.4.5-NC-016">
+  <h2>Modal dialog opens but focus not trapped</h2>
+  <div role="dialog" aria-modal="true">
+    <button>Close</button>
+  </div>
+</section>
+
+<section id="TC-1.4.5-NC-017">
+  <h2>Slider without visible focus</h2>
+  <input type="range">
+</section>
+
+<section id="TC-1.4.5-NC-018">
+  <h2>Checkboxes in a group without proper labeling</h2>
+  <input type="checkbox" id="chk2"><input type="checkbox" id="chk3">
+</section>
+
+<section id="TC-1.4.5-NC-019">
+  <h2>Link color matches background</h2>
+  <a href="#" style="color:#fff; background:#fff;">Invisible link</a>
+</section>
+
+<section id="TC-1.4.5-NC-020">
+  <h2>Buttons too small to see focus on zoom</h2>
+  <button style="width:20px;height:20px;">Tiny</button>
+</section>
+
+<section id="TC-1.4.5-NC-021">
+  <h2>Tabindex misused: skip logical order</h2>
+  <button tabindex="5">Jump</button>
+</section>
+
+<section id="TC-1.4.5-NC-022">
+  <h2>Interactive SVG with no focus or label</h2>
+  <svg width="50" height="50"><circle cx="25" cy="25" r="20" fill="#ccc"/></svg>
+</section>
+
+<section id="TC-1.4.5-NC-023">
+  <h2>Form input with placeholder only (no label)</h2>
+  <input type="text" placeholder="Name">
+</section>
+
+<section id="TC-1.4.5-NC-024">
+  <h2>Image button with no alt or aria-label</h2>
+  <button><img src="icon.png" alt=""></button>
+</section>
+
+<section id="TC-1.4.5-NC-025">
+  <h2>Tooltip on hover only, inaccessible via keyboard</h2>
+  <div title="Info">Hover me</div>
+</section>
+
+<section id="TC-1.4.5-NC-026">
+  <h2>Form error messages not associated with inputs</h2>
+  <input type="text" id="email"><span style="color:red;">Invalid</span>
+</section>
+
+<section id="TC-1.4.5-NC-027">
+  <h2>Skip link missing or invisible</h2>
+  <a href="#main" style="position:absolute;top:-1000px;">Skip to main</a>
+</section>
+
+<section id="TC-1.4.5-NC-028">
+  <h2>Breadcrumb links indistinguishable without focus</h2>
+  <nav>
+    <a href="#">Home</a> &gt;
+    <a href="#">Category</a>
+  </nav>
+</section>
+
+<section id="TC-1.4.5-NC-029">
+  <h2>Footer links low contrast and no focus</h2>
+  <footer>
+    <a href="#" style="color:#999;">Privacy</a> |
+    <a href="#" style="color:#999;">Terms</a>
+  </footer>
+</section>
+
+<section id="TC-1.4.5-NC-030">
+  <h2>Menu items with hover only (no keyboard focus)</h2>
+  <ul>
+    <li>Menu
+      <ul>
+        <li>Option 1</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section id="TC-1.4.5-NC-031">
+  <h2>Pagination links no visible focus</h2>
+  <div>
+    <a href="#">1</a>
+    <a href="#">2</a>
+  </div>
+</section>
+
+<section id="TC-1.4.5-NC-032">
+  <h2>Slider track low contrast</h2>
+  <input type="range" style="accent-color:#ccc;">
+</section>
+
+<section id="TC-1.4.5-NC-033">
+  <h2>Tooltip appears offscreen at zoom</h2>
+  <div style="position:absolute; left:1200px;" title="Info">Hover</div>
+</section>
+
+<section id="TC-1.4.5-NC-034">
+  <h2>Modal without focus on open</h2>
+  <div role="dialog" aria-modal="true">
+    <p>Modal content</p>
+  </div>
+</section>
+
+<section id="TC-1.4.5-NC-035">
+  <h2>Links in table difficult to see focus</h2>
+  <table border="1">
+    <tr><td><a href="#">Link</a></td></tr>
+  </table>
+</section>
+
+<section id="TC-1.4.5-NC-036">
+  <h2>Interactive map without focusable regions</h2>
+  <img src="map.png" alt="Map">
+</section>
+
+<section id="TC-1.4.5-NC-037">
+  <h2>Accordion without focus indication</h2>
+  <button>Accordion 1</button>
+</section>
+
+<section id="TC-1.4.5-NC-038">
+  <h2>Slider thumb low contrast and no focus</h2>
+  <input type="range" style="accent-color:#ccc;">
+</section>
+
+<section id="TC-1.4.5-NC-039">
+  <h2>Tabs with focus invisible</h2>
+  <button>Tab 1</button>
+  <button>Tab 2</button>
+</section>
+
+<section id="TC-1.4.5-NC-040">
+  <h2>Interactive SVG missing focus and label</h2>
+  <svg width="50" height="50"><circle cx="25" cy="25" r="20" fill="#ccc"/></svg>
+</section>
+
+</body>
+</html>

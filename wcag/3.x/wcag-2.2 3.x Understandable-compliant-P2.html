@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCAG 2.2 3.x Understandable - Compliant Test Cases Part 2</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    section { border: 1px solid #4CAF50; padding: 15px; margin-bottom: 20px; }
+    h2 { color: darkgreen; }
+    .case { margin-bottom: 10px; padding: 10px; border: 1px dashed #4CAF50; }
+  </style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+  <h1>WCAG 2.2 3.x Understandable - Compliant Test Cases Part 2</h1>
+
+  <!-- ======================= -->
+  <!-- 3.1 Readable - Additional Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.1 Readable - Additional Compliant</h2>
+
+    <!-- TC-3.1-C-011: Acronyms explained -->
+    <!-- SC 3.1.3, Technique G87 -->
+    <div class="case" id="TC-3.1-C-011">
+      <p>The <abbr title="Return on Investment">ROI</abbr> of our <abbr title="Key Performance Indicators">KPI</abbr> metrics exceeds expectations in the FY Q3 report.</p>
+    </div>
+
+    <!-- TC-3.1-C-012: Non-English labels translated -->
+    <!-- SC 3.1.2, Technique H57 -->
+    <div class="case" id="TC-3.1-C-012">
+      <form>
+        <label for="name">Name / Nombre:</label>
+        <input type="text" id="name">
+      </form>
+    </div>
+
+    <!-- TC-3.1-C-013: Structured paragraphs with headings -->
+    <!-- SC 3.1.1, Technique G82 -->
+    <div class="case" id="TC-3.1-C-013">
+      <h2>Introduction</h2>
+      <p>This is the first paragraph explaining the topic clearly.</p>
+      <h2>Details</h2>
+      <p>Supporting information is broken into readable chunks.</p>
+    </div>
+
+    <!-- TC-3.1-C-014: Complex table with caption and summary -->
+    <!-- SC 3.1.2, Technique H63 -->
+    <div class="case" id="TC-3.1-C-014">
+      <table border="1" summary="Student names and scores in Math and English">
+        <caption>Student Scores</caption>
+        <tr><th rowspan="2">Name</th><th colspan="2">Scores</th></tr>
+        <tr><th>Math</th><th>English</th></tr>
+        <tr><td>Alice</td><td>90</td><td>85</td></tr>
+      </table>
+    </div>
+
+    <!-- TC-3.1-C-015: Abbreviations using <abbr> -->
+    <!-- SC 3.1.2, Technique H59 -->
+    <div class="case" id="TC-3.1-C-015">
+      <p>The <abbr title="Chief Executive Officer">CEO</abbr> will meet the <abbr title="Chief Financial Officer">CFO</abbr> tomorrow.</p>
+    </div>
+
+    <!-- TC-3.1-C-016: Icons with aria-label -->
+    <!-- SC 3.1.1, Technique H30 -->
+    <div class="case" id="TC-3.1-C-016">
+      <button aria-label="Settings"><img src="icon.png" alt=""></button>
+    </div>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 3.2 Predictable - Additional Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.2 Predictable - Additional Compliant</h2>
+
+    <!-- TC-3.2-C-006: Hover does not change layout unexpectedly -->
+    <!-- SC 3.2.1, Technique G140 -->
+    <div class="case" id="TC-3.2-C-006">
+      <div style="padding:10px; border:1px solid gray;">Hover effect changes color only.</div>
+    </div>
+
+    <!-- TC-3.2-C-007: Menu location consistent -->
+    <!-- SC 3.2.2, Technique G86 -->
+    <div class="case" id="TC-3.2-C-007">
+      <nav style="position:top;">
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <p>Menu location consistent across pages.</p>
+    </div>
+
+    <!-- TC-3.2-C-008: Form submission expected -->
+    <!-- SC 3.2.2, Technique F96 -->
+    <div class="case" id="TC-3.2-C-008">
+      <form action="thankyou.html" method="get">
+        <input type="text" placeholder="Name">
+        <button type="submit">Submit</button>
+      </form>
+      <p>Redirect is expected and clearly indicated.</p>
+    </div>
+
+    <!-- TC-3.2-C-009: Modal with proper focus management -->
+    <!-- SC 3.2.2, Technique F97 -->
+    <div class="case" id="TC-3.2-C-009">
+      <div role="dialog" aria-modal="true">
+        <button id="closeBtn">Close</button>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+      </div>
+      <script>
+        document.getElementById('closeBtn').onclick = () => alert('Modal closed properly');
+      </script>
+    </div>
+
+    <!-- TC-3.2-C-010: Layout stable on resize -->
+    <!-- SC 3.2.1, Technique G140 -->
+    <div class="case" id="TC-3.2-C-010" style="width:100%; overflow:auto;">
+      <div style="min-width:300px; background-color:lightgreen;">Content adjusts without jump.</div>
+    </div>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 3.3 Input Assistance - Additional Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.3 Input Assistance - Additional Compliant</h2>
+
+    <!-- TC-3.3-C-006: Inline error messages persist until corrected -->
+    <!-- SC 3.3.3, Technique G83 -->
+    <div class="case" id="TC-3.3-C-006">
+      <form>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone">
+        <p id="phoneError" style="color:red; display:none;">Enter a valid phone number</p>
+        <button type="submit" onclick="event.preventDefault(); document.getElementById('phoneError').style.display='block';">Submit</button>
+      </form>
+    </div>
+
+    <!-- TC-3.3-C-007: Flexible pattern guidance -->
+    <!-- SC 3.3.2, Technique H93 -->
+    <div class="case" id="TC-3.3-C-007">
+      <form>
+        <label for="password">Password:</label>
+        <input type="text" id="password" pattern=".{6,}" title="At least 6 characters">
+        <p>Password must be at least 6 characters long.</p>
+      </form>
+    </div>
+
+    <!-- TC-3.3-C-008: Multi-step form with step indicator -->
+    <!-- SC 3.3.1, Technique G84 -->
+    <div class="case" id="TC-3.3-C-008">
+      <p>Step 1 of 3</p>
+      <form>
+        <label for="step1">Step 1 Input:</label>
+        <input type="text" id="step1">
+        <button type="button">Next</button>
+      </form>
+    </div>
+
+    <!-- TC-3.3-C-009: Correct autocomplete usage -->
+    <!-- SC 3.3.2, Technique H93 -->
+    <div class="case" id="TC-3.3-C-009">
+      <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" autocomplete="email">
+      </form>
+    </div>
+
+    <!-- TC-3.3-C-010: Accessible CAPTCHA alternative -->
+    <!-- SC 3.3.7, Technique H98 -->
+    <div class="case" id="TC-3.3-C-010">
+      <p>Enter the code (or use audio CAPTCHA):</p>
+      <img src="captcha.png" alt="CAPTCHA code">
+      <input type="text">
+    </div>
+
+  </section>
+
+</body>
+</html>

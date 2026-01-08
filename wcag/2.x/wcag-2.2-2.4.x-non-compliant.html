@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title></title>
+<style>
+a { text-decoration:none }
+.no-focus:focus { outline:none }
+.cover { position:fixed; top:0; left:0; width:100%; height:20px; background:black }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.x Operable – NON-COMPLIANT (Part 3)</h1>
+
+<!-- ===================== 2.4.1 BYPASS BLOCKS ===================== -->
+
+<section id="TC-2.4.1-NC-201">
+<h2>No skip link</h2>
+<nav>
+<a href="#">Home</a>
+<a href="#">About</a>
+<a href="#">Services</a>
+<a href="#">Contact</a>
+</nav>
+</section>
+
+<section id="TC-2.4.1-NC-202">
+<h2>Skip link hidden permanently</h2>
+<a href="#main" style="display:none">Skip</a>
+</section>
+
+<!-- ===================== 2.4.2 PAGE TITLED ===================== -->
+
+<section id="TC-2.4.2-NC-203">
+<h2>Missing page title</h2>
+<p>Title element empty</p>
+</section>
+
+<section id="TC-2.4.2-NC-204">
+<h2>Generic title</h2>
+<p>&lt;title&gt;Home&lt;/title&gt; used everywhere</p>
+</section>
+
+<!-- ===================== 2.4.3 FOCUS ORDER ===================== -->
+
+<section id="TC-2.4.3-NC-205">
+<h2>Illogical tabindex order</h2>
+<input tabindex="5" placeholder="Five">
+<input tabindex="1" placeholder="One">
+<input tabindex="3" placeholder="Three">
+</section>
+
+<section id="TC-2.4.3-NC-206">
+<h2>Focus jumps unexpectedly</h2>
+<button autofocus>Auto focus</button>
+<input>
+</section>
+
+<section id="TC-2.4.3-NC-207">
+<h2>Modal opens without focus</h2>
+<div role="dialog">Dialog content</div>
+</section>
+
+<!-- ===================== 2.4.4 LINK PURPOSE ===================== -->
+
+<section id="TC-2.4.4-NC-208">
+<h2>Vague link text</h2>
+<a href="report.pdf">Click here</a>
+</section>
+
+<section id="TC-2.4.4-NC-209">
+<h2>Multiple identical links</h2>
+<a href="a.html">Read more</a>
+<a href="b.html">Read more</a>
+</section>
+
+<!-- ===================== 2.4.5 MULTIPLE WAYS ===================== -->
+
+<section id="TC-2.4.5-NC-210">
+<h2>Single navigation method</h2>
+<p>No search, no sitemap</p>
+</section>
+
+<!-- ===================== 2.4.6 HEADINGS & LABELS ===================== -->
+
+<section id="TC-2.4.6-NC-211">
+<h2>Headings not descriptive</h2>
+<h2>Section 1</h2>
+<h2>Section 2</h2>
+</section>
+
+<section id="TC-2.4.6-NC-212">
+<h2>Form labels unclear</h2>
+<label>Field</label><input>
+</section>
+
+<!-- ===================== 2.4.7 FOCUS VISIBLE ===================== -->
+
+<section id="TC-2.4.7-NC-213">
+<h2>Focus indicator removed</h2>
+<button class="no-focus">Invisible focus</button>
+</section>
+
+<!-- ===================== 2.4.8 LOCATION ===================== -->
+
+<section id="TC-2.4.8-NC-214">
+<h2>No breadcrumb</h2>
+<p>User location unknown</p>
+</section>
+
+<!-- ===================== 2.4.9 LINK PURPOSE (LINK ONLY) ===================== -->
+
+<section id="TC-2.4.9-NC-215">
+<h2>Icon-only link</h2>
+<a href="settings.html">⚙</a>
+</section>
+
+<!-- ===================== 2.4.10 SECTION HEADINGS ===================== -->
+
+<section id="TC-2.4.10-NC-216">
+<h2>Content without headings</h2>
+<p>Large content block</p>
+</section>
+
+<!-- ===================== 2.4.11 FOCUS APPEARANCE (MIN) ===================== -->
+
+<section id="TC-2.4.11-NC-217">
+<h2>Low contrast focus</h2>
+<button style="outline:1px solid #aaa">Focus</button>
+</section>
+
+<!-- ===================== 2.4.12 FOCUS APPEARANCE (ENHANCED) ===================== -->
+
+<section id="TC-2.4.12-NC-218">
+<h2>Thin focus outline</h2>
+<button style="outline:1px dotted">Focus</button>
+</section>
+
+<!-- ===================== 2.4.13 FOCUS OBSCURED ===================== -->
+
+<section id="TC-2.4.13-NC-219">
+<h2>Focus hidden by fixed header</h2>
+<div class="cover"></div>
+<a href="#">Hidden Focus</a>
+</section>
+
+</body>
+</html>

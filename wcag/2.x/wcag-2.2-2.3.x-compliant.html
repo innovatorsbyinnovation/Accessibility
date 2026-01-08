@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WCAG 2.x Operable – COMPLIANT (Part 2)</title>
+<style>
+@media (prefers-reduced-motion: reduce) {
+  .animated { animation:none; }
+}
+.safe-fade {
+  animation: fade 3s ease-in-out infinite;
+}
+@keyframes fade {
+  from { opacity:1; }
+  to { opacity:0.5; }
+}
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+
+<body oncontextmenu="return false;">
+<h1>WCAG 2.x Operable – COMPLIANT (Part 2)</h1>
+
+<!-- ===================== 2.3.1 THREE FLASHES ===================== -->
+
+<section id="TC-2.3.1-C-101">
+<h2>No flashing content</h2>
+<p>Static banner</p>
+</section>
+
+<section id="TC-2.3.1-C-102">
+<h2>Fade animation below threshold</h2>
+<div class="safe-fade">Soft transition</div>
+</section>
+
+<section id="TC-2.3.1-C-103">
+<h2>Video without flashes</h2>
+<video controls>
+<source src="safe-video.mp4" type="video/mp4">
+</video>
+</section>
+
+<!-- ===================== 2.3.2 THREE FLASHES (AAA) ===================== -->
+
+<section id="TC-2.3.2-C-104">
+<h2>No flashing imagery</h2>
+<img src="static-banner.jpg" alt="Static banner">
+</section>
+
+<section id="TC-2.3.2-C-105">
+<h2>Animation under flash threshold</h2>
+<p>Low contrast fade</p>
+</section>
+
+<!-- ===================== 2.3.3 ANIMATION FROM INTERACTIONS ===================== -->
+
+<section id="TC-2.3.3-C-106">
+<h2>User-controlled animation</h2>
+<button onclick="document.getElementById('box').classList.toggle('animated')">
+Toggle animation
+</button>
+<div id="box" class="animated safe-fade">Box</div>
+</section>
+
+<section id="TC-2.3.3-C-107">
+<h2>Respects prefers-reduced-motion</h2>
+<p>Animation disabled when requested</p>
+</section>
+
+<section id="TC-2.3.3-C-108">
+<h2>No motion on interaction</h2>
+<button>Submit</button>
+</section>
+
+<section id="TC-2.3.3-C-109">
+<h2>Alternative feedback</h2>
+<p>Status message instead of animation</p>
+</section>
+
+</body>
+</html>

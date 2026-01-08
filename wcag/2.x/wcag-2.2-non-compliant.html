@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WCAG 2.x Operable - NON COMPLIANT Examples</title>
+<style>
+.hidden { display:none; }
+.fake-button { background:#007bff;color:white;padding:10px;cursor:pointer; }
+.no-focus:focus { outline:none; }
+.flash { animation: flash 0.1s infinite; }
+@keyframes flash { from{background:red;} to{background:blue;} }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.2 Operable – NON-COMPLIANT Test Cases</h1>
+
+<!-- ===================== 2.1 KEYBOARD ACCESSIBLE ===================== -->
+
+<section id="TC-2.1.1-NC-001">
+<h2>2.1.1 Keyboard – Mouse-only div button</h2>
+<div class="fake-button" onclick="alert('Clicked')">Submit</div>
+</section>
+
+<section id="TC-2.1.2-NC-002">
+<h2>2.1.2 No Keyboard Trap – Keyboard trapped modal</h2>
+<div tabindex="0" onkeydown="event.preventDefault()">Cannot escape</div>
+</section>
+
+<section id="TC-2.1.4-NC-003">
+<h2>2.1.4 Character Key Shortcuts – Single key shortcut</h2>
+<script>
+document.addEventListener('keydown', e=>{
+  if(e.key==='s'){ alert('Saved'); }
+});
+</script>
+<p>Press "S" anywhere</p>
+</section>
+
+<!-- ===================== 2.2 ENOUGH TIME ===================== -->
+
+<section id="TC-2.2.1-NC-004">
+<h2>2.2.1 Timing Adjustable – Session timeout</h2>
+<meta http-equiv="refresh" content="5">
+<p>Page auto refreshes in 5 seconds</p>
+</section>
+
+<section id="TC-2.2.2-NC-005">
+<h2>2.2.2 Pause, Stop, Hide – Auto carousel</h2>
+<marquee>Breaking News Scrolling Forever</marquee>
+</section>
+
+<!-- ===================== 2.3 SEIZURES ===================== -->
+
+<section id="TC-2.3.1-NC-006">
+<h2>2.3.1 Three Flashes – Flashing content</h2>
+<div class="flash">Flashing</div>
+</section>
+
+<!-- ===================== 2.4 NAVIGABLE ===================== -->
+
+<section id="TC-2.4.1-NC-007">
+<h2>2.4.1 Bypass Blocks – No skip link</h2>
+<nav>
+<a href="#">Home</a>
+<a href="#">Products</a>
+<a href="#">Contact</a>
+</nav>
+</section>
+
+<section id="TC-2.4.3-NC-008">
+<h2>2.4.3 Focus Order – Illogical tabindex</h2>
+<input tabindex="3" placeholder="Third">
+<input tabindex="1" placeholder="First">
+<input tabindex="2" placeholder="Second">
+</section>
+
+<section id="TC-2.4.4-NC-009">
+<h2>2.4.4 Link Purpose – Vague links</h2>
+<a href="report.pdf">Click here</a>
+</section>
+
+<section id="TC-2.4.7-NC-010">
+<h2>2.4.7 Focus Visible – No focus indicator</h2>
+<button class="no-focus">Invisible Focus</button>
+</section>
+
+<!-- ===================== 2.5 INPUT MODALITIES ===================== -->
+
+<section id="TC-2.5.1-NC-011">
+<h2>2.5.1 Pointer Gestures – Pinch only</h2>
+<p>Zoom image using pinch gesture only</p>
+</section>
+
+<section id="TC-2.5.2-NC-012">
+<h2>2.5.2 Pointer Cancellation – Immediate action</h2>
+<button onmousedown="alert('Deleted')">Delete</button>
+</section>
+
+<section id="TC-2.5.3-NC-013">
+<h2>2.5.3 Label in Name – Mismatch</h2>
+<button aria-label="Close dialog">Submit</button>
+</section>
+
+<section id="TC-2.5.7-NC-014">
+<h2>2.5.7 Dragging Movements – Drag only</h2>
+<div draggable="true">Drag me to reorder</div>
+</section>
+
+</body>
+</html>

@@ -6,8 +6,23 @@
   <script src="../assets/javascript/jquery-1.12.0.min.js"></script>
   <script src="../assets/javascript/main.js"></script>
   <link rel="stylesheet" href="../assets/stylesheets/tests.css" />
-</head>
-<body>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
   <h1>Image with presentation role has non-empty alt</h1>
   <main>
     <img alt="Decorative line clipart" height="118" role="presentation" src="../assets/test_images/decoration.png" width="368" />

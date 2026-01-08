@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WCAG 2.x Operable - COMPLIANT Examples</title>
+<style>
+:focus { outline:3px solid #ff9800; }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+
+<body oncontextmenu="return false;">
+
+<a href="#main" id="TC-2.4.1-C-001">Skip to main content</a>
+
+<h1>WCAG 2.2 Operable – COMPLIANT Test Cases</h1>
+
+<main id="main">
+
+<!-- ===================== 2.1 KEYBOARD ===================== -->
+
+<section id="TC-2.1.1-C-002">
+<h2>2.1.1 Keyboard – Native button</h2>
+<button>Submit</button>
+</section>
+
+<section id="TC-2.1.2-C-003">
+<h2>2.1.2 No Keyboard Trap</h2>
+<button onclick="document.getElementById('dlg').showModal()">Open Dialog</button>
+<dialog id="dlg">
+<p>Dialog content</p>
+<button onclick="this.closest('dialog').close()">Close</button>
+</dialog>
+</section>
+
+<section id="TC-2.1.4-C-004">
+<h2>2.1.4 Character Key Shortcuts – Modified</h2>
+<p>Shortcut requires Ctrl + S</p>
+</section>
+
+<!-- ===================== 2.2 TIME ===================== -->
+
+<section id="TC-2.2.1-C-005">
+<h2>2.2.1 Timing Adjustable</h2>
+<button>Extend Session</button>
+</section>
+
+<section id="TC-2.2.2-C-006">
+<h2>2.2.2 Pause, Stop, Hide</h2>
+<video controls>
+<source src="sample.mp4" type="video/mp4">
+</video>
+</section>
+
+<!-- ===================== 2.3 SEIZURES ===================== -->
+
+<section id="TC-2.3.1-C-007">
+<h2>2.3.1 No Flashing</h2>
+<p>Static content only</p>
+</section>
+
+<!-- ===================== 2.4 NAVIGATION ===================== -->
+
+<section id="TC-2.4.2-C-008">
+<h2>2.4.2 Page Titled</h2>
+<p>Title correctly defined</p>
+</section>
+
+<section id="TC-2.4.3-C-009">
+<h2>2.4.3 Focus Order</h2>
+<input placeholder="First">
+<input placeholder="Second">
+<input placeholder="Third">
+</section>
+
+<section id="TC-2.4.4-C-010">
+<h2>2.4.4 Link Purpose</h2>
+<a href="report.pdf">Download 2024 Annual Report (PDF)</a>
+</section>
+
+<section id="TC-2.4.7-C-011">
+<h2>2.4.7 Focus Visible</h2>
+<button>Focusable Button</button>
+</section>
+
+<!-- ===================== 2.5 INPUT ===================== -->
+
+<section id="TC-2.5.1-C-012">
+<h2>2.5.1 Pointer Gestures – Alternative</h2>
+<button>Zoom In</button>
+</section>
+
+<section id="TC-2.5.2-C-013">
+<h2>2.5.2 Pointer Cancellation</h2>
+<button onclick="confirm('Delete?')">Delete</button>
+</section>
+
+<section id="TC-2.5.3-C-014">
+<h2>2.5.3 Label in Name</h2>
+<button aria-label="Submit">Submit</button>
+</section>
+
+<section id="TC-2.5.7-C-015">
+<h2>2.5.7 Dragging Alternative</h2>
+<button>Move Up</button>
+<button>Move Down</button>
+</section>
+
+</main>
+</body>
+</html>
