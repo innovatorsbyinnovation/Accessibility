@@ -1,0 +1,6 @@
+[build]
+builder = "railpack"
+buildCommand = "cd AccessibilityTestingApp && mvn clean package"
+
+[deploy]
+startCommand = "cd AccessibilityTestingApp && java -jar target/*.jar"
