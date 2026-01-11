@@ -82,23 +82,9 @@
 		}
 
   </style>
-<script>
-	document.addEventListener('keydown', function(e) {
-		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
-			e.preventDefault();
-			alert('Viewing source is disabled!');
-		}
-	});
-	</script>
-<style>
-		body {
-		  user-select: none;
-		  -webkit-user-select: none;
-		  -moz-user-select: none;
-		}
 
-  </style></head>
-<body class="tests" oncontextmenu="return false;">
+</head>
+<body class="tests" >
   <header id="global-header" role="banner">
     <div class="header-wrapper">
       <div class="header-global">
@@ -161,6 +147,7 @@
           </li>
         </ul>
       </div>
+    </div>
   </nav>
 </main>
 
