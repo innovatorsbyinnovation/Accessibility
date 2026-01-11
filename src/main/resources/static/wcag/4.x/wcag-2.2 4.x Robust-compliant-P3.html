@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WCAG 2.2 4.x Robust - Compliant Test Cases Part 3</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; }
+section { border: 1px solid #4CAF50; padding: 15px; margin-bottom: 20px; }
+h2 { color: darkgreen; }
+.case { margin-bottom: 10px; padding: 10px; border: 1px dashed #4CAF50; }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+<h1>WCAG 2.2 4.x Robust - Compliant Test Cases Part 3</h1>
+
+<!-- ======================= -->
+<!-- 4.1 Parsing - Compliant Advanced -->
+<!-- ======================= -->
+<section>
+<h2>4.1.1 Parsing - Advanced Compliant</h2>
+
+<!-- TC-4.1-C-011: Proper nested ARIA roles -->
+<div class="case" id="TC-4.1-C-011">
+  <div role="tablist">
+    <button role="tab" aria-selected="true" aria-controls="panel1">Tab 1</button>
+    <div id="panel1" role="tabpanel">Panel 1 content</div>
+  </div>
+</div>
+
+<!-- TC-4.1-C-012: Properly closed custom component -->
+<div class="case" id="TC-4.1-C-012">
+  <custom-widget>
+    <p>Widget content properly closed</p>
+  </custom-widget>
+</div>
+
+<!-- TC-4.1-C-013: Dialog with aria-labelledby -->
+<div class="case" id="TC-4.1-C-013" role="dialog" aria-labelledby="dialogTitle">
+  <h2 id="dialogTitle">Dialog Title</h2>
+  <p>Dialog content announced correctly</p>
+</div>
+
+<!-- TC-4.1-C-014: Unique live region IDs -->
+<div class="case" id="TC-4.1-C-014">
+  <div aria-live="polite" id="live1">Update 1</div>
+  <div aria-live="polite" id="live2">Update 2</div>
+</div>
+
+<!-- TC-4.1-C-015: Table with headers -->
+<div class="case" id="TC-4.1-C-015">
+  <table border="1">
+    <tr><th>Name</th><th>Score</th></tr>
+    <tr><td>Alice</td><td>90</td></tr>
+    <tr><td>Bob</td><td>85</td></tr>
+  </table>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- 4.2 Name, Role, Value - Compliant Advanced -->
+<!-- ======================= -->
+<section>
+<h2>4.1.2 Name, Role, Value - Advanced Compliant</h2>
+
+<!-- TC-4.2-C-011: Multi-select with label -->
+<div class="case" id="TC-4.2-C-011">
+  <label for="multiSelect">Choose options:</label>
+  <select id="multiSelect" multiple>
+    <option>Option 1</option>
+    <option>Option 2</option>
+  </select>
+</div>
+
+<!-- TC-4.2-C-012: Date picker with label -->
+<div class="case" id="TC-4.2-C-012">
+  <label for="birthdate">Birthdate:</label>
+  <input type="date" id="birthdate">
+</div>
+
+<!-- TC-4.2-C-013: Slider with aria properties -->
+<div class="case" id="TC-4.2-C-013" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Volume">
+  <p>Slider accessible to assistive technology</p>
+</div>
+
+<!-- TC-4.2-C-014: Button with aria-label -->
+<div class="case" id="TC-4.2-C-014">
+  <button aria-label="Submit Form">Click</button>
+</div>
+
+<!-- TC-4.2-C-015: Tabs with correct roles -->
+<div class="case" id="TC-4.2-C-015">
+  <div role="tablist">
+    <button role="tab" aria-selected="true" aria-controls="panelA">Tab 1</button>
+    <button role="tab" aria-selected="false" aria-controls="panelB">Tab 2</button>
+    <div id="panelA" role="tabpanel">Content 1</div>
+    <div id="panelB" role="tabpanel">Content 2</div>
+  </div>
+</div>
+
+</section>
+
+<!-- ======================= -->
+<!-- 4.3 Status Messages - Compliant Advanced -->
+<!-- ======================= -->
+<section>
+<h2>4.1.3 Status Messages - Advanced Compliant</h2>
+
+<!-- TC-4.3-C-011: Alert dynamically updated with aria-live -->
+<div class="case" id="TC-4.3-C-011" aria-live="assertive">
+  <p>Error occurred!</p>
+</div>
+<script>
+setTimeout(()=>{document.getElementById('TC-4.3-C-011').innerHTML="Another error!";},2000);
+</script>
+
+<!-- TC-4.3-C-012: Modal content updates with aria-live -->
+<div class="case" id="TC-4.3-C-012" role="dialog" aria-labelledby="modalTitle" aria-live="polite">
+  <h2 id="modalTitle">Modal Title</h2>
+  <div id="modalContent">
+    <p>Dynamic content</p>
+  </div>
+</div>
+<script>
+setTimeout(()=>{document.getElementById('modalContent').innerHTML="Changed content";},2000);
+</script>
+
+<!-- TC-4.3-C-013: Live region visible to assistive tech -->
+<div class="case" id="TC-4.3-C-013" aria-live="polite">
+  <p>Status visible programmatically</p>
+</div>
+
+<!-- TC-4.3-C-014: Programmatically available status -->
+<div class="case" id="TC-4.3-C-014" aria-live="assertive">
+  <p>Saved successfully</p>
+</div>
+
+<!-- TC-4.3-C-015: Multiple alerts with unique IDs -->
+<div class="case" id="TC-4.3-C-015">
+  <div id="alert1" aria-live="assertive">Alert 1</div>
+  <div id="alert2" aria-live="assertive">Alert 2</div>
+</div>
+
+</section>
+
+</body>
+</html>

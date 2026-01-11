@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCAG 2.2 3.x Understandable - Non-Compliant Test Cases</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    section { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; }
+    h2 { color: darkred; }
+    .case { margin-bottom: 10px; padding: 10px; border: 1px dashed #aaa; }
+  </style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+  <h1>WCAG 2.2 3.x Understandable - Non-Compliant Test Cases</h1>
+
+  <!-- ======================= -->
+  <!-- 3.1 Readable - Non-Compliant -->
+  <!-- ======================= -->
+
+  <section>
+    <h2>3.1 Readable - Non-Compliant Examples</h2>
+
+    <!-- TC-3.1-NC-001: Text in jargon without explanation -->
+    <!-- SC 3.1.1, Technique G94 -->
+    <div class="case" id="TC-3.1-NC-001">
+      <p>The <strong>synergistic paradigm shift</strong> will optimize core competencies.</p>
+    </div>
+
+    <!-- TC-3.1-NC-002: Abbreviations without definition -->
+    <!-- SC 3.1.2, Technique G87 -->
+    <div class="case" id="TC-3.1-NC-002">
+      <p>The patient must undergo an ECG and CBC before discharge.</p>
+    </div>
+
+    <!-- TC-3.1-NC-003: Complex language without simplification -->
+    <!-- SC 3.1.5, Technique G159 -->
+    <div class="case" id="TC-3.1-NC-003">
+      <p>Utilization of heuristic methodologies enhances procedural efficacy in manifold operational contexts.</p>
+    </div>
+
+    <!-- TC-3.1-NC-004: Page content without language declaration -->
+    <!-- SC 3.1.1, Technique H57 -->
+    <html>
+      <head><script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+      <body oncontextmenu="return false;">
+        <p>This paragraph has no lang attribute.</p>
+      </body>
+    </html>
+    <!-- Nested HTML for demonstration; intentional non-compliance -->
+    
+    <!-- TC-3.1-NC-005: Image without alt text -->
+    <!-- SC 1.1.1, Technique H37 (also impacts readability for screen readers) -->
+    <div class="case" id="TC-3.1-NC-005">
+      <img src="diagram.png">
+      <p>Diagram missing alternative text.</p>
+    </div>
+
+    <!-- TC-3.1-NC-006: Text color and background low contrast making reading hard -->
+    <!-- SC 1.4.3, Technique G18 -->
+    <div class="case" id="TC-3.1-NC-006" style="color: lightgray; background-color: white;">
+      <p>Low contrast text is difficult to read.</p>
+    </div>
+
+    <!-- TC-3.1-NC-007: Headings in random order -->
+    <!-- SC 3.1.1, Technique H42 -->
+    <div class="case" id="TC-3.1-NC-007">
+      <h3>Heading Level 3</h3>
+      <h1>Heading Level 1</h1>
+      <p>Improper heading sequence breaks reading order.</p>
+    </div>
+
+    <!-- TC-3.1-NC-008: Table without captions or summaries -->
+    <!-- SC 3.1.2, Technique H63 -->
+    <div class="case" id="TC-3.1-NC-008">
+      <table border="1">
+        <tr><th>Name</th><th>Age</th></tr>
+        <tr><td>Alice</td><td>30</td></tr>
+        <tr><td>Bob</td><td>25</td></tr>
+      </table>
+      <p>Table without caption or summary.</p>
+    </div>
+
+    <!-- TC-3.1-NC-009: Form fields with ambiguous labels -->
+    <!-- SC 3.3.2, Technique H44 -->
+    <div class="case" id="TC-3.1-NC-009">
+      <form>
+        <label for="field1">Enter data:</label>
+        <input type="text" id="field1">
+      </form>
+      <p>Label "Enter data" is ambiguous; unclear what input is expected.</p>
+    </div>
+
+    <!-- TC-3.1-NC-010: Video without captions -->
+    <!-- SC 1.2.2, Technique G87 -->
+    <div class="case" id="TC-3.1-NC-010">
+      <video controls>
+        <source src="video.mp4" type="video/mp4">
+      </video>
+      <p>Video missing captions makes content unreadable for deaf users.</p>
+    </div>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 3.2 Predictable - Non-Compliant -->
+  <!-- ======================= -->
+
+  <section>
+    <h2>3.2 Predictable - Non-Compliant Examples</h2>
+
+    <!-- TC-3.2-NC-001: Navigation changes unexpectedly -->
+    <!-- SC 3.2.1, Technique G84 -->
+    <div class="case" id="TC-3.2-NC-001">
+      <nav>
+        <ul>
+          <li><a href="home.html" onclick="alert('Redirected!')">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <p>Link changes behavior on click unexpectedly.</p>
+    </div>
+
+    <!-- TC-3.2-NC-002: Focus order is illogical -->
+    <!-- SC 3.2.2, Technique G91 -->
+    <div class="case" id="TC-3.2-NC-002">
+      <form>
+        <input type="text" id="first">
+        <input type="text" id="third">
+        <input type="text" id="second">
+      </form>
+      <p>Tabbing moves in non-sequential order.</p>
+    </div>
+
+    <!-- TC-3.2-NC-003: Unexpected popup on link click -->
+    <!-- SC 3.2.2, Technique F96 -->
+    <div class="case" id="TC-3.2-NC-003">
+      <a href="javascript:void(0)" onclick="window.open('popup.html')">Click me</a>
+      <p>Popup appears unexpectedly.</p>
+    </div>
+
+    <!-- TC-3.2-NC-004: Dynamic content changes without notification -->
+    <!-- SC 3.2.3, Technique ARIA13 -->
+    <div class="case" id="TC-3.2-NC-004">
+      <div id="liveContent">
+        <p>Initial content.</p>
+      </div>
+      <script>
+        setTimeout(() => {
+          document.getElementById('liveContent').innerHTML = "<p>Updated content suddenly!</p>";
+        }, 3000);
+      </script>
+      <p>Screen readers are not notified of dynamic change.</p>
+    </div>
+
+    <!-- TC-3.2-NC-005: Inconsistent navigation across pages -->
+    <!-- SC 3.2.2, Technique G86 -->
+    <div class="case" id="TC-3.2-NC-005">
+      <p>Page 1: <a href="next.html">Next</a></p>
+      <p>Page 2: <a href="previous.html">Next</a></p>
+      <p>Navigation labels are inconsistent.</p>
+    </div>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 3.3 Input Assistance - Non-Compliant -->
+  <!-- ======================= -->
+
+  <section>
+    <h2>3.3 Input Assistance - Non-Compliant Examples</h2>
+
+    <!-- TC-3.3-NC-001: Required fields without indication -->
+    <!-- SC 3.3.1, Technique H44 -->
+    <div class="case" id="TC-3.3-NC-001">
+      <form>
+        <label for="email">Email:</label>
+        <input type="text" id="email">
+      </form>
+      <p>No indication that email is required.</p>
+    </div>
+
+    <!-- TC-3.3-NC-002: Error messages not clear -->
+    <!-- SC 3.3.3, Technique G83 -->
+    <div class="case" id="TC-3.3-NC-002">
+      <form onsubmit="alert('Invalid'); return false;">
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+        <button type="submit">Submit</button>
+      </form>
+      <p>Error alert does not specify what is wrong.</p>
+    </div>
+
+    <!-- TC-3.3-NC-003: No suggestions for correction -->
+    <!-- SC 3.3.4, Technique H93 -->
+    <div class="case" id="TC-3.3-NC-003">
+      <form onsubmit="alert('Error'); return false;">
+        <label for="zip">ZIP Code:</label>
+        <input type="text" id="zip">
+        <button type="submit">Submit</button>
+      </form>
+      <p>User receives an error but no guidance on correct format.</p>
+    </div>
+
+    <!-- TC-3.3-NC-004: Captcha inaccessible -->
+    <!-- SC 3.3.7, Technique H98 -->
+    <div class="case" id="TC-3.3-NC-004">
+      <p>Enter captcha:</p>
+      <img src="captcha.png">
+      <input type="text">
+      <p>No accessible alternative for CAPTCHA challenge.</p>
+    </div>
+
+    <!-- TC-3.3-NC-005: Autocomplete disabled unnecessarily -->
+    <!-- SC 3.3.2, Technique H93 -->
+    <div class="case" id="TC-3.3-NC-005">
+      <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" autocomplete="off">
+      </form>
+      <p>Prevents browser autofill, making input harder.</p>
+    </div>
+
+  </section>
+
+</body>
+</html>

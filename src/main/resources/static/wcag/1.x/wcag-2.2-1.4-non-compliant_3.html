@@ -1,0 +1,355 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WCAG 2.2 – 1.4 Text Spacing & Content on Hover (NON-COMPLIANT)</title>
+<style>
+  /* Text spacing non-compliant examples */
+  .nc-line-height { line-height:1; }
+  .nc-letter-spacing { letter-spacing:0; }
+  .nc-word-spacing { word-spacing:0; }
+  .nc-paragraph-spacing { margin-bottom:0; }
+
+  /* Hover/focus non-compliant */
+  .tooltip-nc {
+    position:relative;
+    display:inline-block;
+  }
+  .tooltip-nc span {
+    visibility:hidden;
+    background:#333;
+    color:#fff;
+    position:absolute;
+    top:0; left:100%;
+    z-index:1;
+    width:150px;
+  }
+  .tooltip-nc:hover span { visibility:hidden; } /* never shows */
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.2 – 1.4.x Part 4 NON-COMPLIANT Test Cases</h1>
+
+<!-- ===================== 1.4.12 Text Spacing ===================== -->
+
+<section id="TC-1.4.4-NC-001">
+  <h2>Line height too small</h2>
+  <p class="nc-line-height">This text has line-height of 1 and overlaps when zoomed.</p>
+</section>
+
+<section id="TC-1.4.4-NC-002">
+  <h2>Letter spacing zero</h2>
+  <p class="nc-letter-spacing">Letters are too close together and hard to read.</p>
+</section>
+
+<section id="TC-1.4.4-NC-003">
+  <h2>Word spacing zero</h2>
+  <p class="nc-word-spacing">Words are squeezed making reading difficult.</p>
+</section>
+
+<section id="TC-1.4.4-NC-004">
+  <h2>Paragraph spacing missing</h2>
+  <p class="nc-paragraph-spacing">Paragraph one</p>
+  <p class="nc-paragraph-spacing">Paragraph two</p>
+</section>
+
+<section id="TC-1.4.4-NC-005">
+  <h2>All spacing combined zero</h2>
+  <p class="nc-line-height nc-letter-spacing nc-word-spacing nc-paragraph-spacing">
+    Dense text with overlapping content and no spacing.
+  </p>
+</section>
+
+<!-- ===================== 1.4.13 Content on Hover/Focus ===================== -->
+
+<section id="TC-1.4.4-NC-006">
+  <h2>Tooltip never appears on hover</h2>
+  <div class="tooltip-nc">
+    Hover me
+    <span>Tooltip content</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-007">
+  <h2>Tooltip disappears immediately</h2>
+  <div class="tooltip-nc">
+    Hover me
+    <span style="visibility:visible; transition: visibility 0s;">Gone immediately</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-008">
+  <h2>Hover content overlaps essential text</h2>
+  <div style="position:relative;">
+    <p>Main text</p>
+    <div style="position:absolute;top:0;left:0;background:#333;color:#fff;">
+      Obscures content
+    </div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-009">
+  <h2>Hover menu cannot be dismissed</h2>
+  <ul style="position:relative;">
+    <li>Menu
+      <ul style="position:absolute; display:block;">
+        <li>Option 1</li>
+        <li>Option 2</li>
+      </ul>
+    </li>
+  </ul>
+</section>
+
+<section id="TC-1.4.4-NC-010">
+  <h2>Focus-triggered content disappears on mouseout</h2>
+  <button onfocus="this.nextElementSibling.style.display='block';" 
+          onblur="this.nextElementSibling.style.display='none';">
+    Focus me
+  </button>
+  <div style="display:none;">Hidden content</div>
+</section>
+
+<section id="TC-1.4.4-NC-011">
+  <h2>Tooltip too small and clipped</h2>
+  <div class="tooltip-nc" style="width:50px;">
+    Hover me
+    <span>Very long tooltip text that is clipped</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-012">
+  <h2>Hover content overlaps input fields</h2>
+  <div style="position:relative;">
+    <input type="text">
+    <div style="position:absolute;top:0;left:0;background:#333;color:#fff;">
+      Overlapping content
+    </div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-013">
+  <h2>Hover menu off-screen</h2>
+  <ul style="position:absolute; left:-200px;">
+    <li>Option 1</li>
+  </ul>
+</section>
+
+<section id="TC-1.4.4-NC-014">
+  <h2>Tooltip not accessible via keyboard</h2>
+  <div>
+    <button>Hover Only</button>
+    <span style="display:none;">Hidden tooltip</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-015">
+  <h2>Tooltip with no close method</h2>
+  <div style="position:relative;">
+    Hover me
+    <div style="position:absolute;">Persistent tooltip cannot be dismissed</div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-016">
+  <h2>Hover pop-up blocks other interactive content</h2>
+  <div style="position:relative;">
+    <button>Button 1</button>
+    <div style="position:absolute;top:0;left:0;">Pop-up blocks button</div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-017">
+  <h2>Hover tooltip outside viewport</h2>
+  <div style="position:absolute; top:0; left:1000px;">
+    Hover me
+    <span>Offscreen tooltip</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-018">
+  <h2>Hover content not announced by screen reader</h2>
+  <div title="Tooltip without ARIA">Hover me</div>
+</section>
+
+<section id="TC-1.4.4-NC-019">
+  <h2>Hover tooltip with tiny font</h2>
+  <div class="tooltip-nc">
+    Hover me
+    <span style="font-size:6px;">Unreadable tooltip</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-020">
+  <h2>Hover content disappears when moving mouse slightly</h2>
+  <div style="position:relative;">
+    <div style="display:none;" id="tooltip">Tooltip</div>
+    <span onmouseover="document.getElementById('tooltip').style.display='block';"
+          onmouseout="document.getElementById('tooltip').style.display='none';">Hover me</span>
+  </div>
+</section>
+
+<!-- Additional text spacing failures -->
+
+<section id="TC-1.4.4-NC-021">
+  <h2>Mix of dense spacing elements</h2>
+  <p class="nc-line-height nc-letter-spacing nc-word-spacing">
+    Very dense text with no proper line, letter, or word spacing.
+  </p>
+</section>
+
+<section id="TC-1.4.4-NC-022">
+  <h2>Inline text blocks overlap due to spacing</h2>
+  <span class="nc-letter-spacing nc-word-spacing">Text1</span>
+  <span class="nc-letter-spacing nc-word-spacing">Text2</span>
+</section>
+
+<section id="TC-1.4.4-NC-023">
+  <h2>Paragraphs collapse together</h2>
+  <p class="nc-paragraph-spacing">Paragraph A</p>
+  <p class="nc-paragraph-spacing">Paragraph B</p>
+</section>
+
+<section id="TC-1.4.4-NC-024">
+  <h2>Line height too small in table</h2>
+  <table border="1">
+    <tr><td class="nc-line-height">Data 1</td></tr>
+  </table>
+</section>
+
+<section id="TC-1.4.4-NC-025">
+  <h2>Text spacing breaks inline form labels</h2>
+  <label style="letter-spacing:0;">Name</label><input type="text">
+</section>
+
+<section id="TC-1.4.4-NC-026">
+  <h2>Hover menu hides underlying links</h2>
+  <div style="position:relative;">
+    <a href="#">Link 1</a>
+    <div style="position:absolute;">Hidden overlay</div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-027">
+  <h2>Tooltip partially offscreen at zoom</h2>
+  <div style="position:absolute;left:95%;">
+    Hover me
+    <span>Partially hidden tooltip</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-028">
+  <h2>Hover pop-up covers form</h2>
+  <div style="position:relative;">
+    <input type="text">
+    <div style="position:absolute;top:0;left:0;">Popup blocks input</div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-029">
+  <h2>Hover content moves page layout</h2>
+  <div style="position:relative;">
+    <span onmouseover="this.nextElementSibling.style.display='block';">Hover me</span>
+    <div style="display:none;">Appears and shifts content</div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-030">
+  <h2>Tooltip with no contrast and tiny size</h2>
+  <div class="tooltip-nc">
+    Hover me
+    <span style="color:#ccc;background:#eee;font-size:6px;">Unreadable</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-031">
+  <h2>Hover menu obscures other interactive content</h2>
+  <div style="position:relative;">
+    <button>Button A</button>
+    <div style="position:absolute;">Blocks interaction</div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-032">
+  <h2>Tooltip flickers on hover</h2>
+  <div class="tooltip-nc" onmouseover="this.style.visibility='hidden';">
+    Hover me
+    <span>Tooltip flickers</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-033">
+  <h2>Hover content disappears after 1s</h2>
+  <div style="position:relative;">
+    <span onmouseover="setTimeout(()=>this.nextElementSibling.style.display='none',1000);">Hover me</span>
+    <div>Tooltip</div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-034">
+  <h2>Inline tooltip overlaps other text</h2>
+  <span style="position:relative;">
+    Text
+    <span style="position:absolute;left:0;">Overlaps</span>
+  </span>
+</section>
+
+<section id="TC-1.4.4-NC-035">
+  <h2>Hover pop-up with no focus trap</h2>
+  <div style="position:absolute;">Pop-up content</div>
+</section>
+
+<section id="TC-1.4.4-NC-036">
+  <h2>Tooltip too far from trigger</h2>
+  <div style="position:relative;">
+    <span>Hover me</span>
+    <div style="position:absolute;left:500px;">Too far tooltip</div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-037">
+  <h2>Hover content covers header navigation</h2>
+  <div style="position:absolute;top:0;left:0;">Overlay</div>
+</section>
+
+<section id="TC-1.4.4-NC-038">
+  <h2>Hover pop-up requires precise mouse movement</h2>
+  <div style="position:relative;">
+    <span>Hover</span>
+    <div style="position:absolute;">Tiny hover area</div>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-039">
+  <h2>Tooltip inaccessible via keyboard</h2>
+  <div>
+    <span>Hover only tooltip</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-040">
+  <h2>Hover content disappears when zoomed</h2>
+  <div style="position:relative;">
+    <span>Hover me</span>
+    <div style="position:absolute;">Tooltip lost at zoom</div>
+  </div>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,328 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WCAG 2.2 – 1.4 Reflow & Non-text Contrast (NON-COMPLIANT)</title>
+<style>
+  .fixed-layout {
+    width:400px;
+    display:flex;
+    overflow:hidden;
+  }
+  .fixed-box {
+    width:200px;
+    height:50px;
+    background:#eee;
+    margin-right:5px;
+  }
+  .low-contrast-btn {
+    background:#ccc;
+    color:#eee;
+    border:1px solid #ddd;
+    padding:6px;
+  }
+  .table-fixed td {
+    width:100px;
+    overflow:hidden;
+  }
+  .card {
+    width:150px;
+    border:1px solid #ddd;
+    overflow:hidden;
+  }
+  .nav-low {
+    color:#ccc;
+    background:#eee;
+  }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.2 – 1.4.x Part 3 NON-COMPLIANT Test Cases</h1>
+
+<!-- ===================== 1.4.10 Reflow ===================== -->
+
+<section id="TC-1.4.3-NC-001">
+  <h2>Fixed width container breaks on zoom</h2>
+  <div class="fixed-layout">
+    <div class="fixed-box">Box 1</div>
+    <div class="fixed-box">Box 2</div>
+    <div class="fixed-box">Box 3</div>
+  </div>
+</section>
+
+<section id="TC-1.4.3-NC-002">
+  <h2>Two-column layout overlaps at 400% zoom</h2>
+  <div style="width:500px;display:flex;">
+    <div style="width:300px;">Left content</div>
+    <div style="width:250px;">Right content overlaps</div>
+  </div>
+</section>
+
+<section id="TC-1.4.3-NC-003">
+  <h2>Navigation menu clips on reflow</h2>
+  <nav style="width:300px;overflow:hidden;">
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Support</a>
+  </nav>
+</section>
+
+<section id="TC-1.4.3-NC-004">
+  <h2>Table with fixed column width breaks</h2>
+  <table class="table-fixed" border="1">
+    <tr><td>Long header 1</td><td>Long header 2</td></tr>
+    <tr><td>Data row 1</td><td>Data row 2</td></tr>
+  </table>
+</section>
+
+<section id="TC-1.4.3-NC-005">
+  <h2>Card layout fixed width, text clipped</h2>
+  <div class="card">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+  </div>
+</section>
+
+<section id="TC-1.4.3-NC-006">
+  <h2>Fixed sidebar overlaps main content</h2>
+  <div style="display:flex;">
+    <aside style="width:200px;">Sidebar</aside>
+    <main style="width:300px;">Main content</main>
+  </div>
+</section>
+
+<section id="TC-1.4.3-NC-007">
+  <h2>Form input clipped in fixed-width container</h2>
+  <div style="width:200px;">
+    <label for="name">Name:</label>
+    <input id="name" type="text" style="width:250px;">
+  </div>
+</section>
+
+<section id="TC-1.4.3-NC-008">
+  <h2>Buttons overflow container on zoom</h2>
+  <div style="width:180px;">
+    <button>Submit Long Form Button</button>
+  </div>
+</section>
+
+<section id="TC-1.4.3-NC-009">
+  <h2>Footer text clipped</h2>
+  <footer style="width:150px;overflow:hidden;">© Company 2026 All Rights Reserved</footer>
+</section>
+
+<section id="TC-1.4.3-NC-010">
+  <h2>Absolute positioned elements break reflow</h2>
+  <div style="position:relative;height:50px;">
+    <span style="position:absolute;left:100px;">Absolute text</span>
+  </div>
+</section>
+
+<!-- ===================== 1.4.11 Non-text Contrast ===================== -->
+
+<section id="TC-1.4.3-NC-011">
+  <h2>Low contrast button background</h2>
+  <button class="low-contrast-btn">Pay Now</button>
+</section>
+
+<section id="TC-1.4.3-NC-012">
+  <h2>Checkbox with barely visible border</h2>
+  <input type="checkbox" style="border:1px solid #eee;">
+</section>
+
+<section id="TC-1.4.3-NC-013">
+  <h2>Radio button contrast too low</h2>
+  <input type="radio" style="accent-color:#ccc;">
+</section>
+
+<section id="TC-1.4.3-NC-014">
+  <h2>Input field low contrast border</h2>
+  <input type="text" style="border:1px solid #ddd;">
+</section>
+
+<section id="TC-1.4.3-NC-015">
+  <h2>Dropdown menu background contrast insufficient</h2>
+  <select style="background:#eee;color:#ddd;">
+    <option>Option 1</option>
+    <option>Option 2</option>
+  </select>
+</section>
+
+<section id="TC-1.4.3-NC-016">
+  <h2>Icon-only buttons low contrast</h2>
+  <span style="color:#ccc;">🔔</span>
+</section>
+
+<section id="TC-1.4.3-NC-017">
+  <h2>Focus indicator almost invisible</h2>
+  <input type="text" style="outline:1px solid #eee;">
+</section>
+
+<section id="TC-1.4.3-NC-018">
+  <h2>Progress bar contrast too low</h2>
+  <progress value="40" max="100" style="color:#ccc;"></progress>
+</section>
+
+<section id="TC-1.4.3-NC-019">
+  <h2>Slider track barely distinguishable</h2>
+  <input type="range" style="accent-color:#eee;">
+</section>
+
+<section id="TC-1.4.3-NC-020">
+  <h2>Tab indicator barely visible</h2>
+  <button style="border:1px solid #eee;">Tab 1</button>
+  <button style="border:1px solid #eee;">Tab 2</button>
+</section>
+
+<!-- ===================== Additional Reflow Failures ===================== -->
+
+<section id="TC-1.4.3-NC-021">
+  <h2>Breadcrumbs break into multiple lines incorrectly</h2>
+  <nav style="width:250px;">
+    Home &gt; Category &gt; Subcategory &gt; Product
+  </nav>
+</section>
+
+<section id="TC-1.4.3-NC-022">
+  <h2>Tooltip text disappears on zoom</h2>
+  <span title="Very long tooltip explanation">Hover me</span>
+</section>
+
+<section id="TC-1.4.3-NC-023">
+  <h2>Header text overlaps logo</h2>
+  <header style="height:40px;">
+    <img src="logo.png" alt="">
+    <span>Company Portal</span>
+  </header>
+</section>
+
+<section id="TC-1.4.3-NC-024">
+  <h2>Table with nowrap content</h2>
+  <table border="1">
+    <tr><td style="white-space:nowrap;">Long content that breaks zoom</td></tr>
+  </table>
+</section>
+
+<section id="TC-1.4.3-NC-025">
+  <h2>Image map loses functionality at zoom</h2>
+  <img src="map.png" usemap="#map">
+  <map name="map">
+    <area shape="rect" coords="0,0,50,50" href="#">
+  </map>
+</section>
+
+<section id="TC-1.4.3-NC-026">
+  <h2>Modal dialog overflows viewport</h2>
+  <div style="width:400px;height:400px;overflow:hidden;">Modal content</div>
+</section>
+
+<section id="TC-1.4.3-NC-027">
+  <h2>Dropdown options overlap adjacent content</h2>
+  <select style="position:absolute;width:200px;">
+    <option>Option 1</option>
+    <option>Option 2</option>
+  </select>
+</section>
+
+<section id="TC-1.4.3-NC-028">
+  <h2>Card grid breaks on zoom</h2>
+  <div style="display:flex;width:500px;">
+    <div class="card">Card 1</div>
+    <div class="card">Card 2</div>
+    <div class="card">Card 3</div>
+  </div>
+</section>
+
+<section id="TC-1.4.3-NC-029">
+  <h2>Pagination buttons clipped</h2>
+  <div style="width:180px;">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+  </div>
+</section>
+
+<section id="TC-1.4.3-NC-030">
+  <h2>Absolute positioned modal header overlaps content</h2>
+  <div style="position:relative;">
+    <div style="position:absolute;top:0;left:0;">Header</div>
+    <div>Main content</div>
+  </div>
+</section>
+
+<section id="TC-1.4.3-NC-031">
+  <h2>Form error icon low contrast</h2>
+  <span style="color:#eee;">⚠</span> Error field
+</section>
+
+<section id="TC-1.4.3-NC-032">
+  <h2>Stepper control low contrast</h2>
+  <button style="background:#ccc;color:#eee;">+</button>
+  <button style="background:#ccc;color:#eee;">-</button>
+</section>
+
+<section id="TC-1.4.3-NC-033">
+  <h2>Slider low contrast thumb</h2>
+  <input type="range" style="accent-color:#eee;">
+</section>
+
+<section id="TC-1.4.3-NC-034">
+  <h2>Breadcrumb focus indicator low contrast</h2>
+  <nav>
+    <a href="#" style="outline:1px solid #eee;">Home</a>
+  </nav>
+</section>
+
+<section id="TC-1.4.3-NC-035">
+  <h2>Notification badge barely visible</h2>
+  <span style="background:#eee;color:#ddd;">3</span>
+</section>
+
+<section id="TC-1.4.3-NC-036">
+  <h2>Accordion header contrast insufficient</h2>
+  <div style="color:#ccc;">Section 1</div>
+</section>
+
+<section id="TC-1.4.3-NC-037">
+  <h2>Tabs overlap on zoom</h2>
+  <div style="width:300px;display:flex;">
+    <button>Tab 1</button><button>Tab 2</button>
+  </div>
+</section>
+
+<section id="TC-1.4.3-NC-038">
+  <h2>Footer buttons clipped</h2>
+  <div style="width:200px;">
+    <button>Cancel</button>
+    <button>Save Changes</button>
+  </div>
+</section>
+
+<section id="TC-1.4.3-NC-039">
+  <h2>Icon menu low contrast</h2>
+  <span style="color:#ddd;">☰</span>
+</section>
+
+<section id="TC-1.4.3-NC-040">
+  <h2>Text inside cards with background same as text</h2>
+  <div style="background:#eee;color:#eee;">Unreadable text</div>
+</section>
+
+</body>
+</html>

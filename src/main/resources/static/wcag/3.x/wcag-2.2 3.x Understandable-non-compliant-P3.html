@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCAG 2.2 3.x Understandable - Non-Compliant Test Cases Part 3</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    section { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; }
+    h2 { color: darkred; }
+    .case { margin-bottom: 10px; padding: 10px; border: 1px dashed #aaa; }
+  </style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+  <h1>WCAG 2.2 3.x Understandable - Non-Compliant Test Cases Part 3</h1>
+
+  <!-- ======================= -->
+  <!-- 3.1 Readable - Advanced Non-Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.1 Readable - Advanced Non-Compliant</h2>
+
+    <!-- TC-3.1-NC-017: Nested jargon-heavy paragraphs -->
+    <!-- SC 3.1.1, Technique G94 -->
+    <div class="case" id="TC-3.1-NC-017">
+      <p>The synergistic leverage of cross-platform initiatives enhances bandwidth allocation and paradigmatic disruption.</p>
+    </div>
+
+    <!-- TC-3.1-NC-018: Multiple languages without lang attributes -->
+    <!-- SC 3.1.1, Technique H57 -->
+    <p>English text here. Español text aquí. Français texte ici.</p>
+
+    <!-- TC-3.1-NC-019: Table with ambiguous headers and merged cells -->
+    <!-- SC 3.1.2, Technique H63 -->
+    <table border="1">
+      <tr><th>Data</th><th colspan="2">Scores</th></tr>
+      <tr><td>Alice</td><td>90</td><td>85</td></tr>
+      <tr><td>Bob</td><td>88</td><td>92</td></tr>
+    </table>
+
+    <!-- TC-3.1-NC-020: Icons-only buttons without labels -->
+    <button><img src="icon.png"></button>
+    <p>Icon button has no label or tooltip.</p>
+
+    <!-- TC-3.1-NC-021: Long unbroken paragraphs -->
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua...</p>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 3.2 Predictable - Advanced Non-Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.2 Predictable - Advanced Non-Compliant</h2>
+
+    <!-- TC-3.2-NC-011: Multi-modal dialogues without proper ARIA roles -->
+    <div class="case" id="TC-3.2-NC-011">
+      <div id="modal">
+        <p>Modal opens unexpectedly when clicking unrelated button.</p>
+        <button>Close</button>
+      </div>
+    </div>
+
+    <!-- TC-3.2-NC-012: Dynamic content changes with no notification -->
+    <div class="case" id="TC-3.2-NC-012">
+      <div id="news">
+        <p>Latest news appears suddenly.</p>
+      </div>
+      <script>
+        setTimeout(()=>{document.getElementById('news').innerHTML="<p>Breaking news!</p>";},2000);
+      </script>
+    </div>
+
+    <!-- TC-3.2-NC-013: Multi-step wizard changes layout unexpectedly -->
+    <div class="case" id="TC-3.2-NC-013">
+      <form>
+        <div id="step1"><input type="text" placeholder="Step 1"><button>Next</button></div>
+        <div id="step2" style="display:none;"><input type="text" placeholder="Step 2"><button>Next</button></div>
+      </form>
+      <p>Steps hide/show with no indication of progress.</p>
+    </div>
+
+    <!-- TC-3.2-NC-014: Focus jumps unexpectedly -->
+    <div class="case" id="TC-3.2-NC-014">
+      <input type="text" onfocus="document.getElementById('other').focus();">
+      <input type="text" id="other">
+      <p>Focus moves unpredictably.</p>
+    </div>
+
+    <!-- TC-3.2-NC-015: Inconsistent labels on navigation -->
+    <nav>
+      <a href="page1.html">Start</a>
+      <a href="page2.html">Continue</a>
+    </nav>
+    <p>Navigation labels inconsistent between pages.</p>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 3.3 Input Assistance - Advanced Non-Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.3 Input Assistance - Advanced Non-Compliant</h2>
+
+    <!-- TC-3.3-NC-011: Nested forms with no guidance -->
+    <form>
+      <label for="first">First Name:</label>
+      <input type="text" id="first">
+      <form>
+        <label for="last">Last Name:</label>
+        <input type="text" id="last">
+      </form>
+      <button type="submit">Submit</button>
+    </form>
+    <p>No guidance or error handling for nested forms.</p>
+
+    <!-- TC-3.3-NC-012: Multi-step form without step indicator -->
+    <form>
+      <label for="step1">Step 1:</label>
+      <input type="text" id="step1">
+      <button type="button">Next</button>
+    </form>
+    <p>Users cannot know how many steps remain.</p>
+
+    <!-- TC-3.3-NC-013: CAPTCHA inaccessible -->
+    <p>Enter CAPTCHA:</p>
+    <img src="captcha.png">
+    <input type="text">
+    <p>No text or audio alternative provided.</p>
+
+    <!-- TC-3.3-NC-014: Required fields unclear -->
+    <form>
+      <label for="email">Email:</label>
+      <input type="email" id="email">
+    </form>
+    <p>Required field not indicated.</p>
+
+    <!-- TC-3.3-NC-015: Inline errors disappear too quickly -->
+    <form onsubmit="alert('Error'); return false;">
+      <label for="zip">ZIP:</label>
+      <input type="text" id="zip">
+      <button type="submit">Submit</button>
+    </form>
+    <p>Error alert disappears immediately.</p>
+
+  </section>
+
+</body>
+</html>

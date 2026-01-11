@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WCAG 2.x Operable – NON COMPLIANT (Part 2)</title>
+<style>
+.flash-fast {
+  animation: flash 0.08s infinite alternate;
+}
+.flash-large {
+  width:100%;
+  height:80px;
+  animation: flash 0.1s infinite;
+}
+@keyframes flash {
+  from { background:red; }
+  to { background:white; }
+}
+.spin {
+  animation: spin 0.3s infinite linear;
+}
+@keyframes spin {
+  from { transform:rotate(0); }
+  to { transform:rotate(360deg); }
+}
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+
+<body oncontextmenu="return false;">
+<h1>WCAG 2.x Operable – NON-COMPLIANT (Part 2)</h1>
+
+<!-- ===================== 2.3.1 THREE FLASHES ===================== -->
+
+<section id="TC-2.3.1-NC-101">
+<h2>Rapid flashing banner</h2>
+<div class="flash-large">Flashing Ad</div>
+</section>
+
+<section id="TC-2.3.1-NC-102">
+<h2>Flashing SVG</h2>
+<svg width="200" height="50">
+<rect width="200" height="50" class="flash-fast"></rect>
+</svg>
+</section>
+
+<section id="TC-2.3.1-NC-103">
+<h2>Flashing text highlight</h2>
+<p class="flash-fast">Important Message</p>
+</section>
+
+<section id="TC-2.3.1-NC-104">
+<h2>Carousel flashing transition</h2>
+<div class="flash-fast">Slide Transition</div>
+</section>
+
+<section id="TC-2.3.1-NC-105">
+<h2>Game warning flash</h2>
+<div class="flash-fast">Danger!</div>
+</section>
+
+<section id="TC-2.3.1-NC-106">
+<h2>Animated background flashing</h2>
+<div style="height:60px" class="flash-fast"></div>
+</section>
+
+<section id="TC-2.3.1-NC-107">
+<h2>Video with flashing effect</h2>
+<video autoplay loop>
+<source src="flash-video.mp4" type="video/mp4">
+</video>
+</section>
+
+<section id="TC-2.3.1-NC-108">
+<h2>CSS blinking cursor</h2>
+<span class="flash-fast">|</span>
+</section>
+
+<section id="TC-2.3.1-NC-109">
+<h2>Notification flash</h2>
+<div class="flash-fast">New Message</div>
+</section>
+
+<section id="TC-2.3.1-NC-110">
+<h2>Full-width flash alert</h2>
+<div class="flash-large">System Alert</div>
+</section>
+
+<!-- ===================== 2.3.2 THREE FLASHES (AAA) ===================== -->
+
+<section id="TC-2.3.2-NC-111">
+<h2>Repeated flashing logo</h2>
+<img src="logo.gif" alt="Flashing logo">
+</section>
+
+<section id="TC-2.3.2-NC-112">
+<h2>Promo animation exceeding threshold</h2>
+<div class="flash-fast">Buy Now</div>
+</section>
+
+<section id="TC-2.3.2-NC-113">
+<h2>High contrast strobe effect</h2>
+<div class="flash-fast"></div>
+</section>
+
+<section id="TC-2.3.2-NC-114">
+<h2>Marketing popup flashing</h2>
+<div class="flash-fast">Limited Offer</div>
+</section>
+
+<section id="TC-2.3.2-NC-115">
+<h2>Flashing loading indicator</h2>
+<div class="flash-fast">Loading…</div>
+</section>
+
+<!-- ===================== 2.3.3 ANIMATION FROM INTERACTIONS ===================== -->
+
+<section id="TC-2.3.3-NC-116">
+<h2>Button causes spinning animation</h2>
+<button onclick="this.classList.add('spin')">Submit</button>
+</section>
+
+<section id="TC-2.3.3-NC-117">
+<h2>Hover triggers motion</h2>
+<div onmouseover="this.classList.add('spin')">Hover me</div>
+</section>
+
+<section id="TC-2.3.3-NC-118">
+<h2>Scroll-triggered animation</h2>
+<div class="spin">Animated on scroll</div>
+</section>
+
+<section id="TC-2.3.3-NC-119">
+<h2>Form submit animation</h2>
+<form>
+<button class="spin">Send</button>
+</form>
+</section>
+
+<section id="TC-2.3.3-NC-120">
+<h2>Icon shakes on click</h2>
+<span class="spin">⚠</span>
+</section>
+
+<section id="TC-2.3.3-NC-121">
+<h2>No way to disable motion</h2>
+<p>Animations cannot be turned off</p>
+</section>
+
+<section id="TC-2.3.3-NC-122">
+<h2>CSS animation ignores prefers-reduced-motion</h2>
+<div class="spin">Always animated</div>
+</section>
+
+</body>
+</html>

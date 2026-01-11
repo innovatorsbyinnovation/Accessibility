@@ -1,0 +1,271 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WCAG 2.2 – 1.4 Use of Color & Contrast (NON-COMPLIANT)</title>
+<style>
+  .low-contrast {
+    color:#bdbdbd;
+    background:#ffffff;
+  }
+  .status-success { color: green; }
+  .status-error { color: red; }
+  .icon-only {
+    width:20px; height:20px;
+    background:red;
+    display:inline-block;
+  }
+  .btn-low {
+    background:#cccccc;
+    color:#eeeeee;
+    padding:8px;
+  }
+  .border-low {
+    border:1px solid #ddd;
+    padding:10px;
+  }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.2 – 1.4.x NON-COMPLIANT Test Cases</h1>
+
+<!-- ===================== 1.4.1 Use of Color ===================== -->
+
+<section id="TC-1.4-NC-001">
+  <h2>Status conveyed by color only</h2>
+  <p class="status-success">Approved</p>
+  <p class="status-error">Rejected</p>
+</section>
+
+<section id="TC-1.4-NC-002">
+  <h2>Required fields shown only in red</h2>
+  <label>Name</label>
+  <input type="text" style="border:2px solid red;">
+</section>
+
+<section id="TC-1.4-NC-003">
+  <h2>Chart legend relies only on color</h2>
+  <p><span style="color:blue;">■</span> Sales</p>
+  <p><span style="color:orange;">■</span> Profit</p>
+</section>
+
+<section id="TC-1.4-NC-004">
+  <h2>Link identified by color only</h2>
+  <p>Visit our <span style="color:blue;">Help Center</span></p>
+</section>
+
+<section id="TC-1.4-NC-005">
+  <h2>Error message indicated only by color</h2>
+  <input type="text">
+  <span style="color:red;">Invalid</span>
+</section>
+
+<section id="TC-1.4-NC-006">
+  <h2>Instructions using color reference</h2>
+  <p>Click the green button to proceed.</p>
+</section>
+
+<section id="TC-1.4-NC-007">
+  <h2>Selection state shown by background color only</h2>
+  <button style="background:yellow;">Selected</button>
+</section>
+
+<section id="TC-1.4-NC-008">
+  <h2>Legend without text labels</h2>
+  <div>
+    <span style="background:red;width:10px;height:10px;display:inline-block;"></span>
+    <span style="background:blue;width:10px;height:10px;display:inline-block;"></span>
+  </div>
+</section>
+
+<section id="TC-1.4-NC-009">
+  <h2>Form validation relies only on red outline</h2>
+  <input style="border:3px solid red;">
+</section>
+
+<section id="TC-1.4-NC-010">
+  <h2>Active tab shown only by color</h2>
+  <button style="color:red;">Home</button>
+  <button>Profile</button>
+</section>
+
+<!-- ===================== 1.4.3 Contrast (Minimum) ===================== -->
+
+<section id="TC-1.4-NC-011">
+  <h2>Low contrast body text</h2>
+  <p class="low-contrast">This text does not meet 4.5:1 contrast.</p>
+</section>
+
+<section id="TC-1.4-NC-012">
+  <h2>Low contrast placeholder text</h2>
+  <input placeholder="Enter name" style="color:#ccc;">
+</section>
+
+<section id="TC-1.4-NC-013">
+  <h2>Disabled-looking text but actually enabled</h2>
+  <button class="btn-low">Submit</button>
+</section>
+
+<section id="TC-1.4-NC-014">
+  <h2>Small text with insufficient contrast</h2>
+  <p style="color:#aaa;font-size:12px;">Terms apply</p>
+</section>
+
+<section id="TC-1.4-NC-015">
+  <h2>Link text insufficient contrast</h2>
+  <a href="#" style="color:#bbb;">Read more</a>
+</section>
+
+<section id="TC-1.4-NC-016">
+  <h2>Footer text too light</h2>
+  <footer style="color:#ccc;">© 2026 Company</footer>
+</section>
+
+<section id="TC-1.4-NC-017">
+  <h2>Text on image with low contrast</h2>
+  <div style="background:#ddd;padding:20px;color:#eee;">
+    Sale Now On
+  </div>
+</section>
+
+<section id="TC-1.4-NC-018">
+  <h2>Input value text low contrast</h2>
+  <input value="John" style="color:#bbb;">
+</section>
+
+<section id="TC-1.4-NC-019">
+  <h2>Muted button text</h2>
+  <button style="background:#eee;color:#ddd;">Pay Now</button>
+</section>
+
+<section id="TC-1.4-NC-020">
+  <h2>Breadcrumb contrast failure</h2>
+  <nav style="color:#ccc;">Home > Products > Shoes</nav>
+</section>
+
+<!-- ===================== 1.4.11 Non-text Contrast ===================== -->
+
+<section id="TC-1.4-NC-021">
+  <h2>Low contrast input border</h2>
+  <input class="border-low">
+</section>
+
+<section id="TC-1.4-NC-022">
+  <h2>Checkbox outline insufficient contrast</h2>
+  <input type="checkbox" style="outline:1px solid #ddd;">
+</section>
+
+<section id="TC-1.4-NC-023">
+  <h2>Icon-only button low contrast</h2>
+  <span class="icon-only"></span>
+</section>
+
+<section id="TC-1.4-NC-024">
+  <h2>Focus indicator too subtle</h2>
+  <button style="outline:1px solid #eee;">Focus Me</button>
+</section>
+
+<section id="TC-1.4-NC-025">
+  <h2>Slider track low contrast</h2>
+  <input type="range" style="accent-color:#ddd;">
+</section>
+
+<section id="TC-1.4-NC-026">
+  <h2>Progress bar indistinguishable</h2>
+  <progress value="50" max="100" style="color:#eee;"></progress>
+</section>
+
+<section id="TC-1.4-NC-027">
+  <h2>Tab borders insufficient contrast</h2>
+  <button style="border:1px solid #ddd;">Tab 1</button>
+</section>
+
+<section id="TC-1.4-NC-028">
+  <h2>Card boundary relies on subtle shadow</h2>
+  <div style="box-shadow:0 0 2px #eee;padding:10px;">Card</div>
+</section>
+
+<section id="TC-1.4-NC-029">
+  <h2>Icon state relies on color only</h2>
+  <span style="color:red;">❤</span>
+</section>
+
+<section id="TC-1.4-NC-030">
+  <h2>Button disabled state unclear</h2>
+  <button style="background:#eee;color:#ccc;">Disabled</button>
+</section>
+
+<!-- ===================== Additional Failures ===================== -->
+
+<section id="TC-1.4-NC-031">
+  <h2>Hover state relies on color only</h2>
+  <a href="#" style="color:black;">Hover me</a>
+</section>
+
+<section id="TC-1.4-NC-032">
+  <h2>Table row highlight color only</h2>
+  <table>
+    <tr style="background:yellow;"><td>Selected row</td></tr>
+  </table>
+</section>
+
+<section id="TC-1.4-NC-033">
+  <h2>Error summary uses red only</h2>
+  <div style="color:red;">Errors found</div>
+</section>
+
+<section id="TC-1.4-NC-034">
+  <h2>Rating indicated by star color only</h2>
+  <span style="color:gold;">★★★★★</span>
+</section>
+
+<section id="TC-1.4-NC-035">
+  <h2>Timeline uses color progression only</h2>
+  <div style="color:green;">●</div>
+  <div style="color:orange;">●</div>
+</section>
+
+<section id="TC-1.4-NC-036">
+  <h2>Legend contrast insufficient</h2>
+  <span style="color:#ccc;">Completed</span>
+</section>
+
+<section id="TC-1.4-NC-037">
+  <h2>Notification badge low contrast</h2>
+  <span style="background:red;color:#ffb3b3;">3</span>
+</section>
+
+<section id="TC-1.4-NC-038">
+  <h2>Accordion state shown by color only</h2>
+  <div style="color:green;">Expanded</div>
+</section>
+
+<section id="TC-1.4-NC-039">
+  <h2>Selected menu item color only</h2>
+  <li style="color:blue;">Dashboard</li>
+</section>
+
+<section id="TC-1.4-NC-040">
+  <h2>Text contrast failure in banner</h2>
+  <div style="background:#fafafa;color:#e0e0e0;">Welcome User</div>
+</section>
+
+</body>
+</html>

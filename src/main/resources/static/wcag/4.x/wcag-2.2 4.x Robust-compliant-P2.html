@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCAG 2.2 4.x Robust - Compliant Test Cases Part 2</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    section { border: 1px solid #4CAF50; padding: 15px; margin-bottom: 20px; }
+    h2 { color: darkgreen; }
+    .case { margin-bottom: 10px; padding: 10px; border: 1px dashed #4CAF50; }
+  </style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+  <h1>WCAG 2.2 4.x Robust - Compliant Test Cases Part 2</h1>
+
+  <!-- ======================= -->
+  <!-- 4.1 Parsing - Compliant Advanced -->
+  <!-- ======================= -->
+  <section>
+    <h2>4.1.1 Parsing - Advanced Compliant</h2>
+
+    <!-- TC-4.1-C-006: Correctly closed and nested form labels -->
+    <div class="case" id="TC-4.1-C-006">
+      <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email">
+      </form>
+    </div>
+
+    <!-- TC-4.1-C-007: Table with proper closing tags -->
+    <div class="case" id="TC-4.1-C-007">
+      <table border="1">
+        <tr><th>Name</th><th>Score</th></tr>
+        <tr><td>Alice</td><td>95</td></tr>
+      </table>
+    </div>
+
+    <!-- TC-4.1-C-008: Unique IDs -->
+    <div class="case" id="TC-4.1-C-008">
+      <p id="uniqueA">First</p>
+      <span id="uniqueB">Second</span>
+      <div id="uniqueC">Third</div>
+    </div>
+
+    <!-- TC-4.1-C-009: ARIA role applied correctly -->
+    <div class="case" id="TC-4.1-C-009" role="checkbox" aria-checked="false">
+      <p>Accessible checkbox implemented correctly</p>
+    </div>
+
+    <!-- TC-4.1-C-010: Correct HTML entity -->
+    <div class="case" id="TC-4.1-C-010">
+      <p>Correct entity: &amp;</p>
+    </div>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 4.2 Name, Role, Value - Compliant Advanced -->
+  <!-- ======================= -->
+  <section>
+    <h2>4.1.2 Name, Role, Value - Advanced Compliant</h2>
+
+    <!-- TC-4.2-C-006: Accessible slider -->
+    <div class="case" id="TC-4.2-C-006" role="slider" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-label="Volume">
+      <p>Slider with proper ARIA properties</p>
+    </div>
+
+    <!-- TC-4.2-C-007: Tabs with proper roles -->
+    <div class="case" id="TC-4.2-C-007">
+      <div role="tablist">
+        <button role="tab" aria-selected="true" aria-controls="panel1">Tab 1</button>
+        <button role="tab" aria-selected="false" aria-controls="panel2">Tab 2</button>
+      </div>
+      <div id="panel1" role="tabpanel">Content 1</div>
+      <div id="panel2" role="tabpanel">Content 2</div>
+    </div>
+
+    <!-- TC-4.2-C-008: Checkbox with label -->
+    <div class="case" id="TC-4.2-C-008">
+      <label><input type="checkbox"> Accept Terms</label>
+    </div>
+
+    <!-- TC-4.2-C-009: Input with label -->
+    <div class="case" id="TC-4.2-C-009">
+      <label for="username">Username:</label>
+      <input type="text" id="username">
+    </div>
+
+    <!-- TC-4.2-C-010: Icon button with aria-label -->
+    <div class="case" id="TC-4.2-C-010">
+      <button aria-label="Settings"><img src="icon.png" alt=""></button>
+    </div>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 4.3 Status Messages - Compliant Advanced -->
+  <!-- ======================= -->
+  <section>
+    <h2>4.1.3 Status Messages - Advanced Compliant</h2>
+
+    <!-- TC-4.3-C-006: Alert with aria-live -->
+    <div class="case" id="TC-4.3-C-006" aria-live="assertive">
+      <p>Error occurred!</p>
+    </div>
+
+    <!-- TC-4.3-C-007: Live region visible to assistive tech -->
+    <div class="case" id="TC-4.3-C-007" aria-live="polite">
+      <p>Updates visible programmatically</p>
+    </div>
+
+    <!-- TC-4.3-C-008: Unique live regions -->
+    <div class="case" id="TC-4.3-C-008" aria-live="polite">
+      <p>Live region 1</p>
+    </div>
+    <div class="case" id="TC-4.3-C-009" aria-live="polite">
+      <p>Live region 2</p>
+    </div>
+
+    <!-- TC-4.3-C-010: Programmatically available status -->
+    <div class="case" id="TC-4.3-C-010" aria-live="assertive">
+      <p>Notification content properly announced</p>
+    </div>
+
+  </section>
+
+</body>
+</html>

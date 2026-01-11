@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCAG 2.2 3.x Understandable - Compliant Test Cases Part 3</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    section { border: 1px solid #4CAF50; padding: 15px; margin-bottom: 20px; }
+    h2 { color: darkgreen; }
+    .case { margin-bottom: 10px; padding: 10px; border: 1px dashed #4CAF50; }
+  </style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+  <h1>WCAG 2.2 3.x Understandable - Compliant Test Cases Part 3</h1>
+
+  <!-- ======================= -->
+  <!-- 3.1 Readable - Advanced Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.1 Readable - Advanced Compliant</h2>
+
+    <!-- TC-3.1-C-017: Plain language, jargon explained -->
+    <div class="case" id="TC-3.1-C-017">
+      <p>Coordinated strategies across multiple platforms improve resource allocation and encourage innovation.</p>
+    </div>
+
+    <!-- TC-3.1-C-018: Multi-language content with lang attributes -->
+    <p lang="en">English text here.</p>
+    <p lang="es">Español text aquí.</p>
+    <p lang="fr">Français texte ici.</p>
+
+    <!-- TC-3.1-C-019: Table with caption and summary -->
+    <table border="1" summary="Student names and their Math and English scores">
+      <caption>Student Scores</caption>
+      <tr><th>Name</th><th>Math</th><th>English</th></tr>
+      <tr><td>Alice</td><td>90</td><td>85</td></tr>
+      <tr><td>Bob</td><td>88</td><td>92</td></tr>
+    </table>
+
+    <!-- TC-3.1-C-020: Icon buttons with aria-label -->
+    <button aria-label="Settings"><img src="icon.png" alt=""></button>
+
+    <!-- TC-3.1-C-021: Paragraphs broken into readable chunks -->
+    <p>Our services have multiple benefits:</p>
+    <ul>
+      <li>Easy to understand</li>
+      <li>Clear guidance</li>
+      <li>Structured layout</li>
+    </ul>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 3.2 Predictable - Advanced Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.2 Predictable - Advanced Compliant</h2>
+
+    <!-- TC-3.2-C-011: Modal with ARIA roles and focus management -->
+    <div role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <h2 id="modalTitle">Dialog Title</h2>
+      <p>This modal opens as expected when user requests it.</p>
+      <button onclick="this.closest('[role=dialog]').style.display='none';">Close</button>
+    </div>
+
+    <!-- TC-3.2-C-012: Dynamic content with live region -->
+    <div id="liveNews" aria-live="polite">
+      <p>Initial news content.</p>
+    </div>
+    <script>
+      setTimeout(()=>{
+        document.getElementById('liveNews').innerHTML="<p>Breaking news announced via ARIA live region.</p>";
+      },2000);
+    </script>
+
+    <!-- TC-3.2-C-013: Multi-step wizard with progress indicator -->
+    <div role="form" aria-labelledby="wizardTitle">
+      <h2 id="wizardTitle">Step 1 of 3</h2>
+      <form>
+        <label for="step1">Enter Step 1 Info:</label>
+        <input type="text" id="step1">
+        <button type="button" onclick="alert('Next step');">Next</button>
+      </form>
+    </div>
+
+    <!-- TC-3.2-C-014: Logical focus order -->
+    <input type="text" id="first">
+    <input type="text" id="second">
+    <p>Focus order follows natural sequence.</p>
+
+    <!-- TC-3.2-C-015: Consistent navigation labels -->
+    <nav>
+      <ul>
+        <li><a href="page1.html">Previous</a></li>
+        <li><a href="page2.html">Next</a></li>
+      </ul>
+    </nav>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 3.3 Input Assistance - Advanced Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.3 Input Assistance - Advanced Compliant</h2>
+
+    <!-- TC-3.3-C-011: Nested forms avoided, guidance provided -->
+    <form>
+      <label for="first">First Name:</label>
+      <input type="text" id="first">
+      <label for="last">Last Name:</label>
+      <input type="text" id="last">
+      <button type="submit">Submit</button>
+      <p>All fields are required and guidance is provided.</p>
+    </form>
+
+    <!-- TC-3.3-C-012: Multi-step form with step indicator -->
+    <div role="form" aria-labelledby="multiStep">
+      <h2 id="multiStep">Step 1 of 3</h2>
+      <form>
+        <label for="step1">Step 1 Input:</label>
+        <input type="text" id="step1">
+        <button type="button" onclick="alert('Next step');">Next</button>
+      </form>
+    </div>
+
+    <!-- TC-3.3-C-013: Accessible CAPTCHA alternative -->
+    <p>Enter CAPTCHA code (or use audio option):</p>
+    <img src="captcha.png" alt="CAPTCHA code">
+    <input type="text">
+
+    <!-- TC-3.3-C-014: Required fields clearly indicated -->
+    <form>
+      <label for="email">Email <span aria-hidden="true">*</span></label>
+      <input type="email" id="email" required>
+    </form>
+
+    <!-- TC-3.3-C-015: Persistent error messages -->
+    <form id="zipForm">
+      <label for="zip">ZIP Code:</label>
+      <input type="text" id="zip">
+      <p id="zipError" style="color:red; display:none;">Enter a valid ZIP code.</p>
+      <button type="submit">Submit</button>
+    </form>
+    <script>
+      document.getElementById('zipForm').onsubmit = function(e){
+        e.preventDefault();
+        document.getElementById('zipError').style.display='block';
+      };
+    </script>
+
+  </section>
+
+</body>
+</html>

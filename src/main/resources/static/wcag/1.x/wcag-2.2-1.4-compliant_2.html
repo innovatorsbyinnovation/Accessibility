@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WCAG 2.2 – 1.4 Reflow & Non-text Contrast (COMPLIANT)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-size:16px; line-height:1.5; }
+  .flex-container { display:flex; flex-wrap:wrap; gap:10px; }
+  .flex-box { flex:1 1 150px; padding:10px; border:1px solid #333; background:#f5f5f5; }
+  .btn { padding:8px 16px; font-size:1rem; background:#005fcc; color:#fff; border:none; }
+  .btn:focus { outline:3px solid #ffbf47; outline-offset:2px; }
+  .low-contrast-safe { color:#111; background:#eee; border:2px solid #333; }
+  table { width:100%; border-collapse:collapse; }
+  td, th { border:1px solid #333; padding:8px; }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.2 – 1.4.x Part 3 COMPLIANT Test Cases</h1>
+
+<!-- ===================== 1.4.10 Reflow ===================== -->
+
+<section id="TC-1.4.3-C-001">
+  <h2>Flexible container with wrapping</h2>
+  <div class="flex-container">
+    <div class="flex-box">Box 1</div>
+    <div class="flex-box">Box 2</div>
+    <div class="flex-box">Box 3</div>
+  </div>
+</section>
+
+<section id="TC-1.4.3-C-002">
+  <h2>Two-column responsive layout</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;">
+    <div style="flex:1 1 200px;">Left content</div>
+    <div style="flex:1 1 200px;">Right content</div>
+  </div>
+</section>
+
+<section id="TC-1.4.3-C-003">
+  <h2>Navigation menu wraps on small screens</h2>
+  <nav style="display:flex;flex-wrap:wrap;gap:5px;">
+    <a href="#">Home</a>
+    <a href="#">Products</a>
+    <a href="#">Support</a>
+  </nav>
+</section>
+
+<section id="TC-1.4.3-C-004">
+  <h2>Table resizes without clipping</h2>
+  <table>
+    <tr><th>Header 1</th><th>Header 2</th></tr>
+    <tr><td>Data 1</td><td>Data 2</td></tr>
+  </table>
+</section>
+
+<section id="TC-1.4.3-C-005">
+  <h2>Card layout scales with container width</h2>
+  <div class="flex-container">
+    <div class="flex-box">Card 1</div>
+    <div class="flex-box">Card 2</div>
+    <div class="flex-box">Card 3</div>
+  </div>
+</section>
+
+<section id="TC-1.4.3-C-006">
+  <h2>Sidebar and main content responsive</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;">
+    <aside style="flex:1 1 200px;">Sidebar</aside>
+    <main style="flex:2 1 400px;">Main content</main>
+  </div>
+</section>
+
+<section id="TC-1.4.3-C-007">
+  <h2>Form labels and inputs scale with container</h2>
+  <form style="max-width:400px;">
+    <label for="name">Name:</label>
+    <input id="name" type="text" style="width:100%;">
+  </form>
+</section>
+
+<section id="TC-1.4.3-C-008">
+  <h2>Buttons resize naturally on zoom</h2>
+  <button class="btn">Submit Form</button>
+</section>
+
+<section id="TC-1.4.3-C-009">
+  <h2>Footer text reflows properly</h2>
+  <footer style="width:100%;max-width:600px;">© 2026 Example Corporation</footer>
+</section>
+
+<section id="TC-1.4.3-C-010">
+  <h2>Absolute elements avoided; flex used</h2>
+  <div style="display:flex;flex-wrap:wrap;">
+    <div>Element 1</div>
+    <div>Element 2</div>
+  </div>
+</section>
+
+<!-- ===================== 1.4.11 Non-text Contrast ===================== -->
+
+<section id="TC-1.4.3-C-011">
+  <h2>Button with strong background/text contrast</h2>
+  <button class="btn">Pay Now</button>
+</section>
+
+<section id="TC-1.4.3-C-012">
+  <h2>Checkbox with visible border</h2>
+  <input type="checkbox" style="border:2px solid #333;">
+</section>
+
+<section id="TC-1.4.3-C-013">
+  <h2>Radio button clearly visible</h2>
+  <input type="radio" style="accent-color:#005fcc;">
+</section>
+
+<section id="TC-1.4.3-C-014">
+  <h2>Input field strong contrast border</h2>
+  <input type="text" style="border:2px solid #333;">
+</section>
+
+<section id="TC-1.4.3-C-015">
+  <h2>Dropdown menu high contrast</h2>
+  <select style="background:#fff;color:#000;border:2px solid #333;">
+    <option>Option 1</option>
+    <option>Option 2</option>
+  </select>
+</section>
+
+<section id="TC-1.4.3-C-016">
+  <h2>Icon-only button with label</h2>
+  <button aria-label="Notifications" style="background:#005fcc;color:#fff;">🔔</button>
+</section>
+
+<section id="TC-1.4.3-C-017">
+  <h2>Input focus clearly visible</h2>
+  <input type="text" class="btn" placeholder="Enter name">
+</section>
+
+<section id="TC-1.4.3-C-018">
+  <h2>Progress bar with sufficient contrast</h2>
+  <progress value="40" max="100" style="accent-color:#005fcc;"></progress>
+</section>
+
+<section id="TC-1.4.3-C-019">
+  <h2>Slider track clearly visible</h2>
+  <input type="range" style="accent-color:#005fcc;">
+</section>
+
+<section id="TC-1.4.3-C-020">
+  <h2>Tabs with strong contrast and focus</h2>
+  <button style="border:2px solid #333;">Tab 1</button>
+  <button style="border:2px solid #333;">Tab 2</button>
+</section>
+
+<!-- ===================== Additional Compliant Reflow & Contrast ===================== -->
+
+<section id="TC-1.4.3-C-021">
+  <h2>Breadcrumbs wrap and maintain spacing</h2>
+  <nav style="display:flex;flex-wrap:wrap;gap:5px;">
+    <a href="#">Home</a> &gt;
+    <a href="#">Category</a> &gt;
+    <a href="#">Product</a>
+  </nav>
+</section>
+
+<section id="TC-1.4.3-C-022">
+  <h2>Tooltip text accessible and visible</h2>
+  <span title="Enter username">Username</span>
+</section>
+
+<section id="TC-1.4.3-C-023">
+  <h2>Header text reflows without overlapping logo</h2>
+  <header style="display:flex;flex-wrap:wrap;gap:5px;">
+    <img src="logo.png" alt="">
+    <span>Company Portal</span>
+  </header>
+</section>
+
+<section id="TC-1.4.3-C-024">
+  <h2>Table wraps content</h2>
+  <table>
+    <tr><td>Long content wraps automatically</td></tr>
+  </table>
+</section>
+
+<section id="TC-1.4.3-C-025">
+  <h2>Image map with alternative links</h2>
+  <img src="map.png" usemap="#map" alt="Clickable map">
+  <map name="map">
+    <area shape="rect" coords="0,0,50,50" href="#" alt="Region 1">
+  </map>
+</section>
+
+<section id="TC-1.4.3-C-026">
+  <h2>Modal dialog scales properly</h2>
+  <div style="max-width:90%;padding:10px;border:1px solid #333;">
+    Modal content
+  </div>
+</section>
+
+<section id="TC-1.4.3-C-027">
+  <h2>Dropdown menu responsive</h2>
+  <select style="width:100%;max-width:300px;">
+    <option>Option 1</option>
+    <option>Option 2</option>
+  </select>
+</section>
+
+<section id="TC-1.4.3-C-028">
+  <h2>Card grid responsive</h2>
+  <div class="flex-container">
+    <div class="flex-box">Card 1</div>
+    <div class="flex-box">Card 2</div>
+    <div class="flex-box">Card 3</div>
+  </div>
+</section>
+
+<section id="TC-1.4.3-C-029">
+  <h2>Pagination buttons visible and wrap</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:5px;">
+    <button>1</button>
+    <button>2</button>
+    <button>3</button>
+  </div>
+</section>
+
+<section id="TC-1.4.3-C-030">
+  <h2>Absolute positioning avoided for responsive design</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:10px;">
+    <div>Header</div>
+    <div>Main content</div>
+  </div>
+</section>
+
+<section id="TC-1.4.3-C-031">
+  <h2>Form error icons high contrast</h2>
+  <span style="color:red;">⚠</span> Error field
+</section>
+
+<section id="TC-1.4.3-C-032">
+  <h2>Stepper buttons visible and accessible</h2>
+  <button class="btn">+</button>
+  <button class="btn">-</button>
+</section>
+
+<section id="TC-1.4.3-C-033">
+  <h2>Slider thumb strong contrast</h2>
+  <input type="range" style="accent-color:#005fcc;">
+</section>
+
+<section id="TC-1.4.3-C-034">
+  <h2>Breadcrumb focus indicator visible</h2>
+  <nav>
+    <a href="#" style="outline:3px solid #ffbf47;">Home</a>
+  </nav>
+</section>
+
+<section id="TC-1.4.3-C-035">
+  <h2>Notification badge readable</h2>
+  <span style="background:#005fcc;color:#fff;padding:4px;">3</span>
+</section>
+
+<section id="TC-1.4.3-C-036">
+  <h2>Accordion header high contrast</h2>
+  <div style="color:#111;">Section 1</div>
+</section>
+
+<section id="TC-1.4.3-C-037">
+  <h2>Tabs reflow properly</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:5px;">
+    <button class="btn">Tab 1</button>
+    <button class="btn">Tab 2</button>
+  </div>
+</section>
+
+<section id="TC-1.4.3-C-038">
+  <h2>Footer buttons scale and wrap</h2>
+  <div style="display:flex;flex-wrap:wrap;gap:5px;">
+    <button class="btn">Cancel</button>
+    <button class="btn">Save Changes</button>
+  </div>
+</section>
+
+<section id="TC-1.4.3-C-039">
+  <h2>Icon menu high contrast</h2>
+  <span style="color:#005fcc;">☰</span>
+</section>
+
+<section id="TC-1.4.3-C-040">
+  <h2>Card text readable over background</h2>
+  <div style="background:#f5f5f5;color:#111;padding:10px;border:1px solid #333;">
+    Readable card text
+  </div>
+</section>
+
+</body>
+</html>

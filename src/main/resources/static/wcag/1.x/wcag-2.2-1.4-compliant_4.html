@@ -1,0 +1,332 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WCAG 2.2 – 1.4 Part 5 COMPLIANT</title>
+<style>
+  body { font-size:16px; line-height:1.5; color:#222; background:#fff; }
+  
+  /* Buttons & links */
+  .btn { padding:8px 16px; font-size:1rem; background:#005fcc; color:#fff; border:none; border-radius:4px; }
+  .btn:focus { outline:3px solid #ffbf47; outline-offset:2px; }
+
+  a { color:#005fcc; text-decoration:underline; }
+  a:focus { outline:3px solid #ffbf47; outline-offset:2px; }
+
+  /* Input fields */
+  input, select, textarea { border:1px solid #555; padding:6px; }
+  input:focus, select:focus, textarea:focus { outline:3px solid #ffbf47; outline-offset:2px; }
+
+  /* Landmarks */
+  header, main, nav, footer, aside { padding:5px; margin:5px 0; border:1px solid #ccc; }
+
+  /* Tooltip */
+  .tooltip { position:relative; display:inline-block; }
+  .tooltip span {
+    visibility:hidden; width:200px; background:#333; color:#fff; padding:5px; border-radius:4px; position:absolute; z-index:1; top:100%; left:0;
+  }
+  .tooltip:hover span, .tooltip:focus-within span { visibility:visible; }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.2 – 1.4.x Part 5 COMPLIANT Test Cases</h1>
+
+<!-- ===================== 1.4.11 & 2.4.7 Focus ===================== -->
+
+<section id="TC-1.4.5-C-001">
+  <h2>Button with visible focus</h2>
+  <button class="btn">Submit</button>
+</section>
+
+<section id="TC-1.4.5-C-002">
+  <h2>Link with sufficient contrast and focus</h2>
+  <a href="#">Read more</a>
+</section>
+
+<section id="TC-1.4.5-C-003">
+  <h2>Input field with visible focus</h2>
+  <input type="text" placeholder="Enter name">
+</section>
+
+<section id="TC-1.4.5-C-004">
+  <h2>Checkbox with focus indicator</h2>
+  <input type="checkbox" id="chk1"><label for="chk1">Option</label>
+</section>
+
+<section id="TC-1.4.5-C-005">
+  <h2>Radio button with visible focus</h2>
+  <input type="radio" name="radio1" id="r1"><label for="r1">Choice 1</label>
+</section>
+
+<!-- ===================== ARIA landmarks proper usage ===================== -->
+
+<section id="TC-1.4.5-C-006">
+  <h2>Header landmark correctly used</h2>
+  <header role="banner">
+    <h1>Website Header</h1>
+  </header>
+</section>
+
+<section id="TC-1.4.5-C-007">
+  <h2>Main landmark correctly used</h2>
+  <main role="main">
+    <p>Main content of the page</p>
+  </main>
+</section>
+
+<section id="TC-1.4.5-C-008">
+  <h2>Navigation landmark correctly used</h2>
+  <nav role="navigation">
+    <a href="#">Home</a> |
+    <a href="#">About</a>
+  </nav>
+</section>
+
+<section id="TC-1.4.5-C-009">
+  <h2>Footer landmark correctly used</h2>
+  <footer role="contentinfo">
+    <p>Footer content</p>
+  </footer>
+</section>
+
+<section id="TC-1.4.5-C-010">
+  <h2>Aside landmark correctly used</h2>
+  <aside role="complementary">
+    <p>Related content</p>
+  </aside>
+</section>
+
+<!-- ===================== Interactive elements with focus & contrast ===================== -->
+
+<section id="TC-1.4.5-C-011">
+  <h2>Dropdown with visible focus</h2>
+  <select>
+    <option>Option 1</option>
+    <option>Option 2</option>
+  </select>
+</section>
+
+<section id="TC-1.4.5-C-012">
+  <h2>Tabs with focus indicators</h2>
+  <button class="btn">Tab 1</button>
+  <button class="btn">Tab 2</button>
+</section>
+
+<section id="TC-1.4.5-C-013">
+  <h2>Accordion button with focus</h2>
+  <button class="btn">Section 1</button>
+</section>
+
+<section id="TC-1.4.5-C-014">
+  <h2>Modal dialog with focus trapped</h2>
+  <div role="dialog" aria-modal="true">
+    <button class="btn">Close</button>
+  </div>
+</section>
+
+<section id="TC-1.4.5-C-015">
+  <h2>Slider with visible focus</h2>
+  <input type="range">
+</section>
+
+<section id="TC-1.4.5-C-016">
+  <h2>Checkboxes properly labeled and focusable</h2>
+  <input type="checkbox" id="chk2"><label for="chk2">Option 2</label>
+  <input type="checkbox" id="chk3"><label for="chk3">Option 3</label>
+</section>
+
+<section id="TC-1.4.5-C-017">
+  <h2>Link with sufficient contrast and focus</h2>
+  <a href="#" style="color:#005fcc;">Privacy</a>
+</section>
+
+<section id="TC-1.4.5-C-018">
+  <h2>Skip to main link visible on focus</h2>
+  <a href="#main" style="position:absolute; top:-1000px;" onfocus="this.style.top='0';">Skip to main content</a>
+</section>
+
+<section id="TC-1.4.5-C-019">
+  <h2>Breadcrumb navigation with focus indicators</h2>
+  <nav aria-label="breadcrumb">
+    <a href="#">Home</a> &gt; <a href="#">Category</a>
+  </nav>
+</section>
+
+<section id="TC-1.4.5-C-020">
+  <h2>Pagination links focusable and visible</h2>
+  <div>
+    <a href="#">1</a>
+    <a href="#">2</a>
+  </div>
+</section>
+
+<!-- ===================== Additional compliant interactive & ARIA cases ===================== -->
+
+<section id="TC-1.4.5-C-021">
+  <h2>Tooltip accessible via keyboard</h2>
+  <div class="tooltip" tabindex="0">
+    Hover or focus
+    <span>Tooltip info</span>
+  </div>
+</section>
+
+<section id="TC-1.4.5-C-022">
+  <h2>Form input with label and visible focus</h2>
+  <label for="email">Email</label>
+  <input id="email" type="email">
+</section>
+
+<section id="TC-1.4.5-C-023">
+  <h2>Image button with alt text and focus</h2>
+  <button><img src="icon.png" alt="Settings"></button>
+</section>
+
+<section id="TC-1.4.5-C-024">
+  <h2>Interactive SVG with focus and aria-label</h2>
+  <svg width="50" height="50" role="img" aria-label="Interactive icon"><circle cx="25" cy="25" r="20" fill="#005fcc"/></svg>
+</section>
+
+<section id="TC-1.4.5-C-025">
+  <h2>Form error messages associated via aria-describedby</h2>
+  <input id="username" type="text" aria-describedby="err1">
+  <span id="err1" style="color:red;">Username required</span>
+</section>
+
+<section id="TC-1.4.5-C-026">
+  <h2>Accordion with aria-expanded and focus</h2>
+  <button aria-expanded="false">Section 1</button>
+</section>
+
+<section id="TC-1.4.5-C-027">
+  <h2>Navigation menu focusable and high contrast</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+  </nav>
+</section>
+
+<section id="TC-1.4.5-C-028">
+  <h2>Tabs with aria-selected and visible focus</h2>
+  <button aria-selected="true" class="btn">Tab 1</button>
+  <button aria-selected="false" class="btn">Tab 2</button>
+</section>
+
+<section id="TC-1.4.5-C-029">
+  <h2>Footer links focusable with sufficient contrast</h2>
+  <footer>
+    <a href="#">Privacy</a> | <a href="#">Terms</a>
+  </footer>
+</section>
+
+<section id="TC-1.4.5-C-030">
+  <h2>Modal dialog with close button focusable</h2>
+  <div role="dialog" aria-modal="true">
+    <button class="btn">Close</button>
+  </div>
+</section>
+
+<section id="TC-1.4.5-C-031">
+  <h2>Slider with accessible labels and visible focus</h2>
+  <input type="range" aria-label="Volume">
+</section>
+
+<section id="TC-1.4.5-C-032">
+  <h2>Interactive map regions focusable</h2>
+  <svg width="100" height="100" role="img" aria-label="Map">
+    <a href="#"><circle cx="25" cy="25" r="20" fill="#005fcc"/></a>
+  </svg>
+</section>
+
+<section id="TC-1.4.5-C-033">
+  <h2>Tabs with keyboard navigation and focus</h2>
+  <button class="btn" tabindex="0">Tab 1</button>
+  <button class="btn" tabindex="0">Tab 2</button>
+</section>
+
+<section id="TC-1.4.5-C-034">
+  <h2>Accordion button with aria-controls and visible focus</h2>
+  <button aria-controls="section1">Section 1</button>
+</section>
+
+<section id="TC-1.4.5-C-035">
+  <h2>Tooltip accessible and readable on focus</h2>
+  <div class="tooltip" tabindex="0">
+    Focus me
+    <span>Tooltip content</span>
+  </div>
+</section>
+
+<section id="TC-1.4.5-C-036">
+  <h2>Form label spacing + tooltip guidance</h2>
+  <label class="tooltip" tabindex="0" for="user">
+    Username
+    <span>Enter your unique username</span>
+  </label>
+  <input id="user" type="text">
+</section>
+
+<section id="TC-1.4.5-C-037">
+  <h2>Table cells focusable with tooltips</h2>
+  <table border="1">
+    <tr>
+      <td class="tooltip" tabindex="0">
+        Data 1
+        <span>More info</span>
+      </td>
+      <td class="tooltip" tabindex="0">
+        Data 2
+        <span>More info</span>
+      </td>
+    </tr>
+  </table>
+</section>
+
+<section id="TC-1.4.5-C-038">
+  <h2>Inline text spacing and hover tooltip</h2>
+  <span class="tooltip" tabindex="0">
+    Important term
+    <span>Explanation of the term</span>
+  </span>
+</section>
+
+<section id="TC-1.4.5-C-039">
+  <h2>Card grid with spacing and accessible hover content</h2>
+  <div class="flex-container">
+    <div class="flex-box tooltip" tabindex="0">
+      Card 1
+      <span>Card 1 hover content</span>
+    </div>
+    <div class="flex-box tooltip" tabindex="0">
+      Card 2
+      <span>Card 2 hover content</span>
+    </div>
+  </div>
+</section>
+
+<section id="TC-1.4.5-C-040">
+  <h2>Header with focus and tooltip info</h2>
+  <h3 class="tooltip" tabindex="0">
+    Section Header
+    <span>Accessible info about header</span>
+  </h3>
+</section>
+
+</body>
+</html>

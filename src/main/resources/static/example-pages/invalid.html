@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="foobar">
+<head>
+  <title>Accessibility tools audit results - Invalid values and code - GDS accessibility team</title>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+  <h1>Accessibility Fails: Invalid Values and Code</h1>
+
+  <h2>Language of content</h2>
+  <h3>html element has an invalid value in the lang attribute</h3>
+  <div class="example">
+    <p>This page has a lang attribute set to an invalid value</p>
+  </div>
+</body>
+</html>

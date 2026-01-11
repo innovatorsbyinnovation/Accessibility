@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCAG 2.2 3.x Understandable - Compliant Test Cases</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    section { border: 1px solid #4CAF50; padding: 15px; margin-bottom: 20px; }
+    h2 { color: darkgreen; }
+    .case { margin-bottom: 10px; padding: 10px; border: 1px dashed #4CAF50; }
+  </style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+  <h1>WCAG 2.2 3.x Understandable - Compliant Test Cases</h1>
+
+  <!-- ======================= -->
+  <!-- 3.1 Readable - Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.1 Readable - Compliant Examples</h2>
+
+    <!-- TC-3.1-C-001: Plain language, no jargon -->
+    <!-- SC 3.1.1, Technique G94 -->
+    <div class="case" id="TC-3.1-C-001">
+      <p>We will improve our core services to better meet customer needs.</p>
+    </div>
+
+    <!-- TC-3.1-C-002: Abbreviations explained -->
+    <!-- SC 3.1.2, Technique G87 -->
+    <div class="case" id="TC-3.1-C-002">
+      <p>The patient must undergo an <abbr title="Electrocardiogram">ECG</abbr> and <abbr title="Complete Blood Count">CBC</abbr> before discharge.</p>
+    </div>
+
+    <!-- TC-3.1-C-003: Complex concept simplified -->
+    <!-- SC 3.1.5, Technique G159 -->
+    <div class="case" id="TC-3.1-C-003">
+      <p>Using proven methods helps us work more efficiently in different situations.</p>
+    </div>
+
+    <!-- TC-3.1-C-004: Page declares language -->
+    <!-- SC 3.1.1, Technique H57 -->
+    <html lang="en">
+      <head><script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+      <body oncontextmenu="return false;">
+        <p>This paragraph has a language declaration.</p>
+      </body>
+    </html>
+
+    <!-- TC-3.1-C-005: Image with alt text -->
+    <!-- SC 1.1.1, Technique H37 -->
+    <div class="case" id="TC-3.1-C-005">
+      <img src="diagram.png" alt="Flowchart showing project steps.">
+      <p>Diagram with descriptive alternative text.</p>
+    </div>
+
+    <!-- TC-3.1-C-006: High contrast text -->
+    <!-- SC 1.4.3, Technique G18 -->
+    <div class="case" id="TC-3.1-C-006" style="color: black; background-color: white;">
+      <p>High contrast text ensures readability.</p>
+    </div>
+
+    <!-- TC-3.1-C-007: Proper heading order -->
+    <!-- SC 3.1.1, Technique H42 -->
+    <div class="case" id="TC-3.1-C-007">
+      <h1>Main Heading</h1>
+      <h2>Subheading</h2>
+      <h3>Sub-subheading</h3>
+      <p>Logical heading sequence.</p>
+    </div>
+
+    <!-- TC-3.1-C-008: Table with caption -->
+    <!-- SC 3.1.2, Technique H63 -->
+    <div class="case" id="TC-3.1-C-008">
+      <table border="1">
+        <caption>List of Employees and Ages</caption>
+        <tr><th>Name</th><th>Age</th></tr>
+        <tr><td>Alice</td><td>30</td></tr>
+        <tr><td>Bob</td><td>25</td></tr>
+      </table>
+      <p>Table includes caption for context.</p>
+    </div>
+
+    <!-- TC-3.1-C-009: Form fields with clear labels -->
+    <!-- SC 3.3.2, Technique H44 -->
+    <div class="case" id="TC-3.1-C-009">
+      <form>
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email">
+      </form>
+      <p>Clear label indicates expected input.</p>
+    </div>
+
+    <!-- TC-3.1-C-010: Video with captions -->
+    <!-- SC 1.2.2, Technique G87 -->
+    <div class="case" id="TC-3.1-C-010">
+      <video controls>
+        <source src="video.mp4" type="video/mp4">
+        <track kind="captions" src="video_captions.vtt" srclang="en" label="English">
+      </video>
+      <p>Video includes synchronized captions.</p>
+    </div>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 3.2 Predictable - Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.2 Predictable - Compliant Examples</h2>
+
+    <!-- TC-3.2-C-001: Navigation behavior consistent -->
+    <!-- SC 3.2.1, Technique G84 -->
+    <div class="case" id="TC-3.2-C-001">
+      <nav>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+      <p>Links behave as expected.</p>
+    </div>
+
+    <!-- TC-3.2-C-002: Logical focus order -->
+    <!-- SC 3.2.2, Technique G91 -->
+    <div class="case" id="TC-3.2-C-002">
+      <form>
+        <input type="text" id="first">
+        <input type="text" id="second">
+        <input type="text" id="third">
+      </form>
+      <p>Tabbing follows sequential order.</p>
+    </div>
+
+    <!-- TC-3.2-C-003: No unexpected popups -->
+    <!-- SC 3.2.2, Technique F96 -->
+    <div class="case" id="TC-3.2-C-003">
+      <a href="popup.html" target="_blank" rel="noopener">Open popup intentionally</a>
+      <p>User expects the new window.</p>
+    </div>
+
+    <!-- TC-3.2-C-004: Dynamic updates announced -->
+    <!-- SC 3.2.3, Technique ARIA13 -->
+    <div class="case" id="TC-3.2-C-004">
+      <div id="liveContent" aria-live="polite">
+        <p>Initial content.</p>
+      </div>
+      <script>
+        setTimeout(() => {
+          document.getElementById('liveContent').innerHTML = "<p>Updated content announced to assistive tech.</p>";
+        }, 3000);
+      </script>
+    </div>
+
+    <!-- TC-3.2-C-005: Consistent navigation labels -->
+    <!-- SC 3.2.2, Technique G86 -->
+    <div class="case" id="TC-3.2-C-005">
+      <nav>
+        <ul>
+          <li><a href="previous.html">Previous</a></li>
+          <li><a href="next.html">Next</a></li>
+        </ul>
+      </nav>
+      <p>Navigation labels consistent across pages.</p>
+    </div>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 3.3 Input Assistance - Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.3 Input Assistance - Compliant Examples</h2>
+
+    <!-- TC-3.3-C-001: Required fields indicated -->
+    <!-- SC 3.3.1, Technique H44 -->
+    <div class="case" id="TC-3.3-C-001">
+      <form>
+        <label for="email">Email Address <span aria-hidden="true">*</span></label>
+        <input type="email" id="email" name="email" required>
+      </form>
+      <p>Required field is visually and programmatically indicated.</p>
+    </div>
+
+    <!-- TC-3.3-C-002: Clear error messages -->
+    <!-- SC 3.3.3, Technique G83 -->
+    <div class="case" id="TC-3.3-C-002">
+      <form id="usernameForm">
+        <label for="username">Username:</label>
+        <input type="text" id="username">
+        <button type="submit">Submit</button>
+        <p id="error" style="color:red; display:none;">Username must be at least 5 characters.</p>
+      </form>
+      <script>
+        document.getElementById('usernameForm').onsubmit = function(e){
+          e.preventDefault();
+          var val = document.getElementById('username').value;
+          if(val.length < 5){
+            document.getElementById('error').style.display='block';
+          }
+        }
+      </script>
+    </div>
+
+    <!-- TC-3.3-C-003: Suggestions for correction -->
+    <!-- SC 3.3.4, Technique H93 -->
+    <div class="case" id="TC-3.3-C-003">
+      <form>
+        <label for="zip">ZIP Code:</label>
+        <input type="text" id="zip" pattern="[0-9]{5}">
+        <p>Enter a 5-digit ZIP code, e.g., 12345.</p>
+      </form>
+    </div>
+
+    <!-- TC-3.3-C-004: Accessible CAPTCHA -->
+    <!-- SC 3.3.7, Technique H98 -->
+    <div class="case" id="TC-3.3-C-004">
+      <p>Enter the text you see below (or use audio alternative):</p>
+      <img src="captcha.png" alt="CAPTCHA code">
+      <input type="text">
+    </div>
+
+    <!-- TC-3.3-C-005: Autocomplete enabled where appropriate -->
+    <!-- SC 3.3.2, Technique H93 -->
+    <div class="case" id="TC-3.3-C-005">
+      <form>
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" autocomplete="name">
+      </form>
+    </div>
+
+  </section>
+
+</body>
+</html>

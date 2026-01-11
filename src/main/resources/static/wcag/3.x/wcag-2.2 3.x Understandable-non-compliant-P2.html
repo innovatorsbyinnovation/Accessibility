@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WCAG 2.2 3.x Understandable - Non-Compliant Test Cases Part 2</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    section { border: 1px solid #ccc; padding: 15px; margin-bottom: 20px; }
+    h2 { color: darkred; }
+    .case { margin-bottom: 10px; padding: 10px; border: 1px dashed #aaa; }
+  </style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+  <h1>WCAG 2.2 3.x Understandable - Non-Compliant Test Cases Part 2</h1>
+
+  <!-- ======================= -->
+  <!-- 3.1 Readable - Additional Non-Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.1 Readable - Additional Non-Compliant</h2>
+
+    <!-- TC-3.1-NC-011: Excessive use of acronyms without explanation -->
+    <!-- SC 3.1.3, Technique G87 -->
+    <div class="case" id="TC-3.1-NC-011">
+      <p>The ROI of our KPI metrics exceeds expectations in the FY Q3 report.</p>
+    </div>
+
+    <!-- TC-3.1-NC-012: Form labels in another language without translation -->
+    <!-- SC 3.1.2, Technique H57 -->
+    <div class="case" id="TC-3.1-NC-012">
+      <form>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre">
+      </form>
+      <p>Label not translated for English readers.</p>
+    </div>
+
+    <!-- TC-3.1-NC-013: Long, dense paragraphs without structure -->
+    <!-- SC 3.1.1, Technique G82 -->
+    <div class="case" id="TC-3.1-NC-013">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat...</p>
+    </div>
+
+    <!-- TC-3.1-NC-014: Complex table with merged headers but no summary -->
+    <!-- SC 3.1.2, Technique H63 -->
+    <div class="case" id="TC-3.1-NC-014">
+      <table border="1">
+        <tr><th rowspan="2">Name</th><th colspan="2">Scores</th></tr>
+        <tr><th>Math</th><th>English</th></tr>
+        <tr><td>Alice</td><td>90</td><td>85</td></tr>
+      </table>
+      <p>No caption or summary to explain merged headers.</p>
+    </div>
+
+    <!-- TC-3.1-NC-015: Abbreviations in text without <abbr> -->
+    <!-- SC 3.1.2, Technique H59 -->
+    <div class="case" id="TC-3.1-NC-015">
+      <p>The CEO will meet the CFO tomorrow.</p>
+    </div>
+
+    <!-- TC-3.1-NC-016: Icons used without labels -->
+    <!-- SC 3.1.1, Technique H30 -->
+    <div class="case" id="TC-3.1-NC-016">
+      <button><img src="icon.png"></button>
+      <p>Button icon has no text or aria-label.</p>
+    </div>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 3.2 Predictable - Additional Non-Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.2 Predictable - Additional Non-Compliant</h2>
+
+    <!-- TC-3.2-NC-006: Hover changes page layout unexpectedly -->
+    <!-- SC 3.2.1, Technique G140 -->
+    <div class="case" id="TC-3.2-NC-006">
+      <div onmouseover="this.style.display='none';">Hover here</div>
+      <p>Hovering hides content unexpectedly.</p>
+    </div>
+
+    <!-- TC-3.2-NC-007: Inconsistent menu location -->
+    <!-- SC 3.2.2, Technique G86 -->
+    <div class="case" id="TC-3.2-NC-007">
+      <p>Page 1: menu top-left</p>
+      <p>Page 2: menu bottom-right</p>
+      <p>Navigation location inconsistent.</p>
+    </div>
+
+    <!-- TC-3.2-NC-008: Form submission triggers unexpected redirect -->
+    <!-- SC 3.2.2, Technique F96 -->
+    <div class="case" id="TC-3.2-NC-008">
+      <form action="javascript:window.location='thankyou.html';">
+        <input type="text" placeholder="Name">
+        <button type="submit">Submit</button>
+      </form>
+      <p>Redirect occurs without user expectation.</p>
+    </div>
+
+    <!-- TC-3.2-NC-009: Focus trap in modal -->
+    <!-- SC 3.2.2, Technique F97 -->
+    <div class="case" id="TC-3.2-NC-009">
+      <div role="dialog">
+        <button>Close</button>
+        <a href="#">Link 1</a>
+        <a href="#">Link 2</a>
+      </div>
+      <p>Keyboard focus cannot leave modal properly.</p>
+    </div>
+
+    <!-- TC-3.2-NC-010: Page layout changes unexpectedly on resize -->
+    <!-- SC 3.2.1, Technique G140 -->
+    <div class="case" id="TC-3.2-NC-010" style="width:100%; overflow:auto;">
+      <div style="width:2000px; background-color:lightblue;">Wide div causes scroll jump</div>
+    </div>
+
+  </section>
+
+  <!-- ======================= -->
+  <!-- 3.3 Input Assistance - Additional Non-Compliant -->
+  <!-- ======================= -->
+  <section>
+    <h2>3.3 Input Assistance - Additional Non-Compliant</h2>
+
+    <!-- TC-3.3-NC-006: Inline errors disappear too quickly -->
+    <!-- SC 3.3.3, Technique G83 -->
+    <div class="case" id="TC-3.3-NC-006">
+      <form>
+        <label for="phone">Phone:</label>
+        <input type="text" id="phone">
+        <button type="submit" onclick="alert('Error!');">Submit</button>
+      </form>
+      <p>Error alert disappears; user cannot read guidance.</p>
+    </div>
+
+    <!-- TC-3.3-NC-007: Form requires exact capitalization -->
+    <!-- SC 3.3.2, Technique H93 -->
+    <div class="case" id="TC-3.3-NC-007">
+      <form>
+        <label for="password">Password:</label>
+        <input type="text" id="password" pattern="[A-Z]{1}[a-z]{5}">
+      </form>
+      <p>No guidance; strict pattern may confuse user.</p>
+    </div>
+
+    <!-- TC-3.3-NC-008: Multi-step form with no step indicator -->
+    <!-- SC 3.3.1, Technique G84 -->
+    <div class="case" id="TC-3.3-NC-008">
+      <form>
+        <label for="step1">Step 1 Input:</label>
+        <input type="text" id="step1">
+        <button type="button">Next</button>
+      </form>
+      <p>No indication of how many steps remain.</p>
+    </div>
+
+    <!-- TC-3.3-NC-009: Autocomplete misused -->
+    <!-- SC 3.3.2, Technique H93 -->
+    <div class="case" id="TC-3.3-NC-009">
+      <form>
+        <label for="email">Email:</label>
+        <input type="email" id="email" autocomplete="nope">
+      </form>
+      <p>Incorrect autocomplete value prevents browser assistance.</p>
+    </div>
+
+    <!-- TC-3.3-NC-010: CAPTCHA without text alternatives or audio -->
+    <!-- SC 3.3.7, Technique H98 -->
+    <div class="case" id="TC-3.3-NC-010">
+      <p>Prove you are human:</p>
+      <img src="captcha.png">
+      <input type="text">
+      <p>No accessible alternative provided.</p>
+    </div>
+
+  </section>
+
+</body>
+</html>

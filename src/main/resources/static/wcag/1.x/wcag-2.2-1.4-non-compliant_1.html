@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WCAG 2.2 – 1.4 Resize Text & Images of Text (NON-COMPLIANT)</title>
+<style>
+  .fixed-text {
+    font-size:12px;
+  }
+  .fixed-height {
+    height:30px;
+    overflow:hidden;
+    border:1px solid #000;
+  }
+  .absolute-text {
+    position:absolute;
+    top:10px;
+    left:10px;
+  }
+  .image-text {
+    width:200px;
+  }
+  .px-button {
+    font-size:10px;
+    padding:5px;
+  }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.2 – 1.4.x Part 2 NON-COMPLIANT Test Cases</h1>
+
+<!-- ===================== 1.4.4 Resize Text ===================== -->
+
+<section id="TC-1.4.4-NC-001">
+  <h2>Fixed pixel font size</h2>
+  <p class="fixed-text">This text does not resize properly.</p>
+</section>
+
+<section id="TC-1.4.4-NC-002">
+  <h2>Text clipped at 200% zoom</h2>
+  <div class="fixed-height">
+    This text gets cut off when zoomed.
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-003">
+  <h2>Overflow hidden prevents resize</h2>
+  <div style="width:150px;height:40px;overflow:hidden;">
+    Resizing causes this text to disappear.
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-004">
+  <h2>Absolutely positioned text overlaps</h2>
+  <div style="position:relative;height:50px;">
+    <span class="absolute-text">Overlapping text</span>
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-005">
+  <h2>Inline text inside fixed container</h2>
+  <div style="height:25px;">
+    Inline content breaks on zoom.
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-006">
+  <h2>Navigation text overlaps</h2>
+  <nav style="height:30px;overflow:hidden;">
+    <a href="#">Home</a> | <a href="#">Products</a> | <a href="#">Support</a>
+  </nav>
+</section>
+
+<section id="TC-1.4.4-NC-007">
+  <h2>Form labels truncated</h2>
+  <label style="display:block;height:18px;overflow:hidden;">
+    Very long form label text
+  </label>
+</section>
+
+<section id="TC-1.4.4-NC-008">
+  <h2>Button text unreadable on zoom</h2>
+  <button class="px-button">Submit Order</button>
+</section>
+
+<section id="TC-1.4.4-NC-009">
+  <h2>Table text clipped</h2>
+  <table>
+    <tr>
+      <td style="height:20px;overflow:hidden;">Long table cell content</td>
+    </tr>
+  </table>
+</section>
+
+<section id="TC-1.4.4-NC-010">
+  <h2>Footer text disappears</h2>
+  <footer style="height:15px;overflow:hidden;">
+    © 2026 Example Corporation
+  </footer>
+</section>
+
+<section id="TC-1.4.4-NC-011">
+  <h2>Text inside SVG not resizable</h2>
+  <svg width="200" height="40">
+    <text x="10" y="25">SVG Text Label</text>
+  </svg>
+</section>
+
+<section id="TC-1.4.4-NC-012">
+  <h2>Canvas text without resize support</h2>
+  <canvas width="200" height="40"></canvas>
+</section>
+
+<section id="TC-1.4.4-NC-013">
+  <h2>Icon font scaled incorrectly</h2>
+  <span style="font-size:10px;">🔍 Search</span>
+</section>
+
+<section id="TC-1.4.4-NC-014">
+  <h2>Modal text clipped</h2>
+  <div style="height:40px;overflow:hidden;">
+    Modal dialog content text
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-015">
+  <h2>Breadcrumb text overlaps</h2>
+  <nav style="white-space:nowrap;">
+    Home > Category > Subcategory > Product
+  </nav>
+</section>
+
+<section id="TC-1.4.4-NC-016">
+  <h2>Tooltip text cut off</h2>
+  <span title="Very long tooltip explanation text">Hover me</span>
+</section>
+
+<section id="TC-1.4.4-NC-017">
+  <h2>Accordion header text clipped</h2>
+  <div style="height:20px;overflow:hidden;">
+    Accordion section title
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-018">
+  <h2>Text inside fixed-height card</h2>
+  <div style="height:50px;border:1px solid #000;">
+    Card description content
+  </div>
+</section>
+
+<section id="TC-1.4.4-NC-019">
+  <h2>Dropdown options unreadable</h2>
+  <select style="font-size:10px;">
+    <option>Very long option label</option>
+  </select>
+</section>
+
+<section id="TC-1.4.4-NC-020">
+  <h2>Header text overlaps logo</h2>
+  <header style="height:40px;">
+    <img src="logo.png" alt="">
+    <span>Company Portal</span>
+  </header>
+</section>
+
+<!-- ===================== 1.4.5 Images of Text ===================== -->
+
+<section id="TC-1.4.5-NC-021">
+  <h2>Image used instead of heading text</h2>
+  <img src="heading-text.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-022">
+  <h2>Button label as image</h2>
+  <img src="submit-button.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-023">
+  <h2>Navigation menu as images</h2>
+  <img src="home.png" alt="">
+  <img src="about.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-024">
+  <h2>Banner text embedded in image</h2>
+  <img src="sale-banner.png" alt="Sale">
+</section>
+
+<section id="TC-1.4.5-NC-025">
+  <h2>Form label as image</h2>
+  <img src="email-label.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-026">
+  <h2>SVG text without accessible alternative</h2>
+  <svg width="200" height="40">
+    <text x="10" y="25">SVG Button</text>
+  </svg>
+</section>
+
+<section id="TC-1.4.5-NC-027">
+  <h2>Canvas-based heading</h2>
+  <canvas width="300" height="60"></canvas>
+</section>
+
+<section id="TC-1.4.5-NC-028">
+  <h2>Price shown as image</h2>
+  <img src="price.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-029">
+  <h2>Error message embedded in image</h2>
+  <img src="error-text.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-030">
+  <h2>Text-based icon without text alternative</h2>
+  <img src="icon-text.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-031">
+  <h2>Chart labels as image text</h2>
+  <img src="chart-labels.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-032">
+  <h2>Call-to-action text as image</h2>
+  <img src="cta.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-033">
+  <h2>Login form title as image</h2>
+  <img src="login-title.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-034">
+  <h2>Pagination numbers as image</h2>
+  <img src="page-1.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-035">
+  <h2>Tooltip rendered as image</h2>
+  <img src="tooltip.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-036">
+  <h2>Badge text embedded in image</h2>
+  <img src="badge.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-037">
+  <h2>Watermark text as image</h2>
+  <img src="watermark.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-038">
+  <h2>Heading replaced by background image</h2>
+  <div style="background:url('heading.png');height:40px;"></div>
+</section>
+
+<section id="TC-1.4.5-NC-039">
+  <h2>Menu labels in sprite image</h2>
+  <img src="menu-sprite.png" alt="">
+</section>
+
+<section id="TC-1.4.5-NC-040">
+  <h2>Text embedded in decorative image</h2>
+  <img src="decorative-text.png" alt="">
+</section>
+
+</body>
+</html>

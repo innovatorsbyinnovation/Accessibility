@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>WCAG 2.x Operable – Navigable (Part 3)</title>
+<style>
+:focus {
+  outline:3px solid #ff9800;
+  outline-offset:2px;
+}
+.skip-link {
+  position:absolute;
+  left:-999px;
+}
+.skip-link:focus {
+  left:10px;
+  top:10px;
+  background:#000;
+  color:#fff;
+}
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+
+<body oncontextmenu="return false;">
+
+<a href="#main" class="skip-link" id="TC-2.4.1-C-201">Skip to main content</a>
+
+<h1>WCAG 2.x Operable – COMPLIANT (Part 3)</h1>
+
+<main id="main">
+
+<!-- ===================== 2.4.2 PAGE TITLED ===================== -->
+
+<section id="TC-2.4.2-C-202">
+<h2>Descriptive page title</h2>
+<p>Title reflects page purpose</p>
+</section>
+
+<!-- ===================== 2.4.3 FOCUS ORDER ===================== -->
+
+<section id="TC-2.4.3-C-203">
+<h2>Logical focus order</h2>
+<input placeholder="First">
+<input placeholder="Second">
+<input placeholder="Third">
+</section>
+
+<!-- ===================== 2.4.4 LINK PURPOSE ===================== -->
+
+<section id="TC-2.4.4-C-204">
+<h2>Clear link text</h2>
+<a href="report.pdf">Download Annual Report (PDF)</a>
+</section>
+
+<!-- ===================== 2.4.5 MULTIPLE WAYS ===================== -->
+
+<section id="TC-2.4.5-C-205">
+<h2>Multiple navigation options</h2>
+<nav>
+<a href="/sitemap.html">Sitemap</a>
+<a href="/search.html">Search</a>
+</nav>
+</section>
+
+<!-- ===================== 2.4.6 HEADINGS & LABELS ===================== -->
+
+<section id="TC-2.4.6-C-206">
+<h2>Descriptive headings</h2>
+<h3>Billing Information</h3>
+<h3>Shipping Address</h3>
+</section>
+
+<section id="TC-2.4.6-C-207">
+<h2>Clear form labels</h2>
+<label for="email">Email address</label>
+<input id="email">
+</section>
+
+<!-- ===================== 2.4.7 FOCUS VISIBLE ===================== -->
+
+<section id="TC-2.4.7-C-208">
+<h2>Visible focus</h2>
+<button>Focusable button</button>
+</section>
+
+<!-- ===================== 2.4.8 LOCATION ===================== -->
+
+<section id="TC-2.4.8-C-209">
+<h2>Breadcrumbs</h2>
+<nav aria-label="Breadcrumb">
+<a href="/">Home</a> ›
+<a href="/shop">Shop</a> ›
+<span>Checkout</span>
+</nav>
+</section>
+
+<!-- ===================== 2.4.9 LINK PURPOSE (AAA) ===================== -->
+
+<section id="TC-2.4.9-C-210">
+<h2>Accessible icon link</h2>
+<a href="settings.html" aria-label="Settings">⚙</a>
+</section>
+
+<!-- ===================== 2.4.10 SECTION HEADINGS ===================== -->
+
+<section id="TC-2.4.10-C-211">
+<h2>Well-structured content</h2>
+<h3>Overview</h3>
+<h3>Details</h3>
+</section>
+
+<!-- ===================== 2.4.11–13 FOCUS APPEARANCE ===================== -->
+
+<section id="TC-2.4.11-C-212">
+<h2>Minimum focus appearance</h2>
+<button>Focus meets size & contrast</button>
+</section>
+
+<section id="TC-2.4.12-C-213">
+<h2>Enhanced focus appearance</h2>
+<button style="outline:4px solid #000">High visibility</button>
+</section>
+
+<section id="TC-2.4.13-C-214">
+<h2>Focus not obscured</h2>
+<a href="#">Fully visible focus</a>
+</section>
+
+</main>
+</body>
+</html>

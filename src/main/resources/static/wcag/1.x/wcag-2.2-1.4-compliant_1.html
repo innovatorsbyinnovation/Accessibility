@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>WCAG 2.2 – 1.4 Resize Text & Images of Text (COMPLIANT)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body { font-size:16px; line-height:1.5; }
+  .rem-text { font-size:1rem; }
+  .em-text { font-size:1em; }
+  .responsive { width:100%; max-width:600px; }
+  .btn { padding:8px 16px; font-size:1rem; }
+</style>
+<script>
+	document.addEventListener('keydown', function(e) {
+		if (e.ctrlKey && (e.key === 'u' || e.key === 's' || e.key === 'c')) {
+			e.preventDefault();
+			alert('Viewing source is disabled!');
+		}
+	});
+	</script>
+<style>
+		body {
+		  user-select: none;
+		  -webkit-user-select: none;
+		  -moz-user-select: none;
+		}
+
+  </style></head>
+<body oncontextmenu="return false;">
+
+<h1>WCAG 2.2 – 1.4.x Part 2 COMPLIANT Test Cases</h1>
+
+<!-- ===================== 1.4.4 Resize Text ===================== -->
+
+<section id="TC-1.4-C2-001">
+  <h2>Text resizes using rem units</h2>
+  <p class="rem-text">This paragraph resizes with user settings or zoom.</p>
+</section>
+
+<section id="TC-1.4-C2-002">
+  <h2>Text resizes using em units</h2>
+  <p class="em-text">All text scales proportionally.</p>
+</section>
+
+<section id="TC-1.4-C2-003">
+  <h2>Flexible container allows zoom</h2>
+  <div class="responsive">Resizable container text</div>
+</section>
+
+<section id="TC-1.4-C2-004">
+  <h2>Navigation text scalable</h2>
+  <nav>
+    <a href="#">Home</a> | <a href="#">About</a> | <a href="#">Contact</a>
+  </nav>
+</section>
+
+<section id="TC-1.4-C2-005">
+  <h2>Form labels scale correctly</h2>
+  <label for="email">Email Address</label>
+  <input id="email" type="email">
+</section>
+
+<section id="TC-1.4-C2-006">
+  <h2>Button text resizable</h2>
+  <button class="btn">Submit</button>
+</section>
+
+<section id="TC-1.4-C2-007">
+  <h2>Table content scales</h2>
+  <table border="1">
+    <tr><th>Name</th><th>Score</th></tr>
+    <tr><td>John</td><td>90</td></tr>
+  </table>
+</section>
+
+<section id="TC-1.4-C2-008">
+  <h2>Header scales without clipping</h2>
+  <h2 class="rem-text">Main Heading</h2>
+</section>
+
+<section id="TC-1.4-C2-009">
+  <h2>Paragraph with line-height resizable</h2>
+  <p style="line-height:1.6;">This paragraph maintains spacing when zoomed.</p>
+</section>
+
+<section id="TC-1.4-C2-010">
+  <h2>List items scale proportionally</h2>
+  <ul>
+    <li>Item one</li>
+    <li>Item two</li>
+    <li>Item three</li>
+  </ul>
+</section>
+
+<section id="TC-1.4-C2-011">
+  <h2>Label and input scales</h2>
+  <label for="fname">First Name</label>
+  <input id="fname" type="text">
+</section>
+
+<section id="TC-1.4-C2-012">
+  <h2>Responsive modal text</h2>
+  <div style="width:80%;max-width:400px;">
+    <p>Modal content resizes correctly.</p>
+  </div>
+</section>
+
+<section id="TC-1.4-C2-013">
+  <h2>Breadcrumb resizes</h2>
+  <nav>Home &gt; Category &gt; Product</nav>
+</section>
+
+<section id="TC-1.4-C2-014">
+  <h2>Footer text scales</h2>
+  <footer>© 2026 Company</footer>
+</section>
+
+<section id="TC-1.4-C2-015">
+  <h2>Zoomable tab labels</h2>
+  <div role="tablist">
+    <button role="tab">Tab 1</button>
+    <button role="tab">Tab 2</button>
+  </div>
+</section>
+
+<section id="TC-1.4-C2-016">
+  <h2>Paragraph with fluid width</h2>
+  <p style="width:90%;">This text wraps naturally on resize.</p>
+</section>
+
+<section id="TC-1.4-C2-017">
+  <h2>Text inside card scales</h2>
+  <div style="border:1px solid #000;padding:10px;width:50%;">
+    Card description
+  </div>
+</section>
+
+<section id="TC-1.4-C2-018">
+  <h2>Form validation messages scale</h2>
+  <p style="color:red;">Please fill out this field.</p>
+</section>
+
+<section id="TC-1.4-C2-019">
+  <h2>Zoomable icon font with text</h2>
+  <span>🔍 Search</span>
+</section>
+
+<section id="TC-1.4-C2-020">
+  <h2>Header and paragraph scale correctly</h2>
+  <h3>Section Header</h3>
+  <p>Section description resizes proportionally.</p>
+</section>
+
+<!-- ===================== 1.4.5 Images of Text ===================== -->
+
+<section id="TC-1.4-C2-021">
+  <h2>Heading as real text instead of image</h2>
+  <h2>Main Banner</h2>
+</section>
+
+<section id="TC-1.4-C2-022">
+  <h2>Button text as HTML text</h2>
+  <button>Submit Order</button>
+</section>
+
+<section id="TC-1.4-C2-023">
+  <h2>Navigation menu as HTML links</h2>
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+  </nav>
+</section>
+
+<section id="TC-1.4-C2-024">
+  <h2>Banner text as live text with background image</h2>
+  <div style="background:url('banner.png');padding:20px;color:#fff;">
+    Summer Sale
+  </div>
+</section>
+
+<section id="TC-1.4-C2-025">
+  <h2>Form labels as HTML text</h2>
+  <label for="phone">Phone Number</label>
+  <input id="phone" type="tel">
+</section>
+
+<section id="TC-1.4-C2-026">
+  <h2>SVG text with aria-label alternative</h2>
+  <svg width="200" height="40" aria-label="SVG Heading"></svg>
+</section>
+
+<section id="TC-1.4-C2-027">
+  <h2>Canvas content supplemented with text</h2>
+  <canvas width="200" height="50"></canvas>
+  <p>Chart: Sales increased 20%</p>
+</section>
+
+<section id="TC-1.4-C2-028">
+  <h2>Price rendered as text</h2>
+  <span>₹499</span>
+</section>
+
+<section id="TC-1.4-C2-029">
+  <h2>Error message as HTML text</h2>
+  <p style="color:red;">Invalid password</p>
+</section>
+
+<section id="TC-1.4-C2-030">
+  <h2>Text-based icon with label</h2>
+  <span aria-label="Favorite">❤ Favorite</span>
+</section>
+
+<section id="TC-1.4-C2-031">
+  <h2>Chart labels as HTML text</h2>
+  <ul>
+    <li>Q1: 50%</li>
+    <li>Q2: 60%</li>
+  </ul>
+</section>
+
+<section id="TC-1.4-C2-032">
+  <h2>Call-to-action rendered as HTML text</h2>
+  <button>Join Now</button>
+</section>
+
+<section id="TC-1.4-C2-033">
+  <h2>Login form title as HTML heading</h2>
+  <h2>Sign In</h2>
+</section>
+
+<section id="TC-1.4-C2-034">
+  <h2>Pagination numbers as HTML text</h2>
+  <nav><a href="#">1</a> <a href="#">2</a> <a href="#">3</a></nav>
+</section>
+
+<section id="TC-1.4-C2-035">
+  <h2>Tooltip content as HTML text</h2>
+  <span title="Enter your username">Username</span>
+</section>
+
+<section id="TC-1.4-C2-036">
+  <h2>Badge count as HTML text</h2>
+  <span>3</span>
+</section>
+
+<section id="TC-1.4-C2-037">
+  <h2>Watermark as decorative text with ARIA</h2>
+  <span aria-hidden="true">DRAFT</span>
+</section>
+
+<section id="TC-1.4-C2-038">
+  <h2>Heading using CSS text styles instead of image</h2>
+  <h2 style="font-family:Arial,sans-serif;">Welcome Banner</h2>
+</section>
+
+<section id="TC-1.4-C2-039">
+  <h2>Menu labels as live HTML text</h2>
+  <ul>
+    <li><a href="#">Dashboard</a></li>
+    <li><a href="#">Reports</a></li>
+  </ul>
+</section>
+
+<section id="TC-1.4-C2-040">
+  <h2>Decorative image accompanied by HTML text</h2>
+  <img src="decorative.png" alt="">
+  <p>Decorative content description</p>
+</section>
+
+</body>
+</html>
